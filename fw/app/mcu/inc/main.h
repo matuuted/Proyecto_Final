@@ -34,7 +34,7 @@ extern "C" {
 #include "dev_usart.h"
 #include "dev_gpio.h"
 #include "sys_dbg_api.h"
-#include "dev_UART.h"
+#include "dev_uart.h"
 #include "sys_sm.h"
 #include <stdbool.h>
 

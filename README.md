@@ -39,7 +39,7 @@ Además, esta inclinación se ve reflejada en el **LED** con una frecuencia de p
 |-------------------|---------------------------------------------|
 | `mpu6050.c / .h`  | Lectura y configuración del sensor MPU-6050 |
 | `ds3231.c / .h`   | Manejo del reloj RTC DS3231                 |
-| `dev_UART.c / .h` | Envio de Datos a traves de la UART          |
+| `dev_uart.c / .h` | Envio de Datos a traves de la UART          |
 | `dev_LCD.c / .h`  | Control del display LCD 16×2                |
 | `sys_sm.c / .h`   | Máquina de estados principal                |
 

@@ -37,7 +37,7 @@
 #include "ds3231.h"
 #include "mpu_math.h"
 #include "dev_gpio_cfg.h"
-#include "dev_UART.h"
+#include "dev_uart.h"
 
 #include <math.h>
 #include <stdio.h>

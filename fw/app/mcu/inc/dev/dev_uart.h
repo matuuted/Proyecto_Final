@@ -1,7 +1,7 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    dev_UART.h
+  * @file    dev_uart.h
   * @brief   This file contains all the function prototypes for
   *          the usart.c file
   ******************************************************************************

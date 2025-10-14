@@ -1,7 +1,7 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    dev_UART.c
+  * @file    dev_uart.c
   * @brief   This file provides code for the configuration
   *          of the UART.
   ******************************************************************************
@@ -18,7 +18,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "dev_UART.h"
+#include "dev_uart.h"
 
 /* USER CODE BEGIN 0 */
 

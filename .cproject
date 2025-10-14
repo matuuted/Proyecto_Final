@@ -64,7 +64,9 @@
 									<listOptionValue builtIn="false" value="../fw/app/mcu/inc/sys"/>
 									<listOptionValue builtIn="false" value="../fw/app/mcu/inc/dev"/>
 									<listOptionValue builtIn="false" value="../fw/app/mcu/inc/api"/>
-									<listOptionValue builtIn="false" value="../Devices/API/Inc"/>
+									<listOptionValue builtIn="false" value="../Devices/DS3231/Inc"/>
+									<listOptionValue builtIn="false" value="../Devices/MPU6050/Inc"/>
+									<listOptionValue builtIn="false" value="../Devices/LCD16x2/Inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1825385642" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -92,7 +94,9 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Devices/API/Src"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Devices/DS3231"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Devices/LCD16x2"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Devices/MPU6050"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="fw"/>
