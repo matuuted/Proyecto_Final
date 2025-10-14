@@ -36,6 +36,7 @@ Además, esta inclinación se ve reflejada en el **LED** con una frecuencia de p
 
 ## Módulos de Software
 | Módulo            | Función Principal                           |
+|-------------------|---------------------------------------------|
 | `mpu6050.c / .h`  | Lectura y configuración del sensor MPU-6050 |
 | `ds3231.c / .h`   | Manejo del reloj RTC DS3231                 |
 | `dev_UART.c / .h` | Envio de Datos a traves de la UART          |
