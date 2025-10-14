@@ -1,0 +1,26 @@
+#include "{{ data.main_prefix }}_modules.h"
+{% for _block in data.blocks %}
+#include "{{ data.main_prefix | lower }}_{{ _block | lower }}_api.h"
+{% endfor %}
+
+{% if data.block_count != 0 %}
+const FPTRS *FPTRS_LIST_{{ data.main_prefix | upper }}[{{ data.main_prefix | upper }}_MODULES_COUNT] =
+{
+    {% for _block in data.blocks %}
+        [MODULE_INDEX({{ data.main_prefix | upper }}_{{ _block | upper }}_API_ID)] = {{ data.main_prefix | upper }}_{{ _block | upper }}_FPTRS,
+    {% endfor %}
+};
+{% else %}
+const FPTRS *FPTRS_LIST_{{ data.main_prefix | upper }} = {0};
+{% endif %}
+
+{% if data.block_count != 0 %}
+const uint8_t FPTRS_COUNT_{{ data.main_prefix | upper }}[{{ data.main_prefix | upper }}_MODULES_COUNT] = 
+{
+    {% for _block in data.blocks %}
+        [MODULE_INDEX({{ data.main_prefix | upper }}_{{ _block | upper }}_API_ID)] = STRUCT_COUNT({{ data.main_prefix | upper }}_{{ _block | upper }}_FPTRS),
+    {% endfor %}
+};
+{% else %}
+const uint8_t *FPTRS_COUNT_{{ data.main_prefix | upper }} = 0;
+{% endif %}

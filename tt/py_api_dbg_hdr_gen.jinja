@@ -1,0 +1,26 @@
+DBG_API_ID_REV = {}
+DBG_API_REV = {}
+
+{% for main_prefix, groups in data.items() %}
+    {% for block_name, data_block in groups.blocks.items() %}
+        {% if data_block.fn_count > 0 %}
+# {{ block_name }} API Identifiers
+DBG_{{ main_prefix | upper }}_{{ block_name | upper }}_API_ID = {{ data_block.base }}
+DBG_{{ main_prefix | upper }}_{{ block_name | upper }}_API = {}
+    {% for name, elem in data_block.elements.items() %}
+        {% if elem.type == 'function' %}
+DBG_{{ main_prefix | upper }}_{{ block_name | upper }}_API["{{ name | upper }}"] = {{ elem.base }}
+        {% endif %}
+    {% endfor %}
+
+# {{ block_name }} Reverse Lookup
+DBG_API_ID_REV[{{ data_block.base }}] = "{{ main_prefix | upper }}_{{ block_name | upper }}"
+DBG_API_REV["{{ main_prefix | upper }}_{{ block_name | upper }}"] = {}
+    {% for name, elem in data_block.elements.items() %}
+        {% if elem.type == 'function' %}
+DBG_API_REV["{{ main_prefix | upper }}_{{ block_name | upper }}"][{{ elem.base }}] = "{{ name | upper }}"
+        {% endif %}
+    {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}

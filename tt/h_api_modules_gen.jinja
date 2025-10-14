@@ -1,0 +1,16 @@
+#ifndef _{{ data.main_prefix | upper }}_MODULES_H
+#define _{{ data.main_prefix | upper }}_MODULES_H
+
+#include "api.h"
+
+#define {{ data.main_prefix | upper }}_MODULES_COUNT {{ data.block_count }}
+
+{% if data.block_count != 0 %}
+extern const FPTRS *FPTRS_LIST_{{ data.main_prefix | upper }}[{{ data.main_prefix | upper }}_MODULES_COUNT];
+extern const uint8_t FPTRS_COUNT_{{ data.main_prefix | upper }}[{{ data.main_prefix | upper }}_MODULES_COUNT];
+{% else %}
+extern const FPTRS *FPTRS_LIST_{{ data.main_prefix | upper }};
+extern const uint8_t *FPTRS_COUNT_{{ data.main_prefix | upper }};
+{% endif %}
+
+#endif // _{{ data.main_prefix | upper }}_MODULES_H

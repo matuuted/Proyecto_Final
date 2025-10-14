@@ -1,0 +1,16 @@
+# include "api.h"
+# include "{{ data.main_prefix }}_{{ data.block_name | lower }}_api.h"
+
+const FPTRS {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_FPTRS[{{ data.main_prefix | upper }}_{{ data.block_name | upper }}_FUNCTIONS_COUNT] = {
+{% for name, elem in data.elements.items() %}
+    {% if elem.type == 'function' %}
+
+    { .module_id = {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API_ID,
+      .function_id = {{ name | upper }},
+      .task_id = {{ elem.rtos | upper }}_TASK_ID,
+      .nargs = {{ elem.param_count }},
+      .arg_types = { {% for param, param_data in elem.params.items() %}{% if not param_data.base_type %}0{% else %}{{( param_data.base_type | upper ) }}{% if param_data.size > 0 %} | ARGTYPE_PTR{% endif %}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %} },
+      .arg_lens = { {% for param, param_data in elem.params.items() %}{% if param_data.len %}{{( elem.params[param_data.len]['arg_number'] | upper) }} | ARGLEN_PARAM{% elif param_data.size > 0 %}{{( param_data.size | upper) }}{% else %}0{% endif %}{% if not loop.last %}, {% endif %}{% endfor %} },
+      .fptr = { .f{{ elem.param_count }} = (fptr_{{ elem.param_count }}) {{ name }} },
+    },
+    {% endif %}{% endfor %}};

@@ -1,0 +1,5 @@
+{% for main_prefix, groups in data.items() %}
+    {% for block_name, data_block in groups.blocks.items() %}
+from . import {{ main_prefix | lower }}_{{ block_name | lower }}_api as {{ block_name | lower }}
+    {% endfor %}
+{% endfor %}

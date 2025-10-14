@@ -1,0 +1,33 @@
+{
+    "files.associations": {
+        "api_delay.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "main.h": "c",
+        "ds3231_port.h": "c",
+        "ds3231.h": "c",
+        "dev_i2cm.h": "c",
+        "ds3231_registers.h": "c",
+        "dev_i2cs.h": "c",
+        "api.h": "c",
+        "dev_i2cs_api.h": "c",
+        "dev_gpio.h": "c",
+        "dev_usart.h": "c",
+        "sys_dbg.h": "c",
+        "cmsis_os.h": "c",
+        "cmsis_os2.h": "c",
+        "dev_i2cm_api.h": "c",
+        "dev_lcd.h": "c",
+        "freertos.h": "c",
+        "sys_sm.h": "c",
+        "mpu_math.h": "c",
+        "sys_dbg_api.h": "c",
+        "mpu6050_port.h": "c",
+        "mpu6050.h": "c",
+        "mpu6050_registers.h": "c",
+        "dev_gpio_cfg.h": "c",
+        "dev_uart.h": "c",
+        "stm32f4xx_hal_conf.h": "c",
+        "lcd_port.h": "c"
+    },
+    "cortex-debug.gdbPath": "${env:GDB}"
+}

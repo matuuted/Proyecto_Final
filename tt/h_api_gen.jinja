@@ -1,0 +1,114 @@
+{% macro comment(s, indent=1, add_markers=True) %}
+    {% if s %}
+        {% if '\n' in s %}
+            {% if add_markers %}
+/**
+            {% endif %}
+            {% for c in s.split('\n') %}
+*{{ '{}{}'.format(' ' * indent, c) }}
+            {% endfor %}
+*{% if add_markers %}*/{% endif %}
+        {% else %}
+            {% if add_markers %}/**{% else %}*{% endif %}{{ '{}{}'.format(' ' * indent, s) }}{% if add_markers %} */{% endif %}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+#ifndef {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API_H
+#define {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API_H
+
+#include "api.h"
+{% for file_name, elem in data.elements.items() %}
+{% if elem.type == 'include' %}
+{{ comment(elem.comment) }}
+#include "{{ file_name }}.h"
+{% endif %}
+{% endfor %}
+
+#define {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API_ID {{ data.base }}
+
+/* API Identifiers */
+enum {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API {
+{% for name, elem in data.elements.items() %}
+{% if elem.type == 'function' %}
+    {{ name | upper }} = {{ elem.base }},
+    {% endif %}
+{% endfor %}
+};
+
+/* API Function List */
+#define {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_FUNCTIONS_COUNT {{ data.fn_count }}
+extern const FPTRS {{ data.main_prefix | upper }}_{{ data.block_name | upper }}_FPTRS[{{ data.main_prefix | upper }}_{{ data.block_name | upper }}_FUNCTIONS_COUNT];
+
+{% for name, elem in data.elements.items() %}
+{% if elem.type == 'define' %}
+{{ comment(elem.comment) }}
+#define {{ name }} {{ elem.value }}
+
+{% elif elem.type == 'variable' %}
+{%- if elem.static == True -%}static {% elif elem.extern == True %}extern {% endif %} {{ elem.base_type }} {{ name }}{% if elem.size != 0 %}[{{ elem.size }}]{% endif %};
+
+{% elif elem.type == 'doc' %}
+{{ comment(elem.comment, indent=3) }}
+
+{% elif elem.type == 'enum' %}
+{{ comment(elem.comment) }}
+    {% if elem.typedef %}
+typedef enum {
+    {% else %}
+enum {{ name }} {
+    {% endif %}
+    {% for enum_, enum_data in elem.nums.items() %}
+    {{ comment(enum_data.comment) | indent }}
+    {{ name }}_{{ enum_ }} = {{ enum_data.value }},
+        {% endfor %}
+        {% if elem.typedef %}
+} {{ elem.typedef }};
+    {% else %}
+};
+
+    {% endif %}
+{% elif elem.type == 'struct' %}
+{{ comment(elem.comment) }}
+    {% if elem.typedef %}
+typedef struct {
+    {% else %}
+struct {{ name }} {
+    {% endif %}
+    {% for field, field_data in elem.fields.items() %}
+    {{ comment(field_data.comment) | indent }}
+    {% if field != '_void' %}
+    {{ field_data.base_type }} {% if field_data.size > 1 %}{{ field }}[{{ field_data.size }}]{% else %}{{ field }}{% endif %};
+    {% endif %}
+    
+    {% endfor %}
+    {% if elem.typedef %}
+} {{ name }};
+    {% else %}
+};
+    {% endif %}
+{% elif elem.type == 'function' %}
+
+/**
+{{ comment(elem.comment, indent=3, add_markers=False) }}
+*
+* \return {{ elem.returns }}
+    {% for param, param_data in elem.params.items() %}
+        {% if param != '_void' %}
+*   \param [{{ param_data.dir }}] {{ param }} ({{ param_data.type}}) {{ param_data.comment }}
+        {% endif %}
+    {% endfor %}
+*
+*   RTOS Info: {{ elem.rtos }}
+**/
+{{ elem.returns }} {{ name }} (
+    {%- for param, param_data in elem.params.items() -%}
+{% if param == '_void' %}void{% else %}{{ param_data.c_type }}{% if param_data.size > 0 %}*{% endif %} {{ param }}{% if not loop.last %}, {% endif %}
+    {% endif %}
+    {%- endfor -%}
+);
+
+    {% endif %} 
+{% endfor %} 
+
+#endif // _{{ data.main_prefix | upper }}_{{ data.prefix | upper }}_API_H

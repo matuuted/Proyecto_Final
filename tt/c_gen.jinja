@@ -1,0 +1,19 @@
+#include "api.h"
+#include "{{ data.main_prefix | lower }}_{{ data.block_name | lower }}_api.h"
+
+/* API Functions */
+
+{% for name, elem in data.elements.items() %}
+    {% if elem.type == 'function' %}
+{{ elem.returns }} {{ name }} (
+    {%- for param, param_data in elem.params.items() -%}
+{%- if param == '_void' -%}void{%- else -%}{{ param_data.c_type }}{% if param_data.size > 0 %}*{% endif %} {{ param }}{% if not loop.last %}, {% endif %}
+    {%- endif -%}
+    {%- endfor -%}
+)
+{
+    return 0;
+}
+
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,102 @@
+{% macro comments(s, indent=1, add_markers=True)%}
+    {% if s %}
+        {% if '\n' in s %}
+            {% if add_markers %}
+'''
+            {% endif %}
+            {% for c in s.split('\n') %}
+{{ '{}{}'.format(' ' * indent, c) }}
+            {% endfor %}
+'{% if add_markers %}''{% endif %}
+        {% else %}
+            {% if add_markers %}#{% else %}'{% endif %}{{ '{}{}'.format(' ' * indent, s) }}{% if False %}{% endif %}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% if data.package_name %}
+from api_dbg_hdr import *
+from .caller import *
+{% else %}
+from api_dbg_hdr import *
+from .caller import *
+{% endif %}
+
+# API Functions
+
+{% for name, elem in data.elements.items() %}
+    {% if elem.type == 'define' %}
+{{ comments(elem.comment) }}
+{{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API_{{ name | upper }} = {{ elem.value }}
+
+    {% elif elem.type == 'doc' %}
+{{ comments(elem.comment, indent=3) }}
+
+    {% elif elem.type == 'enum' %}
+{{ comments(elem.comment) }}
+{{ name }} = {}
+        {% for enum, enum_data in elem.nums.items() %}
+{{ comments(enum_data.comment) }}
+{{ name }}['{{ enum | upper }}'] = {{ enum_data.value }}
+        {% endfor %}
+
+    {% elif elem.type == 'struct' %}
+{{ comments(elem.comment) }}
+class {{ name }}(object):
+    def __init__(self):
+        {% for field, field_data in elem.fields.items() %}
+        {{ comments(field_data.comment, indent(width=8)) }}
+        self.{{ field }} = None
+        {% endfor %}
+
+        {% elif elem.type == 'function' %}
+
+'''
+
+#
+#   \return {{ elem.returns }}
+        {% for param, param_data in elem.params.items() %}
+            {% if param != '_void' %}
+    \param [{{ param_data.dir }}] {{ param }} ({{ param_data.type }}) {{ param_data.comment }}
+            {% endif %}
+    {% endfor %}
+{{ elem.comment }}
+    RTOS Info: {{ elem.rtos }}
+'''
+def {{ name }}({{ ', '.join(elem.py_in_params) }}):
+    argType = {{ '0x{:02X}'.format(elem.arg_type) }}
+    args = [
+        {% for param, param_data in elem.params.items() %}
+            {% if param != '_void' %}
+            arg('{{ param }}',
+                {%- if not 'len' in param_data -%}'{{ param_data.type }}'
+                    {%- else -%}'{{ param_data.base_type }}[{}]'.format(
+                        {%- if 'src' in elem.params[param_data.len] -%}len({{ elem.params[param_data.len]['src'] }})
+                        {%- else -%}{{ param_data.len }}
+                        {%- endif -%})
+                {%- endif -%},
+                {%- if not param_data.in %} arg() 
+                {%- elif param_data.size == 1 %} [ {{ param }} ] 
+                {%- elif 'src' not in param_data %} {{ param }} 
+                {%- else %} len({{ param_data.src }}) 
+                {%- endif -%}),
+            {% endif %}
+        {% endfor %}
+    ]
+    retVal = call(DBG_{{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API_ID, DBG_{{ data.main_prefix | upper }}_{{ data.block_name | upper }}_API["{{ name | upper }}"], argType, args)
+        {% for param, param_data in elem.params.items() %}
+            {% if 'out' in param_data.dir %}
+    {{ param }} = args[{{ param_data.arg_number }}].value{% if param_data.size == 1 %}[0]{% endif %}
+
+            {% endif %}
+        {% endfor %}
+
+    return (retVal
+        {%- for param, param_data in elem.params.items() %}
+            {%- if param in elem.py_out_params -%}
+, {{ param }}
+            {%- endif %}
+        {% endfor %})
+        
+    {% endif %}{# elements #}
+{% endfor %}
