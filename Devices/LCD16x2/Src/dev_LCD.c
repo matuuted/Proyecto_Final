@@ -13,6 +13,7 @@
 /* ----------------------- Variable privada ----------------------------------- */
 // Control de backlight
 static bool backlight_on = true;
+#define LCD_MAX_CHARS   (DEV_LCD_COLS)
 
 /* -------------------------- Delay --------------------------------- */
 static void LCD_delay(uint32_t ms) { osDelay(ms); }
@@ -115,8 +116,8 @@ void LCD_WriteChar(char character) {
 }
 
 void LCD_Write(const char *s) {
-    while (*s) {
-        LCD_WriteChar(*s++);
+    for (size_t i = 0; i < LCD_MAX_CHARS && s[i] != '\0'; i++) {
+        LCD_WriteChar(s[i]);
     }
 }
 
