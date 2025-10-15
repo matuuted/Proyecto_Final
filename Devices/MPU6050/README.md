@@ -34,7 +34,6 @@ Devices/
 ## API principal
 - `MPU6050_Status MPU6050_Init(MPU6050_Handler *dev)`
 - `MPU6050_Status MPU6050_Read(MPU6050_Handler *dev)`
-- `MPU6050_Status MPU6050_ReadRaw(MPU6050_DataRaw *raw)`
 
 ## Ejemplo
 ```c
