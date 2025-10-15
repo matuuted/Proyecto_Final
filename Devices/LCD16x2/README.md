@@ -31,10 +31,13 @@ Devices/
 ## Comunicación
 - Dirección del módulo: `0x27`
 
-## API principal
+## API principales
 - `bool LCD_Init(void)`
 - `void LCD_Write(const char *s)` / `void LCD_WriteAt(uint8_t col, uint8_t row, char *s)`
-- `void LCD_Clear(void)` / `void LCD_Cursor(bool on)` / `void LCD_BlinkCursor(bool on)`
+- `void LCD_PrintCentered(uint8_t row, char *s)`
+- `void LCD_Clear(void)`
+- `void LCD_Cursor(bool on)`
+- `void LCD_BlinkCursor(bool on)`
 
 ## Ejemplo
 ```c
