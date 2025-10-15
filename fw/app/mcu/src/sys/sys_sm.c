@@ -66,6 +66,17 @@
 #endif
 
 /* ========================================================================== */
+/*                PARAMETROS DE CONFIGURACION DEL RTC                         */
+/* ========================================================================== */
+#define RTC_YEAR   25
+#define RTC_MONTH  10
+#define RTC_DATE   15
+#define RTC_DAY    3
+#define RTC_HOUR   14
+#define RTC_MIN    30
+#define RTC_SEC    0
+
+/* ========================================================================== */
 /*                          TIPOS Y ESTRUCTURAS LOCALES                       */
 /* ========================================================================== */
 
@@ -88,17 +99,13 @@ typedef enum {
  * y los contadores asociados al ciclo de muestreo.
  */
 typedef struct {
-    SM_State        state;    /*  Estado actual de la máquina de estados */
-    MPU6050_Handler mpu;      /*  Handler del  MPU6050 */
-    DS3231_Time     rtc;      /*  Estructura de tiempo del DS3231 */
+    SM_State        state;     /*  Estado actual de la máquina de estados */
+    MPU6050_Handler mpu;       /*  Handler del  MPU6050 */
+    DS3231_Time     rtc;       /*  Estructura de tiempo del DS3231 */
 
-    float        angle_deg;
-    float        angle_filt;
-    uint32_t     blink_ms;
-    uint32_t     blink_acc;
-    uint32_t     tick_ms;      
-    uint32_t     lcd_div;
-    uint32_t     uart_div;
+    float        angle;        /* Ángulo filtrado actual */
+    TickType_t   blink_period; /* Periodo del LED en ticks */
+    TickType_t   blink_acc;    /* Acumulador en ticks */
 } SM_Handler;
 
 /**
@@ -250,6 +257,7 @@ static Device_Init_Stage run_device_initialization(void)
                 if (boot_status.rtc_ready) {
                     show_boot_message("DS3231 OK", " ");
                     boot_status.attempt_count = 0;
+                    DS3231_SetTime(RTC_YEAR, RTC_MONTH, RTC_DATE, RTC_DAY, RTC_HOUR, RTC_MIN, RTC_SEC);
                     boot_status.init_stage = DEV_INIT_MPU;
                     osDelay(1000);
                     return boot_status.init_stage;
@@ -300,8 +308,7 @@ HAL_StatusTypeDef SM_InitOS(void)
     /* Inicialización de estructuras */
     memset(&sm, 0, sizeof(sm));
     sm.state    = ST_INIT;
-    sm.tick_ms  = SAMPLE_PERIOD_MS;
-    sm.blink_ms = 1000;
+    sm.blink_period = PERIOD_1S;
 
     memset(&boot_status, 0, sizeof(boot_status));
     boot_status.init_stage = DEV_INIT_LCD;
@@ -370,9 +377,8 @@ void SM_Iter(void *argument)
             case ST_READ_SENSORS:
             {
                 if (MPU6050_Read(&sm.mpu) == MPU6050_OK) {
-                    float pitch = mpu_get_angle_deg(sm.mpu.data.accel_x, sm.mpu.data.accel_y, sm.mpu.data.accel_z);
-                    sm.angle_filt = (ALPHA * pitch) + (1.0f - ALPHA) * sm.angle_filt;
-                    sm.angle_deg  = sm.angle_filt;
+                    float angle_deg = mpu_get_angle_deg(sm.mpu.data.accel_x, sm.mpu.data.accel_y, sm.mpu.data.accel_z);
+                    sm.angle = (ALPHA * angle_deg) + (1.0f - ALPHA) * sm.angle;
                 }
                 sm.state = ST_UPDATE_LED;
             }
@@ -380,14 +386,14 @@ void SM_Iter(void *argument)
 
             case ST_UPDATE_LED:
             {
-                sm.blink_ms = angle_to_period_ms(sm.angle_deg);
+                sm.blink_period = angle_to_period_ms(sm.angle);
                 sm.state = ST_UPDATE_UART;
             }
             break;
 
             case ST_UPDATE_UART:
             {
-                uart_send_data(&sm.rtc, sm.angle_deg);
+                uart_send_data(&sm.rtc, sm.angle);
                 sm.state = ST_READ_SENSORS;
             }
             break;
@@ -418,7 +424,7 @@ void SM_Iter(void *argument)
                 last_rtc += PERIOD_1S;
                 if (DS3231_ReadTime(&sm.rtc) == DS3231_OK) {
                         char line0[STR_LENGTH], line1[STR_LENGTH];
-                        format_text(&sm.rtc, sm.angle_deg, line0, line1);
+                        format_text(&sm.rtc, sm.angle, line0, line1);
                         LCD_WriteAt(DEV_LCD_COLS_0, DEV_LCD_ROWS_0, line0);
                         LCD_WriteAt(DEV_LCD_COLS_0, DEV_LCD_ROWS_1, line1);
                 }
@@ -428,8 +434,8 @@ void SM_Iter(void *argument)
         * La frecuencia de parpadeo del LED se ajusta según el ángulo.
         * ========================================================= */
         if (sm.state != ST_INIT) { 
-            sm.blink_acc += sm.tick_ms;
-            if (sm.blink_acc >= sm.blink_ms) {
+            sm.blink_acc += SAMPLE_PERIOD_MS;
+            if (sm.blink_acc >= sm.blink_period) {
                 HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
                 sm.blink_acc = 0;
             }
