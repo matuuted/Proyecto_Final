@@ -1,0 +1,76 @@
+\doxysection{Referencia de la estructura FPTRS\+\_\+T}
+\hypertarget{struct_f_p_t_r_s___t}{}\label{struct_f_p_t_r_s___t}\index{FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_f_p_t_r_s___t_a68ff5f6cab8d5a337f7caa2bd0a8f5da}{module\+\_\+id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_f_p_t_r_s___t_a41bbfffe04a103ce80620e0d14718d9a}{function\+\_\+id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_f_p_t_r_s___t_a26b14a18be50c27aacbbad4f4681f6b3}{task\+\_\+id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_f_p_t_r_s___t_a0212696469469d19fab8ac4a2ed6812c}{nargs}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_f_p_t_r_s___t_ab682f902c981986da33861b503497784}{arg\+\_\+types}} \mbox{[}MAX\+\_\+\+ARGS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_f_p_t_r_s___t_a8f16261367d14381a50c4bf17477f52e}{arg\+\_\+lens}} \mbox{[}MAX\+\_\+\+ARGS\mbox{]}
+\item 
+\Hypertarget{struct_f_p_t_r_s___t_a09868e86aafe4deb10d88e4fffa226e5}\label{struct_f_p_t_r_s___t_a09868e86aafe4deb10d88e4fffa226e5} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>fptr\_0 {\bfseries f0}\\
+\>fptr\_1 {\bfseries f1}\\
+\>fptr\_2 {\bfseries f2}\\
+\>fptr\_3 {\bfseries f3}\\
+\>fptr\_4 {\bfseries f4}\\
+\>fptr\_5 {\bfseries f5}\\
+\} {\bfseries fptr}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_f_p_t_r_s___t_doc-variable-members}
+\doxysubsection{Documentación de campos}
+\Hypertarget{struct_f_p_t_r_s___t_a8f16261367d14381a50c4bf17477f52e}\index{FPTRS\_T@{FPTRS\_T}!arg\_lens@{arg\_lens}}
+\index{arg\_lens@{arg\_lens}!FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection{\texorpdfstring{arg\_lens}{arg\_lens}}
+{\footnotesize\ttfamily \label{struct_f_p_t_r_s___t_a8f16261367d14381a50c4bf17477f52e} 
+uint16\+\_\+t arg\+\_\+lens\mbox{[}MAX\+\_\+\+ARGS\mbox{]}}
+
+Length of pointer arguments, including ARGLEN\+\_\+\+PARAM if appropriate \Hypertarget{struct_f_p_t_r_s___t_ab682f902c981986da33861b503497784}\index{FPTRS\_T@{FPTRS\_T}!arg\_types@{arg\_types}}
+\index{arg\_types@{arg\_types}!FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection{\texorpdfstring{arg\_types}{arg\_types}}
+{\footnotesize\ttfamily \label{struct_f_p_t_r_s___t_ab682f902c981986da33861b503497784} 
+uint8\+\_\+t arg\+\_\+types\mbox{[}MAX\+\_\+\+ARGS\mbox{]}}
+
+Argument types (from ARGTYPE), including ARGTYPE\+\_\+\+PTR if appropriate \Hypertarget{struct_f_p_t_r_s___t_a41bbfffe04a103ce80620e0d14718d9a}\index{FPTRS\_T@{FPTRS\_T}!function\_id@{function\_id}}
+\index{function\_id@{function\_id}!FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection{\texorpdfstring{function\_id}{function\_id}}
+{\footnotesize\ttfamily \label{struct_f_p_t_r_s___t_a41bbfffe04a103ce80620e0d14718d9a} 
+uint8\+\_\+t function\+\_\+id}
+
+Function ID within module \Hypertarget{struct_f_p_t_r_s___t_a68ff5f6cab8d5a337f7caa2bd0a8f5da}\index{FPTRS\_T@{FPTRS\_T}!module\_id@{module\_id}}
+\index{module\_id@{module\_id}!FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection{\texorpdfstring{module\_id}{module\_id}}
+{\footnotesize\ttfamily \label{struct_f_p_t_r_s___t_a68ff5f6cab8d5a337f7caa2bd0a8f5da} 
+uint8\+\_\+t module\+\_\+id}
+
+Module ID \Hypertarget{struct_f_p_t_r_s___t_a0212696469469d19fab8ac4a2ed6812c}\index{FPTRS\_T@{FPTRS\_T}!nargs@{nargs}}
+\index{nargs@{nargs}!FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection{\texorpdfstring{nargs}{nargs}}
+{\footnotesize\ttfamily \label{struct_f_p_t_r_s___t_a0212696469469d19fab8ac4a2ed6812c} 
+uint8\+\_\+t nargs}
+
+Number of arguments to function \Hypertarget{struct_f_p_t_r_s___t_a26b14a18be50c27aacbbad4f4681f6b3}\index{FPTRS\_T@{FPTRS\_T}!task\_id@{task\_id}}
+\index{task\_id@{task\_id}!FPTRS\_T@{FPTRS\_T}}
+\doxysubsubsection{\texorpdfstring{task\_id}{task\_id}}
+{\footnotesize\ttfamily \label{struct_f_p_t_r_s___t_a26b14a18be50c27aacbbad4f4681f6b3} 
+uint8\+\_\+t task\+\_\+id}
+
+Task ID to use to run the function 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/inc/\mbox{\hyperlink{api_8h}{api.\+h}}\end{DoxyCompactItemize}

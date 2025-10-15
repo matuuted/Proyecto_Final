@@ -1,0 +1,64 @@
+\doxysection{mpu6050.\+h}
+\hypertarget{mpu6050_8h_source}{}\label{mpu6050_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050.h}}
+\mbox{\hyperlink{mpu6050_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MPU6050\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MPU6050\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mpu6050__registers_8h}{mpu6050\_registers.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ ENUMERACIONES\ Y\ ESTRUCTURAS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ MPU6050\_OK\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \ 0,\ \textcolor{comment}{//\ OK}}
+\DoxyCodeLine{00025\ \ \ \ \ MPU6050\_ERROR\ \ \ \ \ \ \ \ \ \ \ =\ -\/1,\ \textcolor{comment}{//\ Error\ genérico\ de\ HAL}}
+\DoxyCodeLine{00026\ \ \ \ \ MPU6050\_TIMEOUT\ \ \ \ \ \ \ \ \ =\ -\/2,\ \textcolor{comment}{//\ Timeout\ de\ comunicación\ I2C}}
+\DoxyCodeLine{00027\ \ \ \ \ MPU6050\_NOT\_READY\ \ \ \ \ \ \ =\ -\/3,\ \textcolor{comment}{//\ El\ MPU6050\ no\ respondió\ al\ address}}
+\DoxyCodeLine{00028\ \ \ \ \ MPU6050\_INVALID\_PARAM\ \ \ =\ -\/4,\ \textcolor{comment}{//\ Parámetros\ inválidos}}
+\DoxyCodeLine{00029\ \ \ \ \ MPU6050\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ =\ -\/5,\ \textcolor{comment}{//\ HAL\ Busy}}
+\DoxyCodeLine{00030\ \}\ MPU6050\_Status;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ accel\_x;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ accel\_y;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ accel\_z;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ gyro\_x;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ gyro\_y;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ gyro\_z;\ \ \ \ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{struct_m_p_u6050___data}{MPU6050\_Data}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ int16\_t\ ax,\ ay,\ az;}
+\DoxyCodeLine{00043\ \ \ \ \ int16\_t\ gx,\ gy,\ gz;}
+\DoxyCodeLine{00044\ \}\ \mbox{\hyperlink{struct_m_p_u6050___data_raw}{MPU6050\_DataRaw}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_m_p_u6050___handler_ab263e5e7a3f8e58f4a96aadc9a75463e}{accel\_sens}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_m_p_u6050___handler_a811c0853c804c0b8a155d308097b8017}{gyro\_sens}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{struct_m_p_u6050___data}{MPU6050\_Data}}\ \mbox{\hyperlink{struct_m_p_u6050___handler_a3cfebc7db806eff6a22d8612ef0bed33}{data}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\_Handler}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00053\ \textcolor{comment}{/*\ API\ PÚBLICA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00054\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ MPU6050\_Status\ MPU6050\_Init(\mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\_Handler}}\ *device);}
+\DoxyCodeLine{00057\ MPU6050\_Status\ MPU6050\_Read(\mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\_Handler}}*device);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MPU6050\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

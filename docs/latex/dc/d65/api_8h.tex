@@ -1,0 +1,228 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/inc/api.h}
+\hypertarget{api_8h}{}\label{api_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api.h@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api.h}}
+
+
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_p_t_r_s___t}{FPTRS\+\_\+T}}
+\item 
+struct \mbox{\hyperlink{struct_c_o_m_m_a_n_d___d_a_t_a}{COMMAND\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{api_8h_a2306dddc82e5e58f23bd44c1086a5b6f}\label{api_8h_a2306dddc82e5e58f23bd44c1086a5b6f} 
+\#define {\bfseries REG\+\_\+\+STATUS}~0
+\item 
+\Hypertarget{api_8h_ace03ad281d5c61bbe4db17606ca9de42}\label{api_8h_ace03ad281d5c61bbe4db17606ca9de42} 
+\#define {\bfseries REG\+\_\+\+MODULE\+\_\+\+ID}~1
+\item 
+\Hypertarget{api_8h_abfddfc481792c3ddc89207965eab8ef3}\label{api_8h_abfddfc481792c3ddc89207965eab8ef3} 
+\#define {\bfseries REG\+\_\+\+FUNCTION\+\_\+\+ID}~2
+\item 
+\Hypertarget{api_8h_a3978eab73b3ca1447ca8623e8e402ff0}\label{api_8h_a3978eab73b3ca1447ca8623e8e402ff0} 
+\#define {\bfseries REG\+\_\+\+ARG\+\_\+\+TYPES}~3
+\item 
+\Hypertarget{api_8h_aa9a9ac08251af88d8be2fc413a314758}\label{api_8h_aa9a9ac08251af88d8be2fc413a314758} 
+\#define {\bfseries REG\+\_\+\+DATA\+\_\+\+START}~4
+\item 
+\Hypertarget{api_8h_ac14fab40f6a85e17315e80b425289c96}\label{api_8h_ac14fab40f6a85e17315e80b425289c96} 
+\#define {\bfseries API\+\_\+\+GO}~0x2
+\item 
+\Hypertarget{api_8h_a6edf81e50c42b31b92642e4aadefdaee}\label{api_8h_a6edf81e50c42b31b92642e4aadefdaee} 
+\#define {\bfseries API\+\_\+\+BUSY}~0x1
+\item 
+\Hypertarget{api_8h_a14fdfa4fe6bc95f164709c3c796f89c1}\label{api_8h_a14fdfa4fe6bc95f164709c3c796f89c1} 
+\#define {\bfseries ARGTYPE\+\_\+\+U32}~0
+\item 
+\Hypertarget{api_8h_acf688d0621de254aed5c5876697433f0}\label{api_8h_acf688d0621de254aed5c5876697433f0} 
+\#define {\bfseries ARGTYPE\+\_\+\+TLV}~1
+\item 
+\#define \mbox{\hyperlink{api_8h_a2a890ad0bf5b954b85ff8af577301173}{API\+\_\+\+ALIGN}}(x)
+\item 
+\#define \mbox{\hyperlink{api_8h_a240ed77c6ffab69c1a0370ad4c3361b9}{STRUCT\+\_\+\+COUNT}}(x)
+\item 
+\Hypertarget{api_8h_a776839cbeaa2c4e97b8d72af8f1df405}\label{api_8h_a776839cbeaa2c4e97b8d72af8f1df405} 
+\#define {\bfseries ARGTYPE\+\_\+\+MASK}~0x7F
+\item 
+\Hypertarget{api_8h_a9db9e4ccd62e9faf919ead13f49ee689}\label{api_8h_a9db9e4ccd62e9faf919ead13f49ee689} 
+\#define {\bfseries TLV\+\_\+\+TYPE}~0
+\item 
+\Hypertarget{api_8h_a078f06887f97b2ac37b100d5b9f4cd81}\label{api_8h_a078f06887f97b2ac37b100d5b9f4cd81} 
+\#define {\bfseries TLV\+\_\+\+LENGTH}~1
+\item 
+\Hypertarget{api_8h_a3aa806becb5715d34d659a6e662023e7}\label{api_8h_a3aa806becb5715d34d659a6e662023e7} 
+\#define {\bfseries TLV\+\_\+\+VALUE}~4
+\item 
+\Hypertarget{api_8h_a4c1fa49a2dc108d08ee5471fafea5e6c}\label{api_8h_a4c1fa49a2dc108d08ee5471fafea5e6c} 
+\#define {\bfseries TLV\+\_\+\+HDRLEN}~4
+\item 
+\Hypertarget{api_8h_a5fc2a9f9e229ca3d6c810f9008978734}\label{api_8h_a5fc2a9f9e229ca3d6c810f9008978734} 
+\#define {\bfseries ARGTYPE\+\_\+\+PTR}~0x80
+\item 
+\Hypertarget{api_8h_a0fbf5e6099924f8cf1ef77a4ae0e229b}\label{api_8h_a0fbf5e6099924f8cf1ef77a4ae0e229b} 
+\#define {\bfseries ARGLEN\+\_\+\+PARAM}~0x8000
+\item 
+\Hypertarget{api_8h_a8fbede57f38cfd302767c0012b3ff747}\label{api_8h_a8fbede57f38cfd302767c0012b3ff747} 
+\#define {\bfseries MODULE\+\_\+\+GROUP\+\_\+\+SHIFT}~6
+\item 
+\Hypertarget{api_8h_a584029612b8b514a8d83b3720d86e5a4}\label{api_8h_a584029612b8b514a8d83b3720d86e5a4} 
+\#define {\bfseries MODULE\+\_\+\+GROUP\+\_\+\+MASK}~( (0x\+FF $<$$<$ MODULE\+\_\+\+GROUP\+\_\+\+SHIFT) \& 0x\+FF )
+\item 
+\#define \mbox{\hyperlink{api_8h_afc510181f5e9022b67ac92af4bc79e02}{MODULE\+\_\+\+GROUP}}(m)
+\item 
+\#define \mbox{\hyperlink{api_8h_a268f6f0398068a85e903f55074ec4289}{MODULE\+\_\+\+ISGROUP}}(m,  g)
+\item 
+\#define \mbox{\hyperlink{api_8h_a196b6c657fd4b871453d9fbf3eca92eb}{MODULE\+\_\+\+INDEX}}(m)
+\item 
+\Hypertarget{api_8h_a11e30fc88a716929da69c46c86d90476}\label{api_8h_a11e30fc88a716929da69c46c86d90476} 
+\#define {\bfseries MODULE\+\_\+\+GROUPS}~4
+\item 
+\Hypertarget{api_8h_a053e639f6f41cee9aa5ce3859d255478}\label{api_8h_a053e639f6f41cee9aa5ce3859d255478} 
+\#define {\bfseries NONE\+\_\+modules}~0xff
+\item 
+\Hypertarget{api_8h_a29b7451465deac204c5f7cb1f9c6e1fc}\label{api_8h_a29b7451465deac204c5f7cb1f9c6e1fc} 
+\#define {\bfseries MAX\+\_\+\+ARGS}~8
+\item 
+\Hypertarget{api_8h_a87738054f9a89f0ac29c6ee1fb7da08d}\label{api_8h_a87738054f9a89f0ac29c6ee1fb7da08d} 
+\#define {\bfseries COMMAND\+\_\+\+SIZE}~1280
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{api_8h_accd24235df4a67163517917266229098}\label{api_8h_accd24235df4a67163517917266229098} 
+typedef enum TASK\+\_\+T {\bfseries TASK\+\_\+\+TYPE}
+\item 
+\Hypertarget{api_8h_a6cc33cbbe883d6c9902885171a4f8aae}\label{api_8h_a6cc33cbbe883d6c9902885171a4f8aae} 
+typedef HAL\+\_\+\+Status\+Type\+Def(\texorpdfstring{$\ast$}{*} {\bfseries fptr\+\_\+0}) (void)
+\item 
+\Hypertarget{api_8h_a82459877665ee080a9dbe458f09e02a3}\label{api_8h_a82459877665ee080a9dbe458f09e02a3} 
+typedef HAL\+\_\+\+Status\+Type\+Def(\texorpdfstring{$\ast$}{*} {\bfseries fptr\+\_\+1}) (uintptr\+\_\+t arg0)
+\item 
+\Hypertarget{api_8h_a74f958fcbf65725312646bded73ce08b}\label{api_8h_a74f958fcbf65725312646bded73ce08b} 
+typedef HAL\+\_\+\+Status\+Type\+Def(\texorpdfstring{$\ast$}{*} {\bfseries fptr\+\_\+2}) (uintptr\+\_\+t arg0, uintptr\+\_\+t arg1)
+\item 
+\Hypertarget{api_8h_a622b5395f517159358247c21bc0aab62}\label{api_8h_a622b5395f517159358247c21bc0aab62} 
+typedef HAL\+\_\+\+Status\+Type\+Def(\texorpdfstring{$\ast$}{*} {\bfseries fptr\+\_\+3}) (uintptr\+\_\+t arg0, uintptr\+\_\+t arg1, uintptr\+\_\+t arg2)
+\item 
+\Hypertarget{api_8h_a7d4aee114fc1100ce25e2e4f8f627ab6}\label{api_8h_a7d4aee114fc1100ce25e2e4f8f627ab6} 
+typedef HAL\+\_\+\+Status\+Type\+Def(\texorpdfstring{$\ast$}{*} {\bfseries fptr\+\_\+4}) (uintptr\+\_\+t arg0, uintptr\+\_\+t arg1, uintptr\+\_\+t arg2, uintptr\+\_\+t arg3)
+\item 
+\Hypertarget{api_8h_a78dbfd47631f8e5758a5401b9720a9f3}\label{api_8h_a78dbfd47631f8e5758a5401b9720a9f3} 
+typedef HAL\+\_\+\+Status\+Type\+Def(\texorpdfstring{$\ast$}{*} {\bfseries fptr\+\_\+5}) (uintptr\+\_\+t arg0, uintptr\+\_\+t arg1, uintptr\+\_\+t arg2, uintptr\+\_\+t arg3, uintptr\+\_\+t arg4)
+\item 
+\Hypertarget{api_8h_a1c2d9db7a0200389afcf9c41a33483ef}\label{api_8h_a1c2d9db7a0200389afcf9c41a33483ef} 
+typedef struct \mbox{\hyperlink{struct_f_p_t_r_s___t}{FPTRS\+\_\+T}} {\bfseries FPTRS}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{api_8h_a49796011d6930facc5fac0f7ffca0e4e}\label{api_8h_a49796011d6930facc5fac0f7ffca0e4e} 
+enum {\bfseries TASK\+\_\+T} \{ {\bfseries NONE\+\_\+\+TASK\+\_\+\+ID} = 0
+, {\bfseries ANY\+\_\+\+TASK\+\_\+\+ID} = 1
+ \}
+\item 
+\Hypertarget{api_8h_a90faaa279f0e38bc6f1eee6dfb6b394e}\label{api_8h_a90faaa279f0e38bc6f1eee6dfb6b394e} 
+enum {\bfseries ARG\+\_\+\+TYPE} \{ \newline
+{\bfseries UINT8\+\_\+T}
+, {\bfseries INT8\+\_\+T}
+, {\bfseries UINT16\+\_\+T}
+, {\bfseries INT16\+\_\+T}
+, \newline
+{\bfseries UINT32\+\_\+T}
+, {\bfseries INT32\+\_\+T}
+, {\bfseries FLOAT32\+\_\+T}
+, {\bfseries FLOAT16\+\_\+T}
+, \newline
+{\bfseries UINT64\+\_\+T}
+, {\bfseries \+\_\+\+\_\+\+VOID}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{api_8h_ac210bae174a406f1302244504ce6ca27}\label{api_8h_ac210bae174a406f1302244504ce6ca27} 
+void {\bfseries exec\+\_\+fn} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{api_8h_a30514d7648b80a58396cae3b3b04a2cb}\label{api_8h_a30514d7648b80a58396cae3b3b04a2cb} 
+\mbox{\hyperlink{struct_c_o_m_m_a_n_d___d_a_t_a}{COMMAND\+\_\+\+DATA}} {\bfseries command}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-define-members}
+\Hypertarget{api_8h_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{api_8h_a2a890ad0bf5b954b85ff8af577301173}\index{api.h@{api.h}!API\_ALIGN@{API\_ALIGN}}
+\index{API\_ALIGN@{API\_ALIGN}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{API\_ALIGN}{API\_ALIGN}}
+{\footnotesize\ttfamily \label{api_8h_a2a890ad0bf5b954b85ff8af577301173} 
+\#define API\+\_\+\+ALIGN(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\ ((x)+3)\ \&\ 0xFFFC\ )}
+
+\end{DoxyCode}
+\Hypertarget{api_8h_afc510181f5e9022b67ac92af4bc79e02}\index{api.h@{api.h}!MODULE\_GROUP@{MODULE\_GROUP}}
+\index{MODULE\_GROUP@{MODULE\_GROUP}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{MODULE\_GROUP}{MODULE\_GROUP}}
+{\footnotesize\ttfamily \label{api_8h_afc510181f5e9022b67ac92af4bc79e02} 
+\#define MODULE\+\_\+\+GROUP(\begin{DoxyParamCaption}\item[{}]{m}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\ (m)\ >>\ MODULE\_GROUP\_SHIFT\ )}
+
+\end{DoxyCode}
+\Hypertarget{api_8h_a196b6c657fd4b871453d9fbf3eca92eb}\index{api.h@{api.h}!MODULE\_INDEX@{MODULE\_INDEX}}
+\index{MODULE\_INDEX@{MODULE\_INDEX}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{MODULE\_INDEX}{MODULE\_INDEX}}
+{\footnotesize\ttfamily \label{api_8h_a196b6c657fd4b871453d9fbf3eca92eb} 
+\#define MODULE\+\_\+\+INDEX(\begin{DoxyParamCaption}\item[{}]{m}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\ (m)\ \&\ \string~MODULE\_GROUP\_MASK\ )}
+
+\end{DoxyCode}
+\Hypertarget{api_8h_a268f6f0398068a85e903f55074ec4289}\index{api.h@{api.h}!MODULE\_ISGROUP@{MODULE\_ISGROUP}}
+\index{MODULE\_ISGROUP@{MODULE\_ISGROUP}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{MODULE\_ISGROUP}{MODULE\_ISGROUP}}
+{\footnotesize\ttfamily \label{api_8h_a268f6f0398068a85e903f55074ec4289} 
+\#define MODULE\+\_\+\+ISGROUP(\begin{DoxyParamCaption}\item[{}]{m}{, }\item[{}]{g}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\ (m)\ \&\ MODULE\_GROUP\_MASK\ ==\ (g)\ )}
+
+\end{DoxyCode}
+\Hypertarget{api_8h_a240ed77c6ffab69c1a0370ad4c3361b9}\index{api.h@{api.h}!STRUCT\_COUNT@{STRUCT\_COUNT}}
+\index{STRUCT\_COUNT@{STRUCT\_COUNT}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{STRUCT\_COUNT}{STRUCT\_COUNT}}
+{\footnotesize\ttfamily \label{api_8h_a240ed77c6ffab69c1a0370ad4c3361b9} 
+\#define STRUCT\+\_\+\+COUNT(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\ \textcolor{keyword}{sizeof}(x)\ /\ \textcolor{keyword}{sizeof}(x[0])\ )}
+
+\end{DoxyCode}

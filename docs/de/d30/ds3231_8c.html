@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final – Medición de Inclinación: Referencia del archivo C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/Src/ds3231.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final – Medición de Inclinación<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Este proyecto utiliza la placa NUCLEO-STM32F446RE y permite detectar y visualizar en tiempo real la inclinación mediante el sensor MPU-6050.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('de/d30/ds3231_8c.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo ds3231.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación del driver DS3231, utilizando <a class="el" href="../../d1/de2/ds3231__port_8c.html" title="Implementación del driver DS3231 usando dev_i2cm (HAL I²C).">ds3231_port.c</a>.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../da/dfa/ds3231_8h_source.html">ds3231.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d06/ds3231__registers_8h_source.html">ds3231_registers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d5d/ds3231__port_8h_source.html">ds3231_port.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a1faa1f4d7a1be389faf658871da42f39" id="r_a1faa1f4d7a1be389faf658871da42f39"><td class="memItemLeft" align="right" valign="top">DS3231_Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1faa1f4d7a1be389faf658871da42f39">DS3231_Init</a> (void)</td></tr>
+<tr class="memdesc:a1faa1f4d7a1be389faf658871da42f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la presencia del DS3231 en el bus de I2C.  <br /></td></tr>
+<tr class="memitem:a13a4ba9b594d36f0e92ace12336426b6" id="r_a13a4ba9b594d36f0e92ace12336426b6"><td class="memItemLeft" align="right" valign="top">DS3231_Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13a4ba9b594d36f0e92ace12336426b6">DS3231_ReadTime</a> (<a class="el" href="../../da/d31/struct_d_s3231___time.html">DS3231_Time</a> *time)</td></tr>
+<tr class="memdesc:a13a4ba9b594d36f0e92ace12336426b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee la hora actual desde el DS3231.  <br /></td></tr>
+<tr class="memitem:af422c0f37f5763d688ae3b815002ffda" id="r_af422c0f37f5763d688ae3b815002ffda"><td class="memItemLeft" align="right" valign="top">DS3231_Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af422c0f37f5763d688ae3b815002ffda">DS3231_SetTime</a> (uint8_t year, uint8_t month, uint8_t date, uint8_t day, uint8_t hour, uint8_t min, uint8_t sec)</td></tr>
+<tr class="memdesc:af422c0f37f5763d688ae3b815002ffda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura la fecha y hora del RTC.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación del driver DS3231, utilizando <a class="el" href="../../d1/de2/ds3231__port_8c.html" title="Implementación del driver DS3231 usando dev_i2cm (HAL I²C).">ds3231_port.c</a>. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a1faa1f4d7a1be389faf658871da42f39" name="a1faa1f4d7a1be389faf658871da42f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1faa1f4d7a1be389faf658871da42f39">&#9670;&#160;</a></span>DS3231_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DS3231_Status DS3231_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica la presencia del DS3231 en el bus de I2C. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>DS3231_OK si funciono correctamente. </dd></dl>
+
+</div>
+</div>
+<a id="a13a4ba9b594d36f0e92ace12336426b6" name="a13a4ba9b594d36f0e92ace12336426b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a4ba9b594d36f0e92ace12336426b6">&#9670;&#160;</a></span>DS3231_ReadTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DS3231_Status DS3231_ReadTime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d31/struct_d_s3231___time.html">DS3231_Time</a> *</td>          <td class="paramname"><span class="paramname"><em>time</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee la hora actual desde el DS3231. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Estructura Time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>DS3231_OK si funciono correctamente. </dd></dl>
+
+</div>
+</div>
+<a id="af422c0f37f5763d688ae3b815002ffda" name="af422c0f37f5763d688ae3b815002ffda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af422c0f37f5763d688ae3b815002ffda">&#9670;&#160;</a></span>DS3231_SetTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DS3231_Status DS3231_SetTime </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>day</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configura la fecha y hora del RTC. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">yy</td><td>Año (00-99) </td></tr>
+    <tr><td class="paramname">mm</td><td>Mes (1-12) </td></tr>
+    <tr><td class="paramname">dd</td><td>Día del mes (1-31) </td></tr>
+    <tr><td class="paramname">dow</td><td>Día de semana (1-7) </td></tr>
+    <tr><td class="paramname">hh</td><td>Hora (0-23) </td></tr>
+    <tr><td class="paramname">mi</td><td>Minutos (0-59) </td></tr>
+    <tr><td class="paramname">ss</td><td>Segundos (0-59) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>DS3231_OK si funciono correctamente. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_036ba507fe550560010f008cfcb3a881.html">Devices</a></li><li class="navelem"><a href="../../dir_8a926aa40609c2ebe5235ab7188a2248.html">DS3231</a></li><li class="navelem"><a href="../../dir_cefff825dc13e2dc3390ecd5643113a1.html">Src</a></li><li class="navelem"><a href="../../de/d30/ds3231_8c.html">ds3231.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

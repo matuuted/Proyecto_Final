@@ -1,0 +1,42 @@
+\doxysection{sys\+\_\+dbg\+\_\+api.\+h}
+\hypertarget{sys__dbg__api_8h_source}{}\label{sys__dbg__api_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api/sys\_dbg\_api.h@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api/sys\_dbg\_api.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ SYS\_DBG\_API\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ SYS\_DBG\_API\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{api_8h}{api.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}task.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}cmsis\_os2.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SYS\_DBG\_API\_ID\ 64}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ OS\_NOTIFY\_I2C\_COMMAND\ (1\ <<\ 0)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ osThreadId\_t\ DebugTaskHandle;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*\ API\ Identifiers\ */}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{enum}\ SYS\_DBG\_API\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ DBG\_INITOS\ =\ 0,}
+\DoxyCodeLine{00019\ \ \ \ \ DBG\_ITER\ =\ 1,}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ API\ Function\ List\ */}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ SYS\_DBG\_FUNCTIONS\_COUNT\ 2}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ FPTRS\ SYS\_DBG\_FPTRS[SYS\_DBG\_FUNCTIONS\_COUNT];}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ HAL\_StatusTypeDef\ DBG\_InitOS\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ DBG\_Iter\ (\textcolor{keywordtype}{void}\ *argument);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ }
+\DoxyCodeLine{00048\ \ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_SYS\_\_API\_H}}
+
+\end{DoxyCode}

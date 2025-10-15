@@ -1,0 +1,229 @@
+\doxysection{I2C Master (HAL) }
+\hypertarget{group___d_e_v___i2_c_m}{}\label{group___d_e_v___i2_c_m}\index{I2C Master (HAL)@{I2C Master (HAL)}}
+
+
+Funciones de inicialización del I²C.  
+
+
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_e_v___i2_c_m_gafa3215f0aa766367f5d34bee80929152}{I2\+C\+\_\+\+TIMEOUT}}~(5000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga29d1d5bf3c57039940faa3601ea8d3bf}{I2\+CM\+\_\+\+Init\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa I2\+C1 a 400 k\+Hz, 7-\/bit, sin dual address. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga1b5664928497631a73d21cc164c2683d}{I2\+CM\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Desinicializa I2\+C1. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga8d0aae78b2c2c14f3e513211dffafbcc}{I2\+CM\+\_\+\+Write}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Escribe un buffer en un esclavo I²C. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga86a9c7298258aa62d3ad18c62087cfb1}{I2\+CM\+\_\+\+Read}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Lee un buffer crudo desde un esclavo I²C (no lee dirección interna). \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_gab61d6e6c5f098a0570e5af1ccfe05a42}{I2\+CM\+\_\+\+Read\+\_\+\+Sr}} (uint8\+\_\+t address, uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Lee bytes desde un registro interno. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_gaaa296d609dbf38a083dabcd4006ad8c9}{I2\+CM\+\_\+\+Is\+Device\+Ready}} (uint8\+\_\+t address, uint32\+\_\+t trials)
+\begin{DoxyCompactList}\small\item\em Verifica si un esclavo responde (ACK) en la dirección dada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Funciones de inicialización del I²C. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{group___d_e_v___i2_c_m_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{group___d_e_v___i2_c_m_gafa3215f0aa766367f5d34bee80929152}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2C\_TIMEOUT@{I2C\_TIMEOUT}}
+\index{I2C\_TIMEOUT@{I2C\_TIMEOUT}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2C\_TIMEOUT}{I2C\_TIMEOUT}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_gafa3215f0aa766367f5d34bee80929152} 
+\#define I2\+C\+\_\+\+TIMEOUT~(5000)}
+
+Timeout de I2C en milisegundos 
+
+\label{doc-func-members}
+\Hypertarget{group___d_e_v___i2_c_m_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{group___d_e_v___i2_c_m_ga1b5664928497631a73d21cc164c2683d}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2CM\_DeInit@{I2CM\_DeInit}}
+\index{I2CM\_DeInit@{I2CM\_DeInit}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2CM\_DeInit()}{I2CM\_DeInit()}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_ga1b5664928497631a73d21cc164c2683d} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CM\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Desinicializa I2\+C1. 
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si se desinicializó correctamente.
+\end{DoxyReturn}
+Desinicializa I2\+C1.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def
+\end{DoxyReturn}
+RTOS Info\+: Any \Hypertarget{group___d_e_v___i2_c_m_ga29d1d5bf3c57039940faa3601ea8d3bf}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2CM\_InitStart@{I2CM\_InitStart}}
+\index{I2CM\_InitStart@{I2CM\_InitStart}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2CM\_InitStart()}{I2CM\_InitStart()}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_ga29d1d5bf3c57039940faa3601ea8d3bf} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CM\+\_\+\+Init\+Start (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa I2\+C1 a 400 k\+Hz, 7-\/bit, sin dual address. 
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si se configuró correctamente.
+\end{DoxyReturn}
+Inicializa I2\+C1 a 400 k\+Hz, 7-\/bit, sin dual address.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def
+\end{DoxyReturn}
+RTOS Info\+: Any \Hypertarget{group___d_e_v___i2_c_m_gaaa296d609dbf38a083dabcd4006ad8c9}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2CM\_IsDeviceReady@{I2CM\_IsDeviceReady}}
+\index{I2CM\_IsDeviceReady@{I2CM\_IsDeviceReady}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2CM\_IsDeviceReady()}{I2CM\_IsDeviceReady()}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_gaaa296d609dbf38a083dabcd4006ad8c9} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CM\+\_\+\+Is\+Device\+Ready (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{, }\item[{uint32\+\_\+t}]{trials}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si un esclavo responde (ACK) en la dirección dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Dirección 7-\/bit. \\
+\hline
+{\em trials} & Numero de reintentos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si respondió el esclavo a la direccion dada.
+\end{DoxyReturn}
+Verifica si un esclavo responde (ACK) en la dirección dada.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em address} & (uint8\+\_\+t) Dirección 7-\/bit. \\
+\hline
+\mbox{\texttt{in}}  & {\em trials} & (uint32\+\_\+t) Número de reintentos.\\
+\hline
+\end{DoxyParams}
+RTOS Info\+: Any \Hypertarget{group___d_e_v___i2_c_m_ga86a9c7298258aa62d3ad18c62087cfb1}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2CM\_Read@{I2CM\_Read}}
+\index{I2CM\_Read@{I2CM\_Read}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2CM\_Read()}{I2CM\_Read()}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_ga86a9c7298258aa62d3ad18c62087cfb1} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CM\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Lee un buffer crudo desde un esclavo I²C (no lee dirección interna). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Dirección 7-\/bit (p.\+ej. 0x68). \\
+\hline
+{\em data} & Puntero a buffer de recepción. \\
+\hline
+{\em size} & Cantidad de bytes a recibir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si finalizó correctamente.
+\end{DoxyReturn}
+Lee un buffer crudo desde un esclavo I²C (no lee dirección interna).
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em address} & (uint8\+\_\+t) Dirección 7-\/bit del esclavo (p.\+ej. 0x68). \\
+\hline
+\mbox{\texttt{out}}  & {\em data} & (uint8\+\_\+t\mbox{[}512\mbox{]}) Puntero al buffer de recepción. \\
+\hline
+\mbox{\texttt{in}}  & {\em size} & (uint16\+\_\+t) Cantidad de bytes a recibir.\\
+\hline
+\end{DoxyParams}
+RTOS Info\+: Any \Hypertarget{group___d_e_v___i2_c_m_gab61d6e6c5f098a0570e5af1ccfe05a42}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2CM\_Read\_Sr@{I2CM\_Read\_Sr}}
+\index{I2CM\_Read\_Sr@{I2CM\_Read\_Sr}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2CM\_Read\_Sr()}{I2CM\_Read\_Sr()}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_gab61d6e6c5f098a0570e5af1ccfe05a42} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CM\+\_\+\+Read\+\_\+\+Sr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{, }\item[{uint8\+\_\+t}]{reg}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Lee bytes desde un registro interno. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Dirección 7-\/bit (p.\+ej. 0x68). \\
+\hline
+{\em reg} & Dirección interna (8-\/bit) de inicio. \\
+\hline
+{\em data} & Buffer de salida. \\
+\hline
+{\em size} & Número de bytes a leer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si finalizó correctamente.
+\end{DoxyReturn}
+Lee bytes desde un registro interno (sub-\/address read).
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em address} & (uint8\+\_\+t) Dirección 7-\/bit del esclavo (p.\+ej. 0x68). \\
+\hline
+\mbox{\texttt{in}}  & {\em reg} & (uint8\+\_\+t) Dirección interna (8-\/bit) de inicio. \\
+\hline
+\mbox{\texttt{out}}  & {\em data} & (uint8\+\_\+t\mbox{[}512\mbox{]}) Buffer de salida. \\
+\hline
+\mbox{\texttt{in}}  & {\em size} & (uint16\+\_\+t) Número de bytes a leer.\\
+\hline
+\end{DoxyParams}
+RTOS Info\+: Any \Hypertarget{group___d_e_v___i2_c_m_ga8d0aae78b2c2c14f3e513211dffafbcc}\index{I2C Master (HAL)@{I2C Master (HAL)}!I2CM\_Write@{I2CM\_Write}}
+\index{I2CM\_Write@{I2CM\_Write}!I2C Master (HAL)@{I2C Master (HAL)}}
+\doxysubsubsection{\texorpdfstring{I2CM\_Write()}{I2CM\_Write()}}
+{\footnotesize\ttfamily \label{group___d_e_v___i2_c_m_ga8d0aae78b2c2c14f3e513211dffafbcc} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CM\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Escribe un buffer en un esclavo I²C. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Dirección 7-\/bit (p.\+ej. 0x68). \\
+\hline
+{\em data} & Puntero a buffer a transmitir. \\
+\hline
+{\em size} & Cantidad de bytes a transmitir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si finalizó correctamente.
+\end{DoxyReturn}
+Escribe un buffer en un esclavo I²C.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em address} & (uint8\+\_\+t) Dirección 7-\/bit del esclavo (p.\+ej. 0x68). \\
+\hline
+\mbox{\texttt{in}}  & {\em data} & (uint8\+\_\+t\mbox{[}512\mbox{]}) Puntero al buffer a transmitir. \\
+\hline
+\mbox{\texttt{in}}  & {\em size} & (uint16\+\_\+t) Cantidad de bytes a transmitir.\\
+\hline
+\end{DoxyParams}
+RTOS Info\+: Any 

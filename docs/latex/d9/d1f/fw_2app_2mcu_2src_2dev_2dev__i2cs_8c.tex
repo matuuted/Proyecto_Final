@@ -1,0 +1,95 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/src/dev/dev\+\_\+i2cs.c}
+\hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c}{}\label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/src/dev/dev\_i2cs.c@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/src/dev/dev\_i2cs.c}}
+
+
+This file provides code for the configuration of the I2C instances.  
+
+
+{\ttfamily \#include "{}api.\+h"{}}\newline
+{\ttfamily \#include "{}dev\+\_\+i2cs\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+ll\+\_\+i2c.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+\_\+dbg\+\_\+api.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a297ceca2a18671a981c8ad3382480e12}{I2\+C2\+\_\+\+Enable\+Acknowledge}} (void)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_ab1dee84d359addfa9a5ece87ac1ef9d4}{I2\+C2\+\_\+\+Disable\+Acknowledge}} (void)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a13abebc24eb99a94c8824cdd8ef4f2fb}{I2\+CS\+\_\+\+Init\+Start}} (void)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a63dd2d0759f85fa6ad6f074c67d626fe}{I2\+CS\+\_\+\+De\+Init}} (void)
+\item 
+\Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_abdb05db0781544b33e806a12940d062c}\label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_abdb05db0781544b33e806a12940d062c} 
+void {\bfseries I2\+C2\+\_\+\+EV\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_aecd40b8012604ac4236bda3f65857c37}\label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_aecd40b8012604ac4236bda3f65857c37} 
+void {\bfseries I2\+C2\+\_\+\+ER\+\_\+\+IRQHandler} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a06fcd46097cb1779eaa383a6419cd27d}\label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a06fcd46097cb1779eaa383a6419cd27d} 
+volatile uint8\+\_\+t {\bfseries state} = I2\+CS\+\_\+\+STATE\+\_\+\+READY
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+This file provides code for the configuration of the I2C instances. 
+
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-func-members}
+\Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_ab1dee84d359addfa9a5ece87ac1ef9d4}\index{dev\_i2cs.c@{dev\_i2cs.c}!I2C2\_DisableAcknowledge@{I2C2\_DisableAcknowledge}}
+\index{I2C2\_DisableAcknowledge@{I2C2\_DisableAcknowledge}!dev\_i2cs.c@{dev\_i2cs.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_DisableAcknowledge()}{I2C2\_DisableAcknowledge()}}
+{\footnotesize\ttfamily \label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_ab1dee84d359addfa9a5ece87ac1ef9d4} 
+HAL\+\_\+\+Status\+Type\+Def I2\+C2\+\_\+\+Disable\+Acknowledge (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Disables the I2C slave module.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def
+\end{DoxyReturn}
+RTOS Info\+: Any \Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a297ceca2a18671a981c8ad3382480e12}\index{dev\_i2cs.c@{dev\_i2cs.c}!I2C2\_EnableAcknowledge@{I2C2\_EnableAcknowledge}}
+\index{I2C2\_EnableAcknowledge@{I2C2\_EnableAcknowledge}!dev\_i2cs.c@{dev\_i2cs.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_EnableAcknowledge()}{I2C2\_EnableAcknowledge()}}
+{\footnotesize\ttfamily \label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a297ceca2a18671a981c8ad3382480e12} 
+HAL\+\_\+\+Status\+Type\+Def I2\+C2\+\_\+\+Enable\+Acknowledge (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Enables the I2C slave module.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def
+\end{DoxyReturn}
+RTOS Info\+: Any \Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a63dd2d0759f85fa6ad6f074c67d626fe}\index{dev\_i2cs.c@{dev\_i2cs.c}!I2CS\_DeInit@{I2CS\_DeInit}}
+\index{I2CS\_DeInit@{I2CS\_DeInit}!dev\_i2cs.c@{dev\_i2cs.c}}
+\doxysubsubsection{\texorpdfstring{I2CS\_DeInit()}{I2CS\_DeInit()}}
+{\footnotesize\ttfamily \label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a63dd2d0759f85fa6ad6f074c67d626fe} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CS\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Deinitializes the I2C slave module.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def
+\end{DoxyReturn}
+RTOS Info\+: Any \Hypertarget{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a13abebc24eb99a94c8824cdd8ef4f2fb}\index{dev\_i2cs.c@{dev\_i2cs.c}!I2CS\_InitStart@{I2CS\_InitStart}}
+\index{I2CS\_InitStart@{I2CS\_InitStart}!dev\_i2cs.c@{dev\_i2cs.c}}
+\doxysubsubsection{\texorpdfstring{I2CS\_InitStart()}{I2CS\_InitStart()}}
+{\footnotesize\ttfamily \label{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a13abebc24eb99a94c8824cdd8ef4f2fb} 
+HAL\+\_\+\+Status\+Type\+Def I2\+CS\+\_\+\+Init\+Start (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initializes the I2C slave module.
+
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+Status\+Type\+Def
+\end{DoxyReturn}
+RTOS Info\+: Any 

@@ -1,0 +1,137 @@
+\doxysection{MPU6050\+\_\+\+PORT }
+\hypertarget{group___m_p_u6050___p_o_r_t}{}\label{group___m_p_u6050___p_o_r_t}\index{MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga6a26d06d2f863deedd849612a6c2a4e4}{MPU6050\+\_\+\+ADDRESS}}~(0x69)
+\item 
+\Hypertarget{group___m_p_u6050___p_o_r_t_gad5ab37c1e6d469b8adfa28235608848a}\label{group___m_p_u6050___p_o_r_t_gad5ab37c1e6d469b8adfa28235608848a} 
+\#define {\bfseries MPU6050\+\_\+\+RETRY\+\_\+\+COUNT}~(3)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga033cbe0a29774dbe4799d7aca1ba1f97}{MPU6050\+\_\+is\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica la presencia del MPU6050 en el bus I2C. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga499d2bf6f0996ec6b5119df46f896a2f}{MPU6050\+\_\+register\+\_\+write}} (uint8\+\_\+t reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Escribe un registro del MPU6050. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga0646c3cfbbbcab6528a3572445c65029}{MPU6050\+\_\+register\+\_\+block\+\_\+write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Escribe un bloque de datos del MPU6050. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga2d1875b33d16220aad44eacbca09ee50}{MPU6050\+\_\+register\+\_\+read}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Lee un registro del MPU6050. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga80288a2c3048c386f8f724d0917e2095}{MPU6050\+\_\+register\+\_\+block\+\_\+read}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Lee un registro del MPU6050. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+\label{doc-define-members}
+\Hypertarget{group___m_p_u6050___p_o_r_t_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{group___m_p_u6050___p_o_r_t_ga6a26d06d2f863deedd849612a6c2a4e4}\index{MPU6050\_PORT@{MPU6050\_PORT}!MPU6050\_ADDRESS@{MPU6050\_ADDRESS}}
+\index{MPU6050\_ADDRESS@{MPU6050\_ADDRESS}!MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_ADDRESS}{MPU6050\_ADDRESS}}
+{\footnotesize\ttfamily \label{group___m_p_u6050___p_o_r_t_ga6a26d06d2f863deedd849612a6c2a4e4} 
+\#define MPU6050\+\_\+\+ADDRESS~(0x69)}
+
+Dirección 7-\/bit del MPU6050 (0x68) Cantidad de reintentos en I2\+CM\+\_\+\+Is\+Device\+Ready 
+
+\label{doc-func-members}
+\Hypertarget{group___m_p_u6050___p_o_r_t_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{group___m_p_u6050___p_o_r_t_ga033cbe0a29774dbe4799d7aca1ba1f97}\index{MPU6050\_PORT@{MPU6050\_PORT}!MPU6050\_is\_ready@{MPU6050\_is\_ready}}
+\index{MPU6050\_is\_ready@{MPU6050\_is\_ready}!MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_is\_ready()}{MPU6050\_is\_ready()}}
+{\footnotesize\ttfamily \label{group___m_p_u6050___p_o_r_t_ga033cbe0a29774dbe4799d7aca1ba1f97} 
+HAL\+\_\+\+Status\+Type\+Def MPU6050\+\_\+is\+\_\+ready (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica la presencia del MPU6050 en el bus I2C. 
+
+\begin{DoxyReturn}{Devuelve}
+Retorna HAL\+\_\+\+OK si responde al address 0x68. 
+\end{DoxyReturn}
+\Hypertarget{group___m_p_u6050___p_o_r_t_ga80288a2c3048c386f8f724d0917e2095}\index{MPU6050\_PORT@{MPU6050\_PORT}!MPU6050\_register\_block\_read@{MPU6050\_register\_block\_read}}
+\index{MPU6050\_register\_block\_read@{MPU6050\_register\_block\_read}!MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_register\_block\_read()}{MPU6050\_register\_block\_read()}}
+{\footnotesize\ttfamily \label{group___m_p_u6050___p_o_r_t_ga80288a2c3048c386f8f724d0917e2095} 
+HAL\+\_\+\+Status\+Type\+Def MPU6050\+\_\+register\+\_\+block\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Lee un registro del MPU6050. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reg} & Dirección del registro donde se comienza a leer. \\
+\hline
+{\em data} & Puntero de salida. \\
+\hline
+{\em len} & Cantidad de registros a leer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\Hypertarget{group___m_p_u6050___p_o_r_t_ga0646c3cfbbbcab6528a3572445c65029}\index{MPU6050\_PORT@{MPU6050\_PORT}!MPU6050\_register\_block\_write@{MPU6050\_register\_block\_write}}
+\index{MPU6050\_register\_block\_write@{MPU6050\_register\_block\_write}!MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_register\_block\_write()}{MPU6050\_register\_block\_write()}}
+{\footnotesize\ttfamily \label{group___m_p_u6050___p_o_r_t_ga0646c3cfbbbcab6528a3572445c65029} 
+HAL\+\_\+\+Status\+Type\+Def MPU6050\+\_\+register\+\_\+block\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Escribe un bloque de datos del MPU6050. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Puntero al bloque de datos a escribir. \\
+\hline
+{\em len} & Longitud del bloque de datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\Hypertarget{group___m_p_u6050___p_o_r_t_ga2d1875b33d16220aad44eacbca09ee50}\index{MPU6050\_PORT@{MPU6050\_PORT}!MPU6050\_register\_read@{MPU6050\_register\_read}}
+\index{MPU6050\_register\_read@{MPU6050\_register\_read}!MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_register\_read()}{MPU6050\_register\_read()}}
+{\footnotesize\ttfamily \label{group___m_p_u6050___p_o_r_t_ga2d1875b33d16220aad44eacbca09ee50} 
+HAL\+\_\+\+Status\+Type\+Def MPU6050\+\_\+register\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Lee un registro del MPU6050. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reg} & Dirección del registro. \\
+\hline
+{\em data} & Puntero de salida (1 byte). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\Hypertarget{group___m_p_u6050___p_o_r_t_ga499d2bf6f0996ec6b5119df46f896a2f}\index{MPU6050\_PORT@{MPU6050\_PORT}!MPU6050\_register\_write@{MPU6050\_register\_write}}
+\index{MPU6050\_register\_write@{MPU6050\_register\_write}!MPU6050\_PORT@{MPU6050\_PORT}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_register\_write()}{MPU6050\_register\_write()}}
+{\footnotesize\ttfamily \label{group___m_p_u6050___p_o_r_t_ga499d2bf6f0996ec6b5119df46f896a2f} 
+HAL\+\_\+\+Status\+Type\+Def MPU6050\+\_\+register\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Escribe un registro del MPU6050. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reg} & Dirección del registro. \\
+\hline
+{\em data} & Dato a escribir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+HAL\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}

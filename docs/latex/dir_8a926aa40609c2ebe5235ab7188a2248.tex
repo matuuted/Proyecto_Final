@@ -1,0 +1,73 @@
+\doxysection{Referencia del directorio C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231}
+\hypertarget{dir_8a926aa40609c2ebe5235ab7188a2248}{}\label{dir_8a926aa40609c2ebe5235ab7188a2248}\index{Referencia del directorio C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231@{Referencia del directorio C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231}}
+\doxysubsubsection*{Directorios}
+\begin{DoxyCompactItemize}
+\item 
+directorio \mbox{\hyperlink{dir_8777fa94f583a55b633ea3cad8a8d715}{Inc}}
+\item 
+directorio \mbox{\hyperlink{dir_cefff825dc13e2dc3390ecd5643113a1}{Src}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\hypertarget{README.md_autotoc_md0}{}\doxysubsection{\texorpdfstring{DS3231 -\/ Reloj en Tiempo Real (RTC)}{DS3231 -\/ Reloj en Tiempo Real (RTC)}}\label{README.md_autotoc_md0}
+\hypertarget{README.md_autotoc_md1}{}\doxysubsection{\texorpdfstring{Descripción}{Descripción}}\label{README.md_autotoc_md1}
+Driver para el reloj en tiempo real {\bfseries{DS3231}}.\hypertarget{README.md_autotoc_md2}{}\doxysubsection{\texorpdfstring{Funcionalidad}{Funcionalidad}}\label{README.md_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Permite inicializar el dispositivo
+\item Leer la hora/fecha actual y configurar el RTC a través de {\bfseries{I²C}}.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md3}{}\doxysubsection{\texorpdfstring{Disposición de carpetas}{Disposición de carpetas}}\label{README.md_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Devices/}
+\DoxyCodeLine{└──\ DS3231/}
+\DoxyCodeLine{\ \ \ \ ├──\ Inc/}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ ds3231.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ ds3231\_port.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ └──\ ds3231\_registers.h}
+\DoxyCodeLine{\ \ \ \ └──\ Src/}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ├──\ ds3231.c}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ └──\ ds3231\_port.c}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md4}{}\doxysubsection{\texorpdfstring{Archivos del módulo}{Archivos del módulo}}\label{README.md_autotoc_md4}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Archivo  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Funcionalidad  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Archivo  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Funcionalidad  }\\\cline{1-2}
+\endhead
+{\ttfamily \doxylink{ds3231_8c}{ds3231.\+c}}  &Implementación de lectura/escritura de hora/fecha.  \\\cline{1-2}
+{\ttfamily \doxylink{ds3231_8h}{ds3231.\+h}}  &Tipos públicos ({\ttfamily \doxylink{struct_d_s3231___time}{DS3231\+\_\+\+Time}}, {\ttfamily DS3231\+\_\+\+Status}) y funciones públicas.  \\\cline{1-2}
+{\ttfamily \doxylink{ds3231__port_8c}{ds3231\+\_\+port.\+c}}  &Acceso I²C (capa que depende de HAL de STM).  \\\cline{1-2}
+{\ttfamily \doxylink{ds3231__port_8h}{ds3231\+\_\+port.\+h}}  &Prototipos del port.  \\\cline{1-2}
+{\ttfamily \doxylink{ds3231__registers_8h}{ds3231\+\_\+registers.\+h}}  &Direcciones y máscaras de registros usados.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{README.md_autotoc_md5}{}\doxysubsection{\texorpdfstring{Comunicación}{Comunicación}}\label{README.md_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Dirección {\bfseries{I²\+C1}} del DS3231\+: {\ttfamily 0x68}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md6}{}\doxysubsection{\texorpdfstring{API principal}{API principal}}\label{README.md_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\ttfamily DS3231\+\_\+\+Status \doxylink{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39}{DS3231\+\_\+\+Init(void)}}
+\item {\ttfamily DS3231\+\_\+\+Status \doxylink{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6}{DS3231\+\_\+\+Read\+Time(\+DS3231\+\_\+\+Time \texorpdfstring{$\ast$}{*}time)}}
+\item {\ttfamily DS3231\+\_\+\+Status \doxylink{ds3231_8h_af422c0f37f5763d688ae3b815002ffda}{DS3231\+\_\+\+Set\+Time(uint8\+\_\+t yy, uint8\+\_\+t mm, uint8\+\_\+t dd, uint8\+\_\+t dow, uint8\+\_\+t hh, uint8\+\_\+t mi, uint8\+\_\+t ss)}}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md7}{}\doxysubsection{\texorpdfstring{Ejemplo}{Ejemplo}}\label{README.md_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39}{DS3231\_Init}}()\ ==\ DS3231\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ (void)\mbox{\hyperlink{ds3231_8h_af422c0f37f5763d688ae3b815002ffda}{DS3231\_SetTime}}(25,\ 10,\ 14,\ 2,\ 12,\ 30,\ 0);\ \textcolor{comment}{//\ 2025-\/10-\/14\ 12:30:00}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_d_s3231___time}{DS3231\_Time}}\ now;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6}{DS3231\_ReadTime}}(\&now)\ ==\ DS3231\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ usar\ now.hours,\ now.minutes,\ now.seconds...}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

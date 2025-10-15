@@ -1,0 +1,63 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+MPU6050/\+Inc/mpu6050\+\_\+registers.h}
+\hypertarget{mpu6050__registers_8h}{}\label{mpu6050__registers_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050\_registers.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050\_registers.h}}
+
+
+Definiciones de registros y mascaras para el MPU6050.  
+
+
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mpu6050__registers_8h_a29b84c38e3819ab3ef2194f87acc0265}\label{mpu6050__registers_8h_a29b84c38e3819ab3ef2194f87acc0265} 
+\#define {\bfseries MPU6050\+\_\+\+REG\+\_\+\+CONFIG}~0x1A
+\item 
+\Hypertarget{mpu6050__registers_8h_aa6047e49a54fa8813bd415c98a889455}\label{mpu6050__registers_8h_aa6047e49a54fa8813bd415c98a889455} 
+\#define {\bfseries MPU6050\+\_\+\+REG\+\_\+\+GYRO\+\_\+\+CONFIG}~0x1B
+\item 
+\Hypertarget{mpu6050__registers_8h_a35e7929d2f47c186b37c0c14f7e2f748}\label{mpu6050__registers_8h_a35e7929d2f47c186b37c0c14f7e2f748} 
+\#define {\bfseries MPU6050\+\_\+\+REG\+\_\+\+ACCEL\+\_\+\+CONFIG}~0x1C
+\item 
+\Hypertarget{mpu6050__registers_8h_a216da4483f51a7a1ec5cf1f8169d817f}\label{mpu6050__registers_8h_a216da4483f51a7a1ec5cf1f8169d817f} 
+\#define {\bfseries MPU6050\+\_\+\+REG\+\_\+\+ACCEL}~0x3B   /\texorpdfstring{$\ast$}{*} Burst\+: AX..\+AZ, TEMP, GX..\+GZ (14 bytes) \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{mpu6050__registers_8h_aeeaa101e6be02c7e3c7b74a08c3f0ab2}\label{mpu6050__registers_8h_aeeaa101e6be02c7e3c7b74a08c3f0ab2} 
+\#define {\bfseries MPU6050\+\_\+\+REG\+\_\+\+PWR\+\_\+\+MGMT\+\_\+1}~0x6B
+\item 
+\Hypertarget{mpu6050__registers_8h_ad508be6b2ebfe9b0b30fc5731110594a}\label{mpu6050__registers_8h_ad508be6b2ebfe9b0b30fc5731110594a} 
+\#define {\bfseries MPU6050\+\_\+\+PWR\+\_\+\+CLKSEL\+\_\+\+MASK}~0x07 /\texorpdfstring{$\ast$}{*} 0\+: Int 8MHz, 1\+: PLL X-\/gyro, etc. \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{mpu6050__registers_8h_a29f7aa0ba428e22b6e6038b59346e2e4}\label{mpu6050__registers_8h_a29f7aa0ba428e22b6e6038b59346e2e4} 
+\#define {\bfseries MPU6050\+\_\+\+GYRO\+\_\+\+FS\+\_\+\+SEL\+\_\+\+SHIFT}~3
+\item 
+\Hypertarget{mpu6050__registers_8h_adebf4c76431110979051fb05361d0ce7}\label{mpu6050__registers_8h_adebf4c76431110979051fb05361d0ce7} 
+\#define {\bfseries MPU6050\+\_\+\+GYRO\+\_\+\+FS\+\_\+\+SEL\+\_\+\+MASK}~(0x03 $<$$<$ MPU6050\+\_\+\+GYRO\+\_\+\+FS\+\_\+\+SEL\+\_\+\+SHIFT) /\texorpdfstring{$\ast$}{*} 0\+:250,1\+:500,2\+:1000,3\+:2000 dps \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{mpu6050__registers_8h_a4ac1e21a39287f79b692ad4407a81dd3}\label{mpu6050__registers_8h_a4ac1e21a39287f79b692ad4407a81dd3} 
+\#define {\bfseries MPU6050\+\_\+\+ACCEL\+\_\+\+FS\+\_\+\+SEL\+\_\+\+SHIFT}~3
+\item 
+\Hypertarget{mpu6050__registers_8h_ae2d5d3501eae87264b7c1d1b79ddd0d2}\label{mpu6050__registers_8h_ae2d5d3501eae87264b7c1d1b79ddd0d2} 
+\#define {\bfseries MPU6050\+\_\+\+ACCEL\+\_\+\+FS\+\_\+\+SEL\+\_\+\+MASK}~(0x03 $<$$<$ MPU6050\+\_\+\+ACCEL\+\_\+\+FS\+\_\+\+SEL\+\_\+\+SHIFT) /\texorpdfstring{$\ast$}{*} 0\+:±2g,1\+:±4g,2\+:±8g,3\+:±16g \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{mpu6050__registers_8h_a16c1c75cc92b058541422fc68f5aba26}\label{mpu6050__registers_8h_a16c1c75cc92b058541422fc68f5aba26} 
+\#define {\bfseries MPU6050\+\_\+\+DLPF\+\_\+44\+HZ}~3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mpu6050__registers_8h_a554b80860a54d2040952d2e80cd3bd23}\label{mpu6050__registers_8h_a554b80860a54d2040952d2e80cd3bd23} 
+enum \{ \newline
+{\bfseries MPU6050\+\_\+\+AX} = 0
+, {\bfseries MPU6050\+\_\+\+AY} = 2
+, {\bfseries MPU6050\+\_\+\+AZ} = 4
+, {\bfseries MPU6050\+\_\+\+GX} = 8
+, \newline
+{\bfseries MPU6050\+\_\+\+GY} = 10
+, {\bfseries MPU6050\+\_\+\+GZ} = 12
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Definiciones de registros y mascaras para el MPU6050. 
+
+Este archivo contiene las direcciones de los registros y máscaras de bits usadas por el driver mpu6050. 

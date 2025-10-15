@@ -1,0 +1,731 @@
+\doxysubsubsubsection{FLAG\+\_\+management }
+\hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management}{}\label{group___i2_c___l_l___e_f___f_l_a_g__management}\index{FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga229d40dc4298602dc77c399c534166a3}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+TXE}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Transmit data register empty flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaad55daf96ad698c71d206aced0d94bf7}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BTF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Byte Transfer Finished flag. RESET\+: When Data byte transfer not done. SET\+: When Data byte transfer succeeded. @rmtoll SR1 BTF LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BTF. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga9e3fbc162f05362e645ef9065c90156f}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+RXNE}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Receive data register not empty flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga02bdbfdc9a68caf636621ed4902ef62c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+SB}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Start Bit (master mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga393015c1af4c7ac7b6c7070b44d78218}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADDR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Address sent (master mode) or Address matched flag (slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga5f4ee8c018d3d361ed3abca2b7ca0371}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADD10}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of 10-\/bit header sent (master mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga779a0c1055fc1cfdb940f7badf8561b9}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+AF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Acknowledge failure flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga0b61b6b4136802c2fe8fef4941c4eb31}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+STOP}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Stop detection flag (slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga31ef73ed230923d26a320c39d8093c9c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Bus error flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga22c4c91757b465891f86bf88fcf9bf24}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ARLO}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Arbitration lost flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaa365c84a762d6d89c9bc7bffa7c9cdb3}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+OVR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Overrun/\+Underrun flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga866ba447c3e3637afbdf33905952b842}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+PECERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus PEC error flag in reception. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaead82b8eee90fa68a81090820da7c027}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+TIMEOUT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus Timeout detection flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga01d9faa9cce55af47016ac2fb845359c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+ALERT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus alert flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga4f3d5dd696245946287d72e2f7e753a8}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BUSY}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Bus Busy flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga2f119259a2c634087585dc0e2c34ea72}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+DUAL}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Dual flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaa665a3127711ff705d8fc0fdc3271b74}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBHOST}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus Host address reception (Slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga5dafabf25cad492bd9297ffeef00931c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBDEFAULT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus Device default address reception (Slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga8f3df03ce443d209798f798d24b483c4}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+GENCALL}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of General call address reception (Slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga2bd9a19aed8897b8a35fb37979b3a0d6}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+MSL}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Master/\+Slave flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gad93a2562784d95546c48e726d5f75f2f}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ADDR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Address Matched flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga9fafb6c17a6a4d97d7b2415fd7d76553}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+AF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Acknowledge failure flag. @rmtoll SR1 AF LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+AF. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gacdc9fd799331e8e63695bdfe1fd6e767}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+STOP}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Stop detection flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga54de8e54e194267ef65c7634f517a819}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+BERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Bus error flag. @rmtoll SR1 BERR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+BERR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaaac1db2bcdf8562c00c341fc2ba5d120}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ARLO}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Arbitration lost flag. @rmtoll SR1 ARLO LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ARLO. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gae72f96cc80e3ec2183473f5539d26957}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+OVR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Overrun/\+Underrun flag. @rmtoll SR1 OVR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+OVR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga67062fbeb8882e6a801ab9d79f60ea04}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+PECERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear SMBus PEC error flag. @rmtoll SR1 PECERR LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+PECERR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga2d9d675cecff0e07798d5448213e8c1a}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+TIMEOUT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear SMBus Timeout detection flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga3baa8f6e47c248b3b999351540598aad}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+ALERT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear SMBus Alert flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Descripción detallada}
+
+
+\label{doc-func-members}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_doc-func-members}
+\doxysubsubsubsubsection{Documentación de funciones}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gad93a2562784d95546c48e726d5f75f2f}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearFlag\_ADDR@{LL\_I2C\_ClearFlag\_ADDR}}
+\index{LL\_I2C\_ClearFlag\_ADDR@{LL\_I2C\_ClearFlag\_ADDR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearFlag\_ADDR()}{LL\_I2C\_ClearFlag\_ADDR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gad93a2562784d95546c48e726d5f75f2f} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ADDR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear Address Matched flag. 
+
+\begin{DoxyNote}{Nota}
+Clearing this flag is done by a read access to the I2\+Cx\+\_\+\+SR1 register followed by a read access to the I2\+Cx\+\_\+\+SR2 register. @rmtoll SR1 ADDR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ADDR 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga9fafb6c17a6a4d97d7b2415fd7d76553}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearFlag\_AF@{LL\_I2C\_ClearFlag\_AF}}
+\index{LL\_I2C\_ClearFlag\_AF@{LL\_I2C\_ClearFlag\_AF}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearFlag\_AF()}{LL\_I2C\_ClearFlag\_AF()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga9fafb6c17a6a4d97d7b2415fd7d76553} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+AF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear Acknowledge failure flag. @rmtoll SR1 AF LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+AF. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gaaac1db2bcdf8562c00c341fc2ba5d120}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearFlag\_ARLO@{LL\_I2C\_ClearFlag\_ARLO}}
+\index{LL\_I2C\_ClearFlag\_ARLO@{LL\_I2C\_ClearFlag\_ARLO}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearFlag\_ARLO()}{LL\_I2C\_ClearFlag\_ARLO()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gaaac1db2bcdf8562c00c341fc2ba5d120} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ARLO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear Arbitration lost flag. @rmtoll SR1 ARLO LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ARLO. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga54de8e54e194267ef65c7634f517a819}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearFlag\_BERR@{LL\_I2C\_ClearFlag\_BERR}}
+\index{LL\_I2C\_ClearFlag\_BERR@{LL\_I2C\_ClearFlag\_BERR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearFlag\_BERR()}{LL\_I2C\_ClearFlag\_BERR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga54de8e54e194267ef65c7634f517a819} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+BERR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear Bus error flag. @rmtoll SR1 BERR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+BERR. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gae72f96cc80e3ec2183473f5539d26957}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearFlag\_OVR@{LL\_I2C\_ClearFlag\_OVR}}
+\index{LL\_I2C\_ClearFlag\_OVR@{LL\_I2C\_ClearFlag\_OVR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearFlag\_OVR()}{LL\_I2C\_ClearFlag\_OVR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gae72f96cc80e3ec2183473f5539d26957} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+OVR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear Overrun/\+Underrun flag. @rmtoll SR1 OVR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+OVR. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gacdc9fd799331e8e63695bdfe1fd6e767}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearFlag\_STOP@{LL\_I2C\_ClearFlag\_STOP}}
+\index{LL\_I2C\_ClearFlag\_STOP@{LL\_I2C\_ClearFlag\_STOP}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearFlag\_STOP()}{LL\_I2C\_ClearFlag\_STOP()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gacdc9fd799331e8e63695bdfe1fd6e767} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+STOP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear Stop detection flag. 
+
+\begin{DoxyNote}{Nota}
+Clearing this flag is done by a read access to the I2\+Cx\+\_\+\+SR1 register followed by a write access to I2\+Cx\+\_\+\+CR1 register. @rmtoll SR1 STOPF LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+STOP~\newline
+ CR1 PE LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+STOP 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga3baa8f6e47c248b3b999351540598aad}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearSMBusFlag\_ALERT@{LL\_I2C\_ClearSMBusFlag\_ALERT}}
+\index{LL\_I2C\_ClearSMBusFlag\_ALERT@{LL\_I2C\_ClearSMBusFlag\_ALERT}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearSMBusFlag\_ALERT()}{LL\_I2C\_ClearSMBusFlag\_ALERT()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga3baa8f6e47c248b3b999351540598aad} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+ALERT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear SMBus Alert flag. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll SR1 SMBALERT LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+ALERT 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga67062fbeb8882e6a801ab9d79f60ea04}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearSMBusFlag\_PECERR@{LL\_I2C\_ClearSMBusFlag\_PECERR}}
+\index{LL\_I2C\_ClearSMBusFlag\_PECERR@{LL\_I2C\_ClearSMBusFlag\_PECERR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearSMBusFlag\_PECERR()}{LL\_I2C\_ClearSMBusFlag\_PECERR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga67062fbeb8882e6a801ab9d79f60ea04} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+PECERR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear SMBus PEC error flag. @rmtoll SR1 PECERR LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+PECERR. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga2d9d675cecff0e07798d5448213e8c1a}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_ClearSMBusFlag\_TIMEOUT@{LL\_I2C\_ClearSMBusFlag\_TIMEOUT}}
+\index{LL\_I2C\_ClearSMBusFlag\_TIMEOUT@{LL\_I2C\_ClearSMBusFlag\_TIMEOUT}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ClearSMBusFlag\_TIMEOUT()}{LL\_I2C\_ClearSMBusFlag\_TIMEOUT()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga2d9d675cecff0e07798d5448213e8c1a} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+TIMEOUT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Clear SMBus Timeout detection flag. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll SR1 TIMEOUT LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+TIMEOUT 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga5f4ee8c018d3d361ed3abca2b7ca0371}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_ADD10@{LL\_I2C\_IsActiveFlag\_ADD10}}
+\index{LL\_I2C\_IsActiveFlag\_ADD10@{LL\_I2C\_IsActiveFlag\_ADD10}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_ADD10()}{LL\_I2C\_IsActiveFlag\_ADD10()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga5f4ee8c018d3d361ed3abca2b7ca0371} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADD10 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of 10-\/bit header sent (master mode). 
+
+\begin{DoxyNote}{Nota}
+RESET\+: When no ADD10 event occurred. SET\+: When the master has sent the first address byte (header). @rmtoll SR1 ADD10 LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADD10 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga393015c1af4c7ac7b6c7070b44d78218}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_ADDR@{LL\_I2C\_IsActiveFlag\_ADDR}}
+\index{LL\_I2C\_IsActiveFlag\_ADDR@{LL\_I2C\_IsActiveFlag\_ADDR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_ADDR()}{LL\_I2C\_IsActiveFlag\_ADDR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga393015c1af4c7ac7b6c7070b44d78218} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADDR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Address sent (master mode) or Address matched flag (slave mode). 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Clear default value. SET\+: When the address is fully sent (master mode) or when the received slave address matched with one of the enabled slave address (slave mode). @rmtoll SR1 ADDR LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADDR 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga779a0c1055fc1cfdb940f7badf8561b9}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_AF@{LL\_I2C\_IsActiveFlag\_AF}}
+\index{LL\_I2C\_IsActiveFlag\_AF@{LL\_I2C\_IsActiveFlag\_AF}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_AF()}{LL\_I2C\_IsActiveFlag\_AF()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga779a0c1055fc1cfdb940f7badf8561b9} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+AF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Acknowledge failure flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: No acknowledge failure. SET\+: When an acknowledge failure is received after a byte transmission. @rmtoll SR1 AF LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+AF 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga22c4c91757b465891f86bf88fcf9bf24}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_ARLO@{LL\_I2C\_IsActiveFlag\_ARLO}}
+\index{LL\_I2C\_IsActiveFlag\_ARLO@{LL\_I2C\_IsActiveFlag\_ARLO}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_ARLO()}{LL\_I2C\_IsActiveFlag\_ARLO()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga22c4c91757b465891f86bf88fcf9bf24} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ARLO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Arbitration lost flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Clear default value. SET\+: When arbitration lost. @rmtoll SR1 ARLO LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ARLO 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga31ef73ed230923d26a320c39d8093c9c}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_BERR@{LL\_I2C\_IsActiveFlag\_BERR}}
+\index{LL\_I2C\_IsActiveFlag\_BERR@{LL\_I2C\_IsActiveFlag\_BERR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_BERR()}{LL\_I2C\_IsActiveFlag\_BERR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga31ef73ed230923d26a320c39d8093c9c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BERR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Bus error flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Clear default value. SET\+: When a misplaced Start or Stop condition is detected. @rmtoll SR1 BERR LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BERR 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gaad55daf96ad698c71d206aced0d94bf7}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_BTF@{LL\_I2C\_IsActiveFlag\_BTF}}
+\index{LL\_I2C\_IsActiveFlag\_BTF@{LL\_I2C\_IsActiveFlag\_BTF}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_BTF()}{LL\_I2C\_IsActiveFlag\_BTF()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gaad55daf96ad698c71d206aced0d94bf7} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BTF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Byte Transfer Finished flag. RESET\+: When Data byte transfer not done. SET\+: When Data byte transfer succeeded. @rmtoll SR1 BTF LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BTF. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga4f3d5dd696245946287d72e2f7e753a8}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_BUSY@{LL\_I2C\_IsActiveFlag\_BUSY}}
+\index{LL\_I2C\_IsActiveFlag\_BUSY@{LL\_I2C\_IsActiveFlag\_BUSY}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_BUSY()}{LL\_I2C\_IsActiveFlag\_BUSY()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga4f3d5dd696245946287d72e2f7e753a8} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BUSY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Bus Busy flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Clear default value. SET\+: When a Start condition is detected. @rmtoll SR2 BUSY LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BUSY 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga2f119259a2c634087585dc0e2c34ea72}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_DUAL@{LL\_I2C\_IsActiveFlag\_DUAL}}
+\index{LL\_I2C\_IsActiveFlag\_DUAL@{LL\_I2C\_IsActiveFlag\_DUAL}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_DUAL()}{LL\_I2C\_IsActiveFlag\_DUAL()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga2f119259a2c634087585dc0e2c34ea72} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+DUAL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Dual flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Received address matched with OAR1. SET\+: Received address matched with OAR2. @rmtoll SR2 DUALF LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+DUAL 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga8f3df03ce443d209798f798d24b483c4}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_GENCALL@{LL\_I2C\_IsActiveFlag\_GENCALL}}
+\index{LL\_I2C\_IsActiveFlag\_GENCALL@{LL\_I2C\_IsActiveFlag\_GENCALL}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_GENCALL()}{LL\_I2C\_IsActiveFlag\_GENCALL()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga8f3df03ce443d209798f798d24b483c4} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+GENCALL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of General call address reception (Slave mode). 
+
+\begin{DoxyNote}{Nota}
+RESET\+: No General call address SET\+: General call address received. 
+
+This status is cleared by hardware after a STOP condition or repeated START condition. @rmtoll SR2 GENCALL LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+GENCALL 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga2bd9a19aed8897b8a35fb37979b3a0d6}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_MSL@{LL\_I2C\_IsActiveFlag\_MSL}}
+\index{LL\_I2C\_IsActiveFlag\_MSL@{LL\_I2C\_IsActiveFlag\_MSL}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_MSL()}{LL\_I2C\_IsActiveFlag\_MSL()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga2bd9a19aed8897b8a35fb37979b3a0d6} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+MSL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Master/\+Slave flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Slave Mode. SET\+: Master Mode. @rmtoll SR2 MSL LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+MSL 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gaa365c84a762d6d89c9bc7bffa7c9cdb3}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_OVR@{LL\_I2C\_IsActiveFlag\_OVR}}
+\index{LL\_I2C\_IsActiveFlag\_OVR@{LL\_I2C\_IsActiveFlag\_OVR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_OVR()}{LL\_I2C\_IsActiveFlag\_OVR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gaa365c84a762d6d89c9bc7bffa7c9cdb3} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+OVR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Overrun/\+Underrun flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Clear default value. SET\+: When an overrun/underrun error occurs (Clock Stretching Disabled). @rmtoll SR1 OVR LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+OVR 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga9e3fbc162f05362e645ef9065c90156f}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_RXNE@{LL\_I2C\_IsActiveFlag\_RXNE}}
+\index{LL\_I2C\_IsActiveFlag\_RXNE@{LL\_I2C\_IsActiveFlag\_RXNE}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_RXNE()}{LL\_I2C\_IsActiveFlag\_RXNE()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga9e3fbc162f05362e645ef9065c90156f} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+RXNE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Receive data register not empty flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: When Receive data register is read. SET\+: When the received data is copied in Receive data register. @rmtoll SR1 RXNE LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+RXNE 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga02bdbfdc9a68caf636621ed4902ef62c}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_SB@{LL\_I2C\_IsActiveFlag\_SB}}
+\index{LL\_I2C\_IsActiveFlag\_SB@{LL\_I2C\_IsActiveFlag\_SB}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_SB()}{LL\_I2C\_IsActiveFlag\_SB()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga02bdbfdc9a68caf636621ed4902ef62c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+SB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Start Bit (master mode). 
+
+\begin{DoxyNote}{Nota}
+RESET\+: When No Start condition. SET\+: When Start condition is generated. @rmtoll SR1 SB LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+SB 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga0b61b6b4136802c2fe8fef4941c4eb31}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_STOP@{LL\_I2C\_IsActiveFlag\_STOP}}
+\index{LL\_I2C\_IsActiveFlag\_STOP@{LL\_I2C\_IsActiveFlag\_STOP}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_STOP()}{LL\_I2C\_IsActiveFlag\_STOP()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga0b61b6b4136802c2fe8fef4941c4eb31} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+STOP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Stop detection flag (slave mode). 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Clear default value. SET\+: When a Stop condition is detected. @rmtoll SR1 STOPF LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+STOP 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga229d40dc4298602dc77c399c534166a3}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveFlag\_TXE@{LL\_I2C\_IsActiveFlag\_TXE}}
+\index{LL\_I2C\_IsActiveFlag\_TXE@{LL\_I2C\_IsActiveFlag\_TXE}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveFlag\_TXE()}{LL\_I2C\_IsActiveFlag\_TXE()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga229d40dc4298602dc77c399c534166a3} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+TXE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of Transmit data register empty flag. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: When next data is written in Transmit data register. SET\+: When Transmit data register is empty. @rmtoll SR1 TXE LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+TXE 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga01d9faa9cce55af47016ac2fb845359c}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveSMBusFlag\_ALERT@{LL\_I2C\_IsActiveSMBusFlag\_ALERT}}
+\index{LL\_I2C\_IsActiveSMBusFlag\_ALERT@{LL\_I2C\_IsActiveSMBusFlag\_ALERT}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveSMBusFlag\_ALERT()}{LL\_I2C\_IsActiveSMBusFlag\_ALERT()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga01d9faa9cce55af47016ac2fb845359c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+ALERT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of SMBus alert flag. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll SR1 SMBALERT LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+ALERT 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga866ba447c3e3637afbdf33905952b842}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveSMBusFlag\_PECERR@{LL\_I2C\_IsActiveSMBusFlag\_PECERR}}
+\index{LL\_I2C\_IsActiveSMBusFlag\_PECERR@{LL\_I2C\_IsActiveSMBusFlag\_PECERR}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveSMBusFlag\_PECERR()}{LL\_I2C\_IsActiveSMBusFlag\_PECERR()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga866ba447c3e3637afbdf33905952b842} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+PECERR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of SMBus PEC error flag in reception. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll SR1 PECERR LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+PECERR 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_ga5dafabf25cad492bd9297ffeef00931c}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT@{LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT}}
+\index{LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT@{LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT()}{LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_ga5dafabf25cad492bd9297ffeef00931c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBDEFAULT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of SMBus Device default address reception (Slave mode). 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. 
+
+RESET\+: No SMBus Device default address SET\+: SMBus Device default address received. 
+
+This status is cleared by hardware after a STOP condition or repeated START condition. @rmtoll SR2 SMBDEFAULT LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBDEFAULT 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gaa665a3127711ff705d8fc0fdc3271b74}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveSMBusFlag\_SMBHOST@{LL\_I2C\_IsActiveSMBusFlag\_SMBHOST}}
+\index{LL\_I2C\_IsActiveSMBusFlag\_SMBHOST@{LL\_I2C\_IsActiveSMBusFlag\_SMBHOST}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveSMBusFlag\_SMBHOST()}{LL\_I2C\_IsActiveSMBusFlag\_SMBHOST()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gaa665a3127711ff705d8fc0fdc3271b74} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBHOST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of SMBus Host address reception (Slave mode). 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. 
+
+RESET\+: No SMBus Host address SET\+: SMBus Host address received. 
+
+This status is cleared by hardware after a STOP condition or repeated START condition. @rmtoll SR2 SMBHOST LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBHOST 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___f_l_a_g__management_gaead82b8eee90fa68a81090820da7c027}\index{FLAG\_management@{FLAG\_management}!LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT@{LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT}}
+\index{LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT@{LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT}!FLAG\_management@{FLAG\_management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT()}{LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___f_l_a_g__management_gaead82b8eee90fa68a81090820da7c027} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+TIMEOUT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the status of SMBus Timeout detection flag. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll SR1 TIMEOUT LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+TIMEOUT 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}

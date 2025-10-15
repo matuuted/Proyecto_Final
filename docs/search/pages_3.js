@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['de_20carpetas_0',['de carpetas',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/README.md#autotoc_md3',1,'Disposición de carpetas'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/LCD16x2/README.md#autotoc_md10',1,'Disposición de carpetas'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/MPU6050/README.md#autotoc_md17',1,'Disposición de carpetas']]],
+  ['de_20inclinación_1',['Proyecto Final – Medición de Inclinación',['../C:/Users/Matias D/Documents/Proyecto_Final/README.md#autotoc_md22',1,'']]],
+  ['de_20software_2',['Módulos de Software',['../C:/Users/Matias D/Documents/Proyecto_Final/README.md#autotoc_md29',1,'']]],
+  ['del_20módulo_3',['del módulo',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/README.md#autotoc_md4',1,'Archivos del módulo'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/LCD16x2/README.md#autotoc_md11',1,'Archivos del módulo'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/MPU6050/README.md#autotoc_md18',1,'Archivos del módulo']]],
+  ['descripción_4',['Descripción',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/README.md#autotoc_md1',1,'Descripción'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/LCD16x2/README.md#autotoc_md9',1,'Descripción'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/MPU6050/README.md#autotoc_md16',1,'Descripción'],['../C:/Users/Matias D/Documents/Proyecto_Final/README.md#autotoc_md23',1,'Descripción']]],
+  ['disposición_20de_20carpetas_5',['Disposición de carpetas',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/README.md#autotoc_md3',1,'Disposición de carpetas'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/LCD16x2/README.md#autotoc_md10',1,'Disposición de carpetas'],['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/MPU6050/README.md#autotoc_md17',1,'Disposición de carpetas']]],
+  ['driver_20hd44780_20vía_20i²c_20pcf8574_6',['LCD 16x2 — Driver HD44780 vía I²C (PCF8574)',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/LCD16x2/README.md#autotoc_md8',1,'']]],
+  ['driver_20imu_20acelerómetro_20giroscopio_7',['MPU6050 — Driver IMU (acelerómetro + giroscopio)',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/MPU6050/README.md#autotoc_md15',1,'']]],
+  ['ds3231_20reloj_20en_20tiempo_20real_20rtc_8',['DS3231 - Reloj en Tiempo Real (RTC)',['../C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/README.md#autotoc_md0',1,'']]]
+];

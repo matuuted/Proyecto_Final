@@ -1,0 +1,66 @@
+\doxysection{dev\+\_\+\+LCD.\+h}
+\hypertarget{dev___l_c_d_8h_source}{}\label{dev___l_c_d_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2/Inc/dev\_LCD.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2/Inc/dev\_LCD.h}}
+\mbox{\hyperlink{dev___l_c_d_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ DEV\_LCD\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ DEV\_LCD\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l_c_d__port_8h}{LCD\_port.h}}"{}}\ \ \ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ CONFIGURACIÓN\ DEL\ MÓDULO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ DEV\_LCD\_COLS}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ DEV\_LCD\_COLS\ 16}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ DEV\_LCD\_ROWS}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ DEV\_LCD\_ROWS\ 2}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DEV\_LCD\_COLS\_0\ 0}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DEV\_LCD\_ROWS\_0\ 0}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ DEV\_LCD\_ROWS\_1\ 1}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00054\ \textcolor{comment}{/*\ API\ PÚBLICA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dev___l_c_d_8h_a458da1781d3e79af8d24bf770935488c}{LCD\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\_Clear}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_a84a77d2c5c50ee994f79bcebc6a6fa1c}{LCD\_SetCursor}}(uint8\_t\ col,\ uint8\_t\ row);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_afc8e4657a816c658ff6598551ce476ed}{LCD\_WriteChar}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_a3757c616ea16d44a433de63a3916a62d}{LCD\_Write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_a5042d70ba51bede98f9036747600211c}{LCD\_WriteAt}}(uint8\_t\ col,\ uint8\_t\ row,\ \textcolor{keywordtype}{char}\ *s);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_a07fda1c26af1d5eca4b5cbaa46fc86f4}{LCD\_PrintCentered}}(uint8\_t\ row,\ \textcolor{keywordtype}{char}\ *s);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_adc038e8c2d3cddcbf4ac742e7837078e}{LCD\_Cursor}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev___l_c_d_8h_a5655b2022c4273728f1132f5e613cbd3}{LCD\_BlinkCursor}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DEV\_LCD\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

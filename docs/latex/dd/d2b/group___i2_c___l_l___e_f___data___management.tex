@@ -1,0 +1,474 @@
+\doxysubsubsubsection{Data\+\_\+\+Management }
+\hypertarget{group___i2_c___l_l___e_f___data___management}{}\label{group___i2_c___l_l___e_f___data___management}\index{Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gac24fb1275328978d493b98451a81fe1e}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Reset}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable Reset of I2C peripheral. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Enable\+Reset. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gaec804e0ba925e4da924e35633bcdd14f}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Reset}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable Reset of I2C peripheral. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Disable\+Reset. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga58bb8e732f716bf449b0b95a49e7421c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Reset\+Enabled}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the I2C peripheral is under reset state or not. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Is\+Reset\+Enabled. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga1e0e578274422f439207bf8640db7699}{LL\+\_\+\+I2\+C\+\_\+\+Acknowledge\+Next\+Data}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Type\+Acknowledge)
+\begin{DoxyCompactList}\small\item\em Prepare the generation of a ACKnowledge or Non ACKnowledge condition after the address receive match code or next received byte. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga83e6d7fbef52a87ef221fba3487afe2b}{LL\+\_\+\+I2\+C\+\_\+\+Generate\+Start\+Condition}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Generate a START or RESTART condition. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gadf3921856d465ac13d1b89f4127b6a7c}{LL\+\_\+\+I2\+C\+\_\+\+Generate\+Stop\+Condition}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Generate a STOP condition after the current byte transfer (master mode). @rmtoll CR1 STOP LL\+\_\+\+I2\+C\+\_\+\+Generate\+Stop\+Condition. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga4707ac0f5cc6322c3fe561bef44659a4}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Bit\+POS}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable bit POS (master/host mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga87e12dc4d102c910e89c58e856ca6871}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Bit\+POS}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable bit POS (master/host mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga3e6d7910b4e753a37a10d41dd079fd15}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Bit\+POS}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if bit POS is enabled or disabled. @rmtoll CR1 POS LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Bit\+POS. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gafaebe16879cc748a5f5d6b282061666d}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Transfer\+Direction}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the value of transfer direction. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gab31d5756a0878cee1e2d940a50852b72}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Last\+DMA}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable DMA last transfer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gac152eff240d4ab092aed07c56a8df810}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Last\+DMA}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable DMA last transfer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga05a0e7cd9c8cba838d4ccef3fc0fbdac}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Last\+DMA}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if DMA last transfer is enabled or disabled. @rmtoll CR2 LAST LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Last\+DMA. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga01b5301e2f0173a24195d6b2607e2ae8}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+SMBus\+PECCompare}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga83ddebb34169ed30d933aa4610ef062f}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+SMBus\+PECCompare}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga3c6dbb65435d452a9eae61bd246943c5}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+SMBus\+PECCompare}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the SMBus Packet Error byte transfer or internal comparison is requested or not. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gaf96bd7242fab2057cc1cfd658a6f7615}{LL\+\_\+\+I2\+C\+\_\+\+Get\+SMBus\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the SMBus Packet Error byte calculated. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint8\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga003d01a59192ddd9765bfc5fd624f50d}{LL\+\_\+\+I2\+C\+\_\+\+Receive\+Data8}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Read Receive Data register. @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+Receive\+Data8. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga0a834cd3b6d8208ad98d96775c920209}{LL\+\_\+\+I2\+C\+\_\+\+Transmit\+Data8}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Write in Transmit Data Register . @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+Transmit\+Data8. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Descripción detallada}
+
+
+\label{doc-func-members}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_doc-func-members}
+\doxysubsubsubsubsection{Documentación de funciones}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga1e0e578274422f439207bf8640db7699}\index{Data\_Management@{Data\_Management}!LL\_I2C\_AcknowledgeNextData@{LL\_I2C\_AcknowledgeNextData}}
+\index{LL\_I2C\_AcknowledgeNextData@{LL\_I2C\_AcknowledgeNextData}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_AcknowledgeNextData()}{LL\_I2C\_AcknowledgeNextData()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga1e0e578274422f439207bf8640db7699} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Acknowledge\+Next\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{, }\item[{uint32\+\_\+t}]{Type\+Acknowledge}{}\end{DoxyParamCaption})}
+
+
+
+Prepare the generation of a ACKnowledge or Non ACKnowledge condition after the address receive match code or next received byte. 
+
+\begin{DoxyNote}{Nota}
+Usage in Slave or Master mode. @rmtoll CR1 ACK LL\+\_\+\+I2\+C\+\_\+\+Acknowledge\+Next\+Data 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+{\em Type\+Acknowledge} & This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group___i2_c___l_l___e_c___i2_c___a_c_k_n_o_w_l_e_d_g_e_ga25c958493ed8a59d94a2d1c551e327b3}{LL\+\_\+\+I2\+C\+\_\+\+ACK} \item \doxylink{group___i2_c___l_l___e_c___i2_c___a_c_k_n_o_w_l_e_d_g_e_ga3143a9ba21c4dfda59ee6033bdd4f0e9}{LL\+\_\+\+I2\+C\+\_\+\+NACK} \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga87e12dc4d102c910e89c58e856ca6871}\index{Data\_Management@{Data\_Management}!LL\_I2C\_DisableBitPOS@{LL\_I2C\_DisableBitPOS}}
+\index{LL\_I2C\_DisableBitPOS@{LL\_I2C\_DisableBitPOS}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_DisableBitPOS()}{LL\_I2C\_DisableBitPOS()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga87e12dc4d102c910e89c58e856ca6871} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Disable\+Bit\+POS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Disable bit POS (master/host mode). 
+
+\begin{DoxyNote}{Nota}
+In that case, the ACK bit controls the (N)ACK of the current byte received or the PEC bit indicates that the current byte in shift register is a PEC. @rmtoll CR1 POS LL\+\_\+\+I2\+C\+\_\+\+Disable\+Bit\+POS 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gac152eff240d4ab092aed07c56a8df810}\index{Data\_Management@{Data\_Management}!LL\_I2C\_DisableLastDMA@{LL\_I2C\_DisableLastDMA}}
+\index{LL\_I2C\_DisableLastDMA@{LL\_I2C\_DisableLastDMA}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_DisableLastDMA()}{LL\_I2C\_DisableLastDMA()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gac152eff240d4ab092aed07c56a8df810} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Disable\+Last\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Disable DMA last transfer. 
+
+\begin{DoxyNote}{Nota}
+This action mean that next DMA EOT is not the last transfer. @rmtoll CR2 LAST LL\+\_\+\+I2\+C\+\_\+\+Disable\+Last\+DMA 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gaec804e0ba925e4da924e35633bcdd14f}\index{Data\_Management@{Data\_Management}!LL\_I2C\_DisableReset@{LL\_I2C\_DisableReset}}
+\index{LL\_I2C\_DisableReset@{LL\_I2C\_DisableReset}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_DisableReset()}{LL\_I2C\_DisableReset()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gaec804e0ba925e4da924e35633bcdd14f} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Disable\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Disable Reset of I2C peripheral. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Disable\+Reset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga83ddebb34169ed30d933aa4610ef062f}\index{Data\_Management@{Data\_Management}!LL\_I2C\_DisableSMBusPECCompare@{LL\_I2C\_DisableSMBusPECCompare}}
+\index{LL\_I2C\_DisableSMBusPECCompare@{LL\_I2C\_DisableSMBusPECCompare}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_DisableSMBusPECCompare()}{LL\_I2C\_DisableSMBusPECCompare()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga83ddebb34169ed30d933aa4610ef062f} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Disable\+SMBus\+PECCompare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Disable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll CR1 PEC LL\+\_\+\+I2\+C\+\_\+\+Disable\+SMBus\+PECCompare 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga4707ac0f5cc6322c3fe561bef44659a4}\index{Data\_Management@{Data\_Management}!LL\_I2C\_EnableBitPOS@{LL\_I2C\_EnableBitPOS}}
+\index{LL\_I2C\_EnableBitPOS@{LL\_I2C\_EnableBitPOS}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_EnableBitPOS()}{LL\_I2C\_EnableBitPOS()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga4707ac0f5cc6322c3fe561bef44659a4} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Enable\+Bit\+POS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Enable bit POS (master/host mode). 
+
+\begin{DoxyNote}{Nota}
+In that case, the ACK bit controls the (N)ACK of the next byte received or the PEC bit indicates that the next byte in shift register is a PEC. @rmtoll CR1 POS LL\+\_\+\+I2\+C\+\_\+\+Enable\+Bit\+POS 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gab31d5756a0878cee1e2d940a50852b72}\index{Data\_Management@{Data\_Management}!LL\_I2C\_EnableLastDMA@{LL\_I2C\_EnableLastDMA}}
+\index{LL\_I2C\_EnableLastDMA@{LL\_I2C\_EnableLastDMA}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_EnableLastDMA()}{LL\_I2C\_EnableLastDMA()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gab31d5756a0878cee1e2d940a50852b72} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Enable\+Last\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Enable DMA last transfer. 
+
+\begin{DoxyNote}{Nota}
+This action mean that next DMA EOT is the last transfer. @rmtoll CR2 LAST LL\+\_\+\+I2\+C\+\_\+\+Enable\+Last\+DMA 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gac24fb1275328978d493b98451a81fe1e}\index{Data\_Management@{Data\_Management}!LL\_I2C\_EnableReset@{LL\_I2C\_EnableReset}}
+\index{LL\_I2C\_EnableReset@{LL\_I2C\_EnableReset}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_EnableReset()}{LL\_I2C\_EnableReset()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gac24fb1275328978d493b98451a81fe1e} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Enable\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Enable Reset of I2C peripheral. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Enable\+Reset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga01b5301e2f0173a24195d6b2607e2ae8}\index{Data\_Management@{Data\_Management}!LL\_I2C\_EnableSMBusPECCompare@{LL\_I2C\_EnableSMBusPECCompare}}
+\index{LL\_I2C\_EnableSMBusPECCompare@{LL\_I2C\_EnableSMBusPECCompare}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_EnableSMBusPECCompare()}{LL\_I2C\_EnableSMBusPECCompare()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga01b5301e2f0173a24195d6b2607e2ae8} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Enable\+SMBus\+PECCompare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Enable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. 
+
+This feature is cleared by hardware when the PEC byte is transferred or compared, or by a START or STOP condition, it is also cleared by software. @rmtoll CR1 PEC LL\+\_\+\+I2\+C\+\_\+\+Enable\+SMBus\+PECCompare 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga83e6d7fbef52a87ef221fba3487afe2b}\index{Data\_Management@{Data\_Management}!LL\_I2C\_GenerateStartCondition@{LL\_I2C\_GenerateStartCondition}}
+\index{LL\_I2C\_GenerateStartCondition@{LL\_I2C\_GenerateStartCondition}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_GenerateStartCondition()}{LL\_I2C\_GenerateStartCondition()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga83e6d7fbef52a87ef221fba3487afe2b} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Generate\+Start\+Condition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Generate a START or RESTART condition. 
+
+\begin{DoxyNote}{Nota}
+The START bit can be set even if bus is BUSY or I2C is in slave mode. This action has no effect when RELOAD is set. @rmtoll CR1 START LL\+\_\+\+I2\+C\+\_\+\+Generate\+Start\+Condition 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gadf3921856d465ac13d1b89f4127b6a7c}\index{Data\_Management@{Data\_Management}!LL\_I2C\_GenerateStopCondition@{LL\_I2C\_GenerateStopCondition}}
+\index{LL\_I2C\_GenerateStopCondition@{LL\_I2C\_GenerateStopCondition}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_GenerateStopCondition()}{LL\_I2C\_GenerateStopCondition()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gadf3921856d465ac13d1b89f4127b6a7c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Generate\+Stop\+Condition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Generate a STOP condition after the current byte transfer (master mode). @rmtoll CR1 STOP LL\+\_\+\+I2\+C\+\_\+\+Generate\+Stop\+Condition. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gaf96bd7242fab2057cc1cfd658a6f7615}\index{Data\_Management@{Data\_Management}!LL\_I2C\_GetSMBusPEC@{LL\_I2C\_GetSMBusPEC}}
+\index{LL\_I2C\_GetSMBusPEC@{LL\_I2C\_GetSMBusPEC}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_GetSMBusPEC()}{LL\_I2C\_GetSMBusPEC()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gaf96bd7242fab2057cc1cfd658a6f7615} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Get\+SMBus\+PEC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Get the SMBus Packet Error byte calculated. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll SR2 PEC LL\+\_\+\+I2\+C\+\_\+\+Get\+SMBus\+PEC 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em Value} & between Min\+\_\+\+Data=0x00 and Max\+\_\+\+Data=0x\+FF \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_gafaebe16879cc748a5f5d6b282061666d}\index{Data\_Management@{Data\_Management}!LL\_I2C\_GetTransferDirection@{LL\_I2C\_GetTransferDirection}}
+\index{LL\_I2C\_GetTransferDirection@{LL\_I2C\_GetTransferDirection}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_GetTransferDirection()}{LL\_I2C\_GetTransferDirection()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_gafaebe16879cc748a5f5d6b282061666d} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Get\+Transfer\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Indicate the value of transfer direction. 
+
+\begin{DoxyNote}{Nota}
+RESET\+: Bus is in read transfer (peripheral point of view). SET\+: Bus is in write transfer (peripheral point of view). @rmtoll SR2 TRA LL\+\_\+\+I2\+C\+\_\+\+Get\+Transfer\+Direction 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em Returned} & value can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group___i2_c___l_l___e_c___d_i_r_e_c_t_i_o_n_ga13b8b7e7c63899dfee28093f783ef7ea}{LL\+\_\+\+I2\+C\+\_\+\+DIRECTION\+\_\+\+WRITE} \item \doxylink{group___i2_c___l_l___e_c___d_i_r_e_c_t_i_o_n_gabcce2b86c66c3af0c3aaf41bd01c709b}{LL\+\_\+\+I2\+C\+\_\+\+DIRECTION\+\_\+\+READ} \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga3e6d7910b4e753a37a10d41dd079fd15}\index{Data\_Management@{Data\_Management}!LL\_I2C\_IsEnabledBitPOS@{LL\_I2C\_IsEnabledBitPOS}}
+\index{LL\_I2C\_IsEnabledBitPOS@{LL\_I2C\_IsEnabledBitPOS}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsEnabledBitPOS()}{LL\_I2C\_IsEnabledBitPOS()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga3e6d7910b4e753a37a10d41dd079fd15} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Bit\+POS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Check if bit POS is enabled or disabled. @rmtoll CR1 POS LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Bit\+POS. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga05a0e7cd9c8cba838d4ccef3fc0fbdac}\index{Data\_Management@{Data\_Management}!LL\_I2C\_IsEnabledLastDMA@{LL\_I2C\_IsEnabledLastDMA}}
+\index{LL\_I2C\_IsEnabledLastDMA@{LL\_I2C\_IsEnabledLastDMA}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsEnabledLastDMA()}{LL\_I2C\_IsEnabledLastDMA()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga05a0e7cd9c8cba838d4ccef3fc0fbdac} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Last\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Check if DMA last transfer is enabled or disabled. @rmtoll CR2 LAST LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Last\+DMA. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga3c6dbb65435d452a9eae61bd246943c5}\index{Data\_Management@{Data\_Management}!LL\_I2C\_IsEnabledSMBusPECCompare@{LL\_I2C\_IsEnabledSMBusPECCompare}}
+\index{LL\_I2C\_IsEnabledSMBusPECCompare@{LL\_I2C\_IsEnabledSMBusPECCompare}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsEnabledSMBusPECCompare()}{LL\_I2C\_IsEnabledSMBusPECCompare()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga3c6dbb65435d452a9eae61bd246943c5} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+SMBus\+PECCompare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Check if the SMBus Packet Error byte transfer or internal comparison is requested or not. 
+
+\begin{DoxyNote}{Nota}
+Macro IS\+\_\+\+SMBUS\+\_\+\+ALL\+\_\+\+INSTANCE(\+I2\+Cx) can be used to check whether or not SMBus feature is supported by the I2\+Cx Instance. @rmtoll CR1 PEC LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+SMBus\+PECCompare 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga58bb8e732f716bf449b0b95a49e7421c}\index{Data\_Management@{Data\_Management}!LL\_I2C\_IsResetEnabled@{LL\_I2C\_IsResetEnabled}}
+\index{LL\_I2C\_IsResetEnabled@{LL\_I2C\_IsResetEnabled}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_IsResetEnabled()}{LL\_I2C\_IsResetEnabled()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga58bb8e732f716bf449b0b95a49e7421c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Is\+Reset\+Enabled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Check if the I2C peripheral is under reset state or not. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Is\+Reset\+Enabled. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em State} & of bit (1 or 0). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga003d01a59192ddd9765bfc5fd624f50d}\index{Data\_Management@{Data\_Management}!LL\_I2C\_ReceiveData8@{LL\_I2C\_ReceiveData8}}
+\index{LL\_I2C\_ReceiveData8@{LL\_I2C\_ReceiveData8}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_ReceiveData8()}{LL\_I2C\_ReceiveData8()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga003d01a59192ddd9765bfc5fd624f50d} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint8\+\_\+t LL\+\_\+\+I2\+C\+\_\+\+Receive\+Data8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{}\end{DoxyParamCaption})}
+
+
+
+Read Receive Data register. @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+Receive\+Data8. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em Value} & between Min\+\_\+\+Data=0x0 and Max\+\_\+\+Data=0x\+FF \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___l_l___e_f___data___management_ga0a834cd3b6d8208ad98d96775c920209}\index{Data\_Management@{Data\_Management}!LL\_I2C\_TransmitData8@{LL\_I2C\_TransmitData8}}
+\index{LL\_I2C\_TransmitData8@{LL\_I2C\_TransmitData8}!Data\_Management@{Data\_Management}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_I2C\_TransmitData8()}{LL\_I2C\_TransmitData8()}}
+{\footnotesize\ttfamily \label{group___i2_c___l_l___e_f___data___management_ga0a834cd3b6d8208ad98d96775c920209} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void LL\+\_\+\+I2\+C\+\_\+\+Transmit\+Data8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx}{, }\item[{uint8\+\_\+t}]{Data}{}\end{DoxyParamCaption})}
+
+
+
+Write in Transmit Data Register . @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+Transmit\+Data8. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I2\+Cx} & I2C Instance. \\
+\hline
+{\em Data} & Value between Min\+\_\+\+Data=0x0 and Max\+\_\+\+Data=0x\+FF \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

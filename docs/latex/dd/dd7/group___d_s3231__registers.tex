@@ -1,0 +1,46 @@
+\doxysection{.h Definiciones de registros }
+\hypertarget{group___d_s3231__registers}{}\label{group___d_s3231__registers}\index{.h Definiciones de registros@{.h Definiciones de registros}}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___d_s3231__registers_ga662a0cc87473e7fc2bb073d0c0bba4c3}\label{group___d_s3231__registers_ga662a0cc87473e7fc2bb073d0c0bba4c3} 
+\#define {\bfseries DS3231\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+WRITE}~(8)
+\item 
+\Hypertarget{group___d_s3231__registers_ga32e209fc50f54f66922baa5e1c77640e}\label{group___d_s3231__registers_ga32e209fc50f54f66922baa5e1c77640e} 
+\#define {\bfseries DS3231\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+READ}~(7)
+\item 
+\#define \mbox{\hyperlink{group___d_s3231__registers_gab752aeeb9f43f088ef3ea1e92cf0dd55}{DS3231\+\_\+\+REG\+\_\+\+SECONDS}}~(0x00)
+\item 
+\Hypertarget{group___d_s3231__registers_ga0beecd98fb52521b3df1fb020e10bde1}\label{group___d_s3231__registers_ga0beecd98fb52521b3df1fb020e10bde1} 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+MINUTES}~(0x01)
+\item 
+\Hypertarget{group___d_s3231__registers_gac54475e0a15745f77a8275a4ddd71574}\label{group___d_s3231__registers_gac54475e0a15745f77a8275a4ddd71574} 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+HOURS}~(0x02)
+\item 
+\Hypertarget{group___d_s3231__registers_ga893212dc1791ad4b6d57351fed0df3bf}\label{group___d_s3231__registers_ga893212dc1791ad4b6d57351fed0df3bf} 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+DAY}~(0x03)  /\texorpdfstring{$\ast$}{*} 1..\+7 \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{group___d_s3231__registers_ga30d9731093cd092c212bc763183e5819}\label{group___d_s3231__registers_ga30d9731093cd092c212bc763183e5819} 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+DATE}~(0x04)  /\texorpdfstring{$\ast$}{*} 1..\+31 \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{group___d_s3231__registers_gaaa4a129d3a1b54e2ab4e77f43a6f4985}\label{group___d_s3231__registers_gaaa4a129d3a1b54e2ab4e77f43a6f4985} 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+MONTH}~(0x05)  /\texorpdfstring{$\ast$}{*} bit7 = Centenas \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{group___d_s3231__registers_ga109bb0d6f731ff9453434eb80ded18b3}\label{group___d_s3231__registers_ga109bb0d6f731ff9453434eb80ded18b3} 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+YEAR}~(0x06)  /\texorpdfstring{$\ast$}{*} (00..\+99) \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+\label{doc-define-members}
+\Hypertarget{group___d_s3231__registers_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{group___d_s3231__registers_gab752aeeb9f43f088ef3ea1e92cf0dd55}\index{.h Definiciones de registros@{.h Definiciones de registros}!DS3231\_REG\_SECONDS@{DS3231\_REG\_SECONDS}}
+\index{DS3231\_REG\_SECONDS@{DS3231\_REG\_SECONDS}!.h Definiciones de registros@{.h Definiciones de registros}}
+\doxysubsubsection{\texorpdfstring{DS3231\_REG\_SECONDS}{DS3231\_REG\_SECONDS}}
+{\footnotesize\ttfamily \label{group___d_s3231__registers_gab752aeeb9f43f088ef3ea1e92cf0dd55} 
+\#define DS3231\+\_\+\+REG\+\_\+\+SECONDS~(0x00)}
+
+Nota\+: Los registros de hora y fecha están en formato BCD 

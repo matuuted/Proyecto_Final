@@ -1,0 +1,134 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.h}
+\hypertarget{ds3231_8h}{}\label{ds3231_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231.h}}
+
+
+Driver del RTC DS3231 utilizando dev\+\_\+i2cm.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_d_s3231___time}{DS3231\+\_\+\+Time}}
+\begin{DoxyCompactList}\small\item\em Estructura de tiempo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ds3231_8h_a66eea8285a4541590aaafec8572caa91}\label{ds3231_8h_a66eea8285a4541590aaafec8572caa91} 
+enum {\bfseries DS3231\+\_\+\+Status} \{ \newline
+{\bfseries DS3231\+\_\+\+OK} = 0
+, {\bfseries DS3231\+\_\+\+ERROR} = -\/1
+, {\bfseries DS3231\+\_\+\+TIMEOUT} = -\/2
+, {\bfseries DS3231\+\_\+\+NOT\+\_\+\+READY} = -\/3
+, \newline
+{\bfseries DS3231\+\_\+\+INVALID\+\_\+\+PARAM} = -\/4
+, {\bfseries DS3231\+\_\+\+BUSY} = -\/5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{Indent}\textbf{ Convertidores BCD}\par
+{\em Estas funciones convierten números entre decimal normal y BCD (Binary Coded Decimal), que es el formato que usa el DS3231 para guardar hora y fecha.
+
+dec2bcd\+:
+\begin{DoxyItemize}
+\item Convierte un número decimal (ej\+: 45) a BCD (0x45). Las decenas van al nibble alto (bits 7-\/4). Las unidades van al nibble bajo (bits 3-\/0).
+\end{DoxyItemize}
+
+bcd2dec\+:
+\begin{DoxyItemize}
+\item Convierte de BCD (0x45) a decimal (45). Toma el nibble alto, lo multiplica por 10 y le suma el nibble bajo. 
+\end{DoxyItemize}}\begin{DoxyCompactItemize}
+\item 
+DS3231\+\_\+\+Status \mbox{\hyperlink{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39}{DS3231\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica la presencia del DS3231 en el bus de I2C. \end{DoxyCompactList}\item 
+DS3231\+\_\+\+Status \mbox{\hyperlink{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6}{DS3231\+\_\+\+Read\+Time}} (\mbox{\hyperlink{struct_d_s3231___time}{DS3231\+\_\+\+Time}} \texorpdfstring{$\ast$}{*}time)
+\begin{DoxyCompactList}\small\item\em Lee la hora actual desde el DS3231. \end{DoxyCompactList}\item 
+DS3231\+\_\+\+Status \mbox{\hyperlink{ds3231_8h_af422c0f37f5763d688ae3b815002ffda}{DS3231\+\_\+\+Set\+Time}} (uint8\+\_\+t year, uint8\+\_\+t month, uint8\+\_\+t date, uint8\+\_\+t day, uint8\+\_\+t hour, uint8\+\_\+t min, uint8\+\_\+t sec)
+\begin{DoxyCompactList}\small\item\em Configura la fecha y hora del RTC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Descripción detallada}
+Driver del RTC DS3231 utilizando dev\+\_\+i2cm. 
+
+API utilizada para leer y escribir registros del RTC DS3231. 
+
+\label{doc-func-members}
+\Hypertarget{ds3231_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39}\index{ds3231.h@{ds3231.h}!DS3231\_Init@{DS3231\_Init}}
+\index{DS3231\_Init@{DS3231\_Init}!ds3231.h@{ds3231.h}}
+\doxysubsubsection{\texorpdfstring{DS3231\_Init()}{DS3231\_Init()}}
+{\footnotesize\ttfamily \label{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39} 
+DS3231\+\_\+\+Status DS3231\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica la presencia del DS3231 en el bus de I2C. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em void.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+DS3231\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}
+\Hypertarget{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6}\index{ds3231.h@{ds3231.h}!DS3231\_ReadTime@{DS3231\_ReadTime}}
+\index{DS3231\_ReadTime@{DS3231\_ReadTime}!ds3231.h@{ds3231.h}}
+\doxysubsubsection{\texorpdfstring{DS3231\_ReadTime()}{DS3231\_ReadTime()}}
+{\footnotesize\ttfamily \label{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6} 
+DS3231\+\_\+\+Status DS3231\+\_\+\+Read\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_s3231___time}{DS3231\+\_\+\+Time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Lee la hora actual desde el DS3231. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em time} & Estructura Time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+DS3231\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}
+\Hypertarget{ds3231_8h_af422c0f37f5763d688ae3b815002ffda}\index{ds3231.h@{ds3231.h}!DS3231\_SetTime@{DS3231\_SetTime}}
+\index{DS3231\_SetTime@{DS3231\_SetTime}!ds3231.h@{ds3231.h}}
+\doxysubsubsection{\texorpdfstring{DS3231\_SetTime()}{DS3231\_SetTime()}}
+{\footnotesize\ttfamily \label{ds3231_8h_af422c0f37f5763d688ae3b815002ffda} 
+DS3231\+\_\+\+Status DS3231\+\_\+\+Set\+Time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{year}{, }\item[{uint8\+\_\+t}]{month}{, }\item[{uint8\+\_\+t}]{date}{, }\item[{uint8\+\_\+t}]{day}{, }\item[{uint8\+\_\+t}]{hour}{, }\item[{uint8\+\_\+t}]{min}{, }\item[{uint8\+\_\+t}]{sec}{}\end{DoxyParamCaption})}
+
+
+
+Configura la fecha y hora del RTC. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em yy} & Año (00-\/99) \\
+\hline
+{\em mm} & Mes (1-\/12) \\
+\hline
+{\em dd} & Día del mes (1-\/31) \\
+\hline
+{\em dow} & Día de semana (1-\/7) \\
+\hline
+{\em hh} & Hora (0-\/23) \\
+\hline
+{\em mi} & Minutos (0-\/59) \\
+\hline
+{\em ss} & Segundos (0-\/59) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+DS3231\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}

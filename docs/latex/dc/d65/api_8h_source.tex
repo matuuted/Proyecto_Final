@@ -1,0 +1,116 @@
+\doxysection{api.\+h}
+\hypertarget{api_8h_source}{}\label{api_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api.h@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api.h}}
+\mbox{\hyperlink{api_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_\_API\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_\_API\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ REG\_STATUS\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ REG\_MODULE\_ID\ \ \ \ 1}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ REG\_FUNCTION\_ID\ \ 2}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ REG\_ARG\_TYPES\ \ \ \ 3}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ REG\_DATA\_START\ \ \ 4}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ API\_GO\ \ \ \ \ \ \ \ \ \ \ 0x2}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ API\_BUSY\ \ \ \ \ \ \ \ \ 0x1}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ARGTYPE\_U32\ \ \ \ \ \ 0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ARGTYPE\_TLV\ \ \ \ \ \ 1}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ API\_ALIGN(x)\ \ \ \ (\ ((x)+3)\ \&\ 0xFFFC\ )}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ STRUCT\_COUNT(x)\ (\ sizeof(x)\ /\ sizeof(x[0])\ )}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ARGTYPE\_MASK\ \ \ \ \ 0x7F}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ TLV\_TYPE\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ TLV\_LENGTH\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ TLV\_VALUE\ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ TLV\_HDRLEN\ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ ARGTYPE\_PTR\ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ ARGLEN\_PARAM\ \ \ \ 0x8000}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ TASK\_T\ \{}
+\DoxyCodeLine{00060\ \ \ NONE\_TASK\_ID\ \ =\ 0,}
+\DoxyCodeLine{00061\ \ \ ANY\_TASK\_ID\ \ \ =\ 1,}
+\DoxyCodeLine{00062\ \}\ TASK\_TYPE;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ UINT8\_T,\ \ \ \textcolor{comment}{//\ equivalente\ a\ uint8\_t}}
+\DoxyCodeLine{00066\ \ \ \ \ INT8\_T,\ \ \ \ \textcolor{comment}{//\ equivalente\ a\ int8\_t}}
+\DoxyCodeLine{00067\ \ \ \ \ UINT16\_T,\ \ \textcolor{comment}{//\ equivalente\ a\ uint16\_t}}
+\DoxyCodeLine{00068\ \ \ \ \ INT16\_T,\ \ \ \textcolor{comment}{//\ equivalente\ a\ int16\_t}}
+\DoxyCodeLine{00069\ \ \ \ \ UINT32\_T,\ \ \textcolor{comment}{//\ equivalente\ a\ uint32\_t}}
+\DoxyCodeLine{00070\ \ \ \ \ INT32\_T,\ \ \ \textcolor{comment}{//\ equivalente\ a\ int32\_t}}
+\DoxyCodeLine{00071\ \ \ \ \ FLOAT32\_T,\ \textcolor{comment}{//\ equivalente\ a\ float\ (32-\/bit\ IEEE-\/754)}}
+\DoxyCodeLine{00072\ \ \ \ \ FLOAT16\_T,\ \textcolor{comment}{//\ equivalente\ a\ \_Float16\ /\ \_\_fp16\ (si\ lo\ soporta\ el\ compilador)}}
+\DoxyCodeLine{00073\ \ \ \ \ UINT64\_T,\ \ \textcolor{comment}{//\ equivalente\ a\ uint64\_t}}
+\DoxyCodeLine{00074\ \ \ \ \ \_\_VOID\ \ \ \ \ \textcolor{comment}{//\ equivalente\ a\ void}}
+\DoxyCodeLine{00075\ \}\ ARG\_TYPE;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ MODULE\_GROUP\_SHIFT\ \ 6}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ MODULE\_GROUP\_MASK\ \ \ \ \ (\ (0xFF\ <<\ MODULE\_GROUP\_SHIFT)\ \&\ 0xFF\ )}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ MODULE\_GROUP(m)\ \ \ \ \ \ \ (\ (m)\ >>\ MODULE\_GROUP\_SHIFT\ )\ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ MODULE\_ISGROUP(m,\ g)\ \ (\ (m)\ \&\ MODULE\_GROUP\_MASK\ ==\ (g)\ )}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ MODULE\_INDEX(m)\ \ \ \ \ \ \ (\ (m)\ \&\ \string~MODULE\_GROUP\_MASK\ )}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ MODULE\_GROUPS\ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ NONE\_modules\ \ \ \ \ \ \ \ \ 0xff}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ HAL\_StatusTypeDef\ (*fptr\_0)\ (void);}
+\DoxyCodeLine{00086\ \textcolor{keyword}{typedef}\ HAL\_StatusTypeDef\ (*fptr\_1)\ (uintptr\_t\ arg0);}
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ HAL\_StatusTypeDef\ (*fptr\_2)\ (uintptr\_t\ arg0,\ uintptr\_t\ arg1);}
+\DoxyCodeLine{00088\ \textcolor{keyword}{typedef}\ HAL\_StatusTypeDef\ (*fptr\_3)\ (uintptr\_t\ arg0,\ uintptr\_t\ arg1,\ uintptr\_t\ arg2);}
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ HAL\_StatusTypeDef\ (*fptr\_4)\ (uintptr\_t\ arg0,\ uintptr\_t\ arg1,\ uintptr\_t\ arg2,\ uintptr\_t\ arg3);}
+\DoxyCodeLine{00090\ \textcolor{keyword}{typedef}\ HAL\_StatusTypeDef\ (*fptr\_5)\ (uintptr\_t\ arg0,\ uintptr\_t\ arg1,\ uintptr\_t\ arg2,\ uintptr\_t\ arg3,\ uintptr\_t\ arg4);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ MAX\_ARGS\ 8}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_p_t_r_s___t}{FPTRS\_T}}\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_f_p_t_r_s___t_a68ff5f6cab8d5a337f7caa2bd0a8f5da}{module\_id}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_f_p_t_r_s___t_a41bbfffe04a103ce80620e0d14718d9a}{function\_id}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_f_p_t_r_s___t_a26b14a18be50c27aacbbad4f4681f6b3}{task\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_f_p_t_r_s___t_a0212696469469d19fab8ac4a2ed6812c}{nargs}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_f_p_t_r_s___t_ab682f902c981986da33861b503497784}{arg\_types}}[MAX\_ARGS];\ \ }
+\DoxyCodeLine{00100\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_f_p_t_r_s___t_a8f16261367d14381a50c4bf17477f52e}{arg\_lens}}[MAX\_ARGS];\ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ fptr\_0\ f0;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ fptr\_1\ f1;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ fptr\_2\ f2;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ fptr\_3\ f3;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ fptr\_4\ f4;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ fptr\_5\ f5;}
+\DoxyCodeLine{00109\ \ \ \ \ \}\ fptr;}
+\DoxyCodeLine{00110\ \}\ FPTRS;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ COMMAND\_SIZE\ 1280}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00116\ \ \ uint8\_t\ buffer[COMMAND\_SIZE];}
+\DoxyCodeLine{00117\ \}\ \mbox{\hyperlink{struct_c_o_m_m_a_n_d___d_a_t_a}{COMMAND\_DATA}}\ \_\_attribute\_\_((aligned(4)));}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_c_o_m_m_a_n_d___d_a_t_a}{COMMAND\_DATA}}\ command;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ exec\_fn(uint8\_t\ *data);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_API\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

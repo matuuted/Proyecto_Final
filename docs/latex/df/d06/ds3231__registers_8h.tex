@@ -1,0 +1,34 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231\+\_\+registers.h}
+\hypertarget{ds3231__registers_8h}{}\label{ds3231__registers_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231\_registers.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231\_registers.h}}
+
+
+Definiciones de registros y mascaras para el RTC DS3231.  
+
+
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries DS3231\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+WRITE}~(8)
+\item 
+\#define {\bfseries DS3231\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+READ}~(7)
+\item 
+\#define \mbox{\hyperlink{group___d_s3231__registers_gab752aeeb9f43f088ef3ea1e92cf0dd55}{DS3231\+\_\+\+REG\+\_\+\+SECONDS}}~(0x00)
+\item 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+MINUTES}~(0x01)
+\item 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+HOURS}~(0x02)
+\item 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+DAY}~(0x03)  /\texorpdfstring{$\ast$}{*} 1..\+7 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+DATE}~(0x04)  /\texorpdfstring{$\ast$}{*} 1..\+31 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+MONTH}~(0x05)  /\texorpdfstring{$\ast$}{*} bit7 = Centenas \texorpdfstring{$\ast$}{*}/
+\item 
+\#define {\bfseries DS3231\+\_\+\+REG\+\_\+\+YEAR}~(0x06)  /\texorpdfstring{$\ast$}{*} (00..\+99) \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Definiciones de registros y mascaras para el RTC DS3231. 
+
+Este archivo contiene las direcciones de los registros y máscaras de bits usadas por el driver DS3231. 

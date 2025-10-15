@@ -1,0 +1,73 @@
+\doxysection{Referencia del directorio C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+LCD16x2}
+\hypertarget{dir_0ecc79980392c2008a29b00770c41105}{}\label{dir_0ecc79980392c2008a29b00770c41105}\index{Referencia del directorio C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2@{Referencia del directorio C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2}}
+\doxysubsubsection*{Directorios}
+\begin{DoxyCompactItemize}
+\item 
+directorio \mbox{\hyperlink{dir_5bb2d7b5a813dc44f25d7cbcb3c3d2c0}{Inc}}
+\item 
+directorio \mbox{\hyperlink{dir_177b045cde8a2f38bb98d8c608e3590e}{Src}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\hypertarget{README.md_autotoc_md8}{}\doxysubsection{\texorpdfstring{LCD 16x2 — Driver HD44780 vía I²C (PCF8574)}{LCD 16x2 — Driver HD44780 vía I²C (PCF8574)}}\label{README.md_autotoc_md8}
+\hypertarget{README.md_autotoc_md9}{}\doxysubsection{\texorpdfstring{Descripción}{Descripción}}\label{README.md_autotoc_md9}
+Driver para pantalla {\bfseries{LCD 16×2}} con controlador {\bfseries{HD44780}} utilizando un driver {\bfseries{PCF8574}} (I²C).
+
+
+\begin{DoxyItemize}
+\item El módulo contiene inicialización del display en modo 4‑bit, funciones de escritura de texto, posicionamiento de cursor, limpieza y centrado.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md10}{}\doxysubsection{\texorpdfstring{Disposición de carpetas}{Disposición de carpetas}}\label{README.md_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Devices/}
+\DoxyCodeLine{└──\ LCD16x2/}
+\DoxyCodeLine{\ \ \ \ ├──\ Inc/}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ dev\_LCD.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ LCD\_port.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ └──\ LCD\_registers.h}
+\DoxyCodeLine{\ \ \ \ └──\ Src/}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ├──\ dev\_LCD.c}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ └──\ LCD\_port.c}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md11}{}\doxysubsection{\texorpdfstring{Archivos del módulo}{Archivos del módulo}}\label{README.md_autotoc_md11}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Archivo  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Funcionalidad  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Archivo  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Funcionalidad  }\\\cline{1-2}
+\endhead
+{\ttfamily \doxylink{dev___l_c_d_8c}{dev\+\_\+\+LCD.\+c}}  &Funciones para la inicialización del display y escritura de datos.  \\\cline{1-2}
+{\ttfamily \doxylink{dev___l_c_d_8h}{dev\+\_\+\+LCD.\+h}}  &Prototipos y constantes públicas.  \\\cline{1-2}
+{\ttfamily \doxylink{_l_c_d__port_8c}{LCD\+\_\+port.\+c}}  &Escritura de registros (dependiente de HAL).  \\\cline{1-2}
+{\ttfamily \doxylink{_l_c_d__port_8h}{LCD\+\_\+port.\+h}}  &Prototipos del port.  \\\cline{1-2}
+{\ttfamily \doxylink{_l_c_d__registers_8h_source}{LCD\+\_\+registers.\+h}}  &Comandos y flags del {\bfseries{HD44780/\+PCF8574}} utilizados en {\bfseries{\doxylink{dev___l_c_d_8c}{dev\+\_\+\+LCD.\+c}}}.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{README.md_autotoc_md12}{}\doxysubsection{\texorpdfstring{Comunicación}{Comunicación}}\label{README.md_autotoc_md12}
+
+\begin{DoxyItemize}
+\item Dirección del módulo\+: {\ttfamily 0x27}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md13}{}\doxysubsection{\texorpdfstring{API principales}{API principales}}\label{README.md_autotoc_md13}
+
+\begin{DoxyItemize}
+\item {\ttfamily bool \doxylink{dev___l_c_d_8h_a458da1781d3e79af8d24bf770935488c}{LCD\+\_\+\+Init(void)}}
+\item {\ttfamily void \doxylink{dev___l_c_d_8h_a3757c616ea16d44a433de63a3916a62d}{LCD\+\_\+\+Write(const char \texorpdfstring{$\ast$}{*}s)}} / {\ttfamily void \doxylink{dev___l_c_d_8h_a5042d70ba51bede98f9036747600211c}{LCD\+\_\+\+Write\+At(uint8\+\_\+t col, uint8\+\_\+t row, char \texorpdfstring{$\ast$}{*}s)}}
+\item {\ttfamily void \doxylink{dev___l_c_d_8h_a07fda1c26af1d5eca4b5cbaa46fc86f4}{LCD\+\_\+\+Print\+Centered(uint8\+\_\+t row, char \texorpdfstring{$\ast$}{*}s)}}
+\item {\ttfamily void \doxylink{dev___l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\+\_\+\+Clear(void)}}
+\item {\ttfamily void \doxylink{dev___l_c_d_8h_adc038e8c2d3cddcbf4ac742e7837078e}{LCD\+\_\+\+Cursor(bool on)}}
+\item {\ttfamily void \doxylink{dev___l_c_d_8h_a5655b2022c4273728f1132f5e613cbd3}{LCD\+\_\+\+Blink\+Cursor(bool on)}}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md14}{}\doxysubsection{\texorpdfstring{Ejemplo}{Ejemplo}}\label{README.md_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dev___l_c_d_8h_a458da1781d3e79af8d24bf770935488c}{LCD\_Init}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{dev___l_c_d_8h_a07fda1c26af1d5eca4b5cbaa46fc86f4}{LCD\_PrintCentered}}(0,\ \textcolor{stringliteral}{"{}Funcionando..."{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{dev___l_c_d_8h_a5042d70ba51bede98f9036747600211c}{LCD\_WriteAt}}(0,\ 1,\ \textcolor{stringliteral}{"{}LCD\ OK"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

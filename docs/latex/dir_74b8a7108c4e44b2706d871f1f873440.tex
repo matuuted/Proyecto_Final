@@ -1,0 +1,72 @@
+\doxysection{Referencia del directorio C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+MPU6050}
+\hypertarget{dir_74b8a7108c4e44b2706d871f1f873440}{}\label{dir_74b8a7108c4e44b2706d871f1f873440}\index{Referencia del directorio C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050@{Referencia del directorio C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050}}
+\doxysubsubsection*{Directorios}
+\begin{DoxyCompactItemize}
+\item 
+directorio \mbox{\hyperlink{dir_d6259a8d0474f204a73d106b62291e5e}{Inc}}
+\item 
+directorio \mbox{\hyperlink{dir_edc55781abc9b4c210887f0a77d74a0d}{Src}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\hypertarget{README.md_autotoc_md15}{}\doxysubsection{\texorpdfstring{MPU6050 — Driver IMU (acelerómetro + giroscopio)}{MPU6050 — Driver IMU (acelerómetro + giroscopio)}}\label{README.md_autotoc_md15}
+\hypertarget{README.md_autotoc_md16}{}\doxysubsection{\texorpdfstring{Descripción}{Descripción}}\label{README.md_autotoc_md16}
+Driver para el sensor {\bfseries{MPU6050}}.
+\begin{DoxyItemize}
+\item Permite inicializar el dispositivo y leer los datos de aceleración y giro.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md17}{}\doxysubsection{\texorpdfstring{Disposición de carpetas}{Disposición de carpetas}}\label{README.md_autotoc_md17}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Devices/}
+\DoxyCodeLine{└──\ MPU6050/}
+\DoxyCodeLine{\ \ \ \ ├──\ Inc/}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ mpu6050.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ mpu6050\_port.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ ├──\ mpu6050\_registers.h}
+\DoxyCodeLine{\ \ \ \ │\ \ \ └──\ mpu\_math.h}
+\DoxyCodeLine{\ \ \ \ └──\ Src/}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ├──\ mpu6050.c}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ └──\ mpu6050\_port.c}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md18}{}\doxysubsection{\texorpdfstring{Archivos del módulo}{Archivos del módulo}}\label{README.md_autotoc_md18}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Archivo  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Funcionalidaad  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Archivo  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Funcionalidaad  }\\\cline{1-2}
+\endhead
+{\ttfamily \doxylink{mpu6050_8c}{mpu6050.\+c}}  &Inicialización, lectura de los ejes (X, Y y Z) y conversión del ángulo a grados.  \\\cline{1-2}
+{\ttfamily \doxylink{mpu6050_8h}{mpu6050.\+h}}  &Tipos públicos ({\ttfamily \doxylink{struct_m_p_u6050___handler}{MPU6050\+\_\+\+Handler}}, {\ttfamily \doxylink{struct_m_p_u6050___data}{MPU6050\+\_\+\+Data}}) y prototipos.  \\\cline{1-2}
+{\ttfamily \doxylink{mpu6050__port_8c}{mpu6050\+\_\+port.\+c}}  &Acceso I²C al sensor (depende de HAL).  \\\cline{1-2}
+{\ttfamily \doxylink{mpu6050__port_8h}{mpu6050\+\_\+port.\+h}}  &Prototipos del port.  \\\cline{1-2}
+{\ttfamily \doxylink{mpu6050__registers_8h}{mpu6050\+\_\+registers.\+h}}  &Registros y máscaras usados por el driver.  \\\cline{1-2}
+{\ttfamily \doxylink{mpu__math_8h_source}{mpu\+\_\+math.\+h}}  &Cálculo de ángulo.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{README.md_autotoc_md19}{}\doxysubsection{\texorpdfstring{Comunicación}{Comunicación}}\label{README.md_autotoc_md19}
+
+\begin{DoxyItemize}
+\item Dirección del dispositivo\+: {\ttfamily 0x69}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md20}{}\doxysubsection{\texorpdfstring{API principal}{API principal}}\label{README.md_autotoc_md20}
+
+\begin{DoxyItemize}
+\item {\ttfamily MPU6050\+\_\+\+Status MPU6050\+\_\+\+Init(\+MPU6050\+\_\+\+Handler \texorpdfstring{$\ast$}{*}dev)}
+\item {\ttfamily MPU6050\+\_\+\+Status MPU6050\+\_\+\+Read(\+MPU6050\+\_\+\+Handler \texorpdfstring{$\ast$}{*}dev)}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md21}{}\doxysubsection{\texorpdfstring{Ejemplo}{Ejemplo}}\label{README.md_autotoc_md21}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\_Handler}}\ mpu;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (MPU6050\_Init(\&mpu)\ ==\ MPU6050\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (MPU6050\_Read(\&mpu)\ ==\ MPU6050\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ax\ =\ mpu.\mbox{\hyperlink{struct_m_p_u6050___handler_a3cfebc7db806eff6a22d8612ef0bed33}{data}}.accel\_x;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ gz\ =\ mpu.\mbox{\hyperlink{struct_m_p_u6050___handler_a3cfebc7db806eff6a22d8612ef0bed33}{data}}.gyro\_z;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

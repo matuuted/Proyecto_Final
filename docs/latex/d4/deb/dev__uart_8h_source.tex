@@ -1,0 +1,47 @@
+\doxysection{dev\+\_\+uart.\+h}
+\hypertarget{dev__uart_8h_source}{}\label{dev__uart_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/dev/dev\_uart.h@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/dev/dev\_uart.h}}
+\mbox{\hyperlink{dev__uart_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ \_\_DEV\_UART\_H\_\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \_\_DEV\_UART\_H\_\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ Tiempo\ máximo\ de\ espera\ para\ operaciones\ UART}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ UART\_TIMEOUT\_MS\ 2000}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ Tamaño\ máximo\ del\ buffer\ para\ enviar\ datos\ por\ UART}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ UART\_TX\_MAX\_SIZE\ 512}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ Funciones\ públicas\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dev__uart_8h_a0e6c3e0aac687cdabb6946e8041c1112}{uartInit}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dev__uart_8h_afdd3ccc22006988371986c96adec118d}{uartDeInit}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev__uart_8h_af39ecc336dacb5da49f6bf5093952abe}{uartSendString}}(uint8\_t\ *\ pstring);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev__uart_8h_a5f7272d7b83bf68319beb9c9acbb3f22}{uartSendStringSize}}(uint8\_t\ *\ pstring,\ uint16\_t\ size);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dev__uart_8h_aeffd5a15e15e28b5261f17b864ad28c4}{uartReceiveStringSize}}(uint8\_t\ *\ pstring,\ uint16\_t\ size);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_DEV\_UART\_H\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00083\ }
+
+\end{DoxyCode}

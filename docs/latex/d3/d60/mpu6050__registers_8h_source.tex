@@ -1,0 +1,44 @@
+\doxysection{mpu6050\+\_\+registers.\+h}
+\hypertarget{mpu6050__registers_8h_source}{}\label{mpu6050__registers_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050\_registers.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050\_registers.h}}
+\mbox{\hyperlink{mpu6050__registers_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ MPU6050\_REGS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MPU6050\_REGS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Registros\ utilizados\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ MPU6050\_REG\_CONFIG\ \ \ \ \ \ \ \ \ 0x1A}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MPU6050\_REG\_GYRO\_CONFIG\ \ \ \ 0x1B}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MPU6050\_REG\_ACCEL\_CONFIG\ \ \ 0x1C}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MPU6050\_REG\_ACCEL\ \ \ \ \ \ \ \ \ \ 0x3B\ \ \ }\textcolor{comment}{/*\ Burst:\ AX..AZ,\ TEMP,\ GX..GZ\ (14\ bytes)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MPU6050\_REG\_PWR\_MGMT\_1\ \ \ \ \ 0x6B}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Máscaras\ /\ shifts\ utilizados\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ PWR\_MGMT\_1\ */}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MPU6050\_PWR\_CLKSEL\_MASK\ \ \ \ 0x07\ }\textcolor{comment}{/*\ 0:\ Int\ 8MHz,\ 1:\ PLL\ X-\/gyro,\ etc.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ GYRO\_CONFIG\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ MPU6050\_GYRO\_FS\_SEL\_SHIFT\ \ 3}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MPU6050\_GYRO\_FS\_SEL\_MASK\ \ \ (0x03\ <<\ MPU6050\_GYRO\_FS\_SEL\_SHIFT)\ }\textcolor{comment}{/*\ 0:250,1:500,2:1000,3:2000\ dps\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ ACCEL\_CONFIG\ */}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MPU6050\_ACCEL\_FS\_SEL\_SHIFT\ 3}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MPU6050\_ACCEL\_FS\_SEL\_MASK\ \ (0x03\ <<\ MPU6050\_ACCEL\_FS\_SEL\_SHIFT)\ }\textcolor{comment}{/*\ 0:±2g,1:±4g,2:±8g,3:±16g\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ FILTRO\ DIGITAL\ \ \ \ */}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ MPU6050\_DLPF\_44HZ\ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00036\ \ \ MPU6050\_AX\ =\ 0,}
+\DoxyCodeLine{00037\ \ \ MPU6050\_AY\ =\ 2,\ }
+\DoxyCodeLine{00038\ \ \ MPU6050\_AZ\ =\ 4,\ }
+\DoxyCodeLine{00039\ \ \ MPU6050\_GX\ =\ 8,\ }
+\DoxyCodeLine{00040\ \ \ MPU6050\_GY\ =\ 10,\ }
+\DoxyCodeLine{00041\ \ \ MPU6050\_GZ\ =\ 12,\ }
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MPU6050\_REGS\_H}}
+
+\end{DoxyCode}

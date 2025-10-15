@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final – Medición de Inclinación: Data_Management</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final – Medición de Inclinación<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Este proyecto utiliza la placa **NUCLEO-STM32F446RE** y permite detectar y visualizar en tiempo real la inclinación mediante el sensor MPU-6050.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('dd/d2b/group___i2_c___l_l___e_f___data___management.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Data_Management <div class="ingroups"><a class="el" href="../../d0/d8b/group___s_t_m32_f4xx___l_l___driver.html">STM32F4xx_LL_Driver</a> &raquo; <a class="el" href="../../d4/d6b/group___i2_c___l_l.html">I2C</a> &raquo; <a class="el" href="../../d8/dbc/group___i2_c___l_l___exported___functions.html">I2C Exported Functions</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:gac24fb1275328978d493b98451a81fe1e" id="r_gac24fb1275328978d493b98451a81fe1e"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac24fb1275328978d493b98451a81fe1e">LL_I2C_EnableReset</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gac24fb1275328978d493b98451a81fe1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Reset of I2C peripheral. @rmtoll CR1 SWRST LL_I2C_EnableReset.  <br /></td></tr>
+<tr class="memitem:gaec804e0ba925e4da924e35633bcdd14f" id="r_gaec804e0ba925e4da924e35633bcdd14f"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaec804e0ba925e4da924e35633bcdd14f">LL_I2C_DisableReset</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gaec804e0ba925e4da924e35633bcdd14f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable Reset of I2C peripheral. @rmtoll CR1 SWRST LL_I2C_DisableReset.  <br /></td></tr>
+<tr class="memitem:ga58bb8e732f716bf449b0b95a49e7421c" id="r_ga58bb8e732f716bf449b0b95a49e7421c"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga58bb8e732f716bf449b0b95a49e7421c">LL_I2C_IsResetEnabled</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga58bb8e732f716bf449b0b95a49e7421c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the I2C peripheral is under reset state or not. @rmtoll CR1 SWRST LL_I2C_IsResetEnabled.  <br /></td></tr>
+<tr class="memitem:ga1e0e578274422f439207bf8640db7699" id="r_ga1e0e578274422f439207bf8640db7699"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e0e578274422f439207bf8640db7699">LL_I2C_AcknowledgeNextData</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx, uint32_t TypeAcknowledge)</td></tr>
+<tr class="memdesc:ga1e0e578274422f439207bf8640db7699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the generation of a ACKnowledge or Non ACKnowledge condition after the address receive match code or next received byte.  <br /></td></tr>
+<tr class="memitem:ga83e6d7fbef52a87ef221fba3487afe2b" id="r_ga83e6d7fbef52a87ef221fba3487afe2b"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83e6d7fbef52a87ef221fba3487afe2b">LL_I2C_GenerateStartCondition</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga83e6d7fbef52a87ef221fba3487afe2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a START or RESTART condition.  <br /></td></tr>
+<tr class="memitem:gadf3921856d465ac13d1b89f4127b6a7c" id="r_gadf3921856d465ac13d1b89f4127b6a7c"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadf3921856d465ac13d1b89f4127b6a7c">LL_I2C_GenerateStopCondition</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gadf3921856d465ac13d1b89f4127b6a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a STOP condition after the current byte transfer (master mode). @rmtoll CR1 STOP LL_I2C_GenerateStopCondition.  <br /></td></tr>
+<tr class="memitem:ga4707ac0f5cc6322c3fe561bef44659a4" id="r_ga4707ac0f5cc6322c3fe561bef44659a4"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4707ac0f5cc6322c3fe561bef44659a4">LL_I2C_EnableBitPOS</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga4707ac0f5cc6322c3fe561bef44659a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable bit POS (master/host mode).  <br /></td></tr>
+<tr class="memitem:ga87e12dc4d102c910e89c58e856ca6871" id="r_ga87e12dc4d102c910e89c58e856ca6871"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga87e12dc4d102c910e89c58e856ca6871">LL_I2C_DisableBitPOS</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga87e12dc4d102c910e89c58e856ca6871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable bit POS (master/host mode).  <br /></td></tr>
+<tr class="memitem:ga3e6d7910b4e753a37a10d41dd079fd15" id="r_ga3e6d7910b4e753a37a10d41dd079fd15"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3e6d7910b4e753a37a10d41dd079fd15">LL_I2C_IsEnabledBitPOS</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga3e6d7910b4e753a37a10d41dd079fd15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if bit POS is enabled or disabled. @rmtoll CR1 POS LL_I2C_IsEnabledBitPOS.  <br /></td></tr>
+<tr class="memitem:gafaebe16879cc748a5f5d6b282061666d" id="r_gafaebe16879cc748a5f5d6b282061666d"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafaebe16879cc748a5f5d6b282061666d">LL_I2C_GetTransferDirection</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gafaebe16879cc748a5f5d6b282061666d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate the value of transfer direction.  <br /></td></tr>
+<tr class="memitem:gab31d5756a0878cee1e2d940a50852b72" id="r_gab31d5756a0878cee1e2d940a50852b72"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab31d5756a0878cee1e2d940a50852b72">LL_I2C_EnableLastDMA</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gab31d5756a0878cee1e2d940a50852b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable DMA last transfer.  <br /></td></tr>
+<tr class="memitem:gac152eff240d4ab092aed07c56a8df810" id="r_gac152eff240d4ab092aed07c56a8df810"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac152eff240d4ab092aed07c56a8df810">LL_I2C_DisableLastDMA</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gac152eff240d4ab092aed07c56a8df810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable DMA last transfer.  <br /></td></tr>
+<tr class="memitem:ga05a0e7cd9c8cba838d4ccef3fc0fbdac" id="r_ga05a0e7cd9c8cba838d4ccef3fc0fbdac"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga05a0e7cd9c8cba838d4ccef3fc0fbdac">LL_I2C_IsEnabledLastDMA</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga05a0e7cd9c8cba838d4ccef3fc0fbdac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if DMA last transfer is enabled or disabled. @rmtoll CR2 LAST LL_I2C_IsEnabledLastDMA.  <br /></td></tr>
+<tr class="memitem:ga01b5301e2f0173a24195d6b2607e2ae8" id="r_ga01b5301e2f0173a24195d6b2607e2ae8"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga01b5301e2f0173a24195d6b2607e2ae8">LL_I2C_EnableSMBusPECCompare</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga01b5301e2f0173a24195d6b2607e2ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode).  <br /></td></tr>
+<tr class="memitem:ga83ddebb34169ed30d933aa4610ef062f" id="r_ga83ddebb34169ed30d933aa4610ef062f"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83ddebb34169ed30d933aa4610ef062f">LL_I2C_DisableSMBusPECCompare</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga83ddebb34169ed30d933aa4610ef062f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode).  <br /></td></tr>
+<tr class="memitem:ga3c6dbb65435d452a9eae61bd246943c5" id="r_ga3c6dbb65435d452a9eae61bd246943c5"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3c6dbb65435d452a9eae61bd246943c5">LL_I2C_IsEnabledSMBusPECCompare</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga3c6dbb65435d452a9eae61bd246943c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the SMBus Packet Error byte transfer or internal comparison is requested or not.  <br /></td></tr>
+<tr class="memitem:gaf96bd7242fab2057cc1cfd658a6f7615" id="r_gaf96bd7242fab2057cc1cfd658a6f7615"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf96bd7242fab2057cc1cfd658a6f7615">LL_I2C_GetSMBusPEC</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:gaf96bd7242fab2057cc1cfd658a6f7615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the SMBus Packet Error byte calculated.  <br /></td></tr>
+<tr class="memitem:ga003d01a59192ddd9765bfc5fd624f50d" id="r_ga003d01a59192ddd9765bfc5fd624f50d"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga003d01a59192ddd9765bfc5fd624f50d">LL_I2C_ReceiveData8</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx)</td></tr>
+<tr class="memdesc:ga003d01a59192ddd9765bfc5fd624f50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Receive Data register. @rmtoll DR DR LL_I2C_ReceiveData8.  <br /></td></tr>
+<tr class="memitem:ga0a834cd3b6d8208ad98d96775c920209" id="r_ga0a834cd3b6d8208ad98d96775c920209"><td class="memItemLeft" align="right" valign="top">__STATIC_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a834cd3b6d8208ad98d96775c920209">LL_I2C_TransmitData8</a> (<a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *I2Cx, uint8_t Data)</td></tr>
+<tr class="memdesc:ga0a834cd3b6d8208ad98d96775c920209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write in Transmit Data Register . @rmtoll DR DR LL_I2C_TransmitData8.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ga1e0e578274422f439207bf8640db7699" name="ga1e0e578274422f439207bf8640db7699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e0e578274422f439207bf8640db7699">&#9670;&#160;</a></span>LL_I2C_AcknowledgeNextData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_AcknowledgeNextData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>TypeAcknowledge</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prepare the generation of a ACKnowledge or Non ACKnowledge condition after the address receive match code or next received byte. </p>
+<dl class="section note"><dt>Nota</dt><dd>Usage in Slave or Master mode. @rmtoll CR1 ACK LL_I2C_AcknowledgeNextData </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+    <tr><td class="paramname">TypeAcknowledge</td><td>This parameter can be one of the following values: <ul>
+<li><a class="el" href="../../dd/dd5/group___i2_c___l_l___e_c___i2_c___a_c_k_n_o_w_l_e_d_g_e.html#ga25c958493ed8a59d94a2d1c551e327b3">LL_I2C_ACK</a> </li>
+<li><a class="el" href="../../dd/dd5/group___i2_c___l_l___e_c___i2_c___a_c_k_n_o_w_l_e_d_g_e.html#ga3143a9ba21c4dfda59ee6033bdd4f0e9">LL_I2C_NACK</a> </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga87e12dc4d102c910e89c58e856ca6871" name="ga87e12dc4d102c910e89c58e856ca6871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87e12dc4d102c910e89c58e856ca6871">&#9670;&#160;</a></span>LL_I2C_DisableBitPOS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_DisableBitPOS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable bit POS (master/host mode). </p>
+<dl class="section note"><dt>Nota</dt><dd>In that case, the ACK bit controls the (N)ACK of the current byte received or the PEC bit indicates that the current byte in shift register is a PEC. @rmtoll CR1 POS LL_I2C_DisableBitPOS </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac152eff240d4ab092aed07c56a8df810" name="gac152eff240d4ab092aed07c56a8df810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac152eff240d4ab092aed07c56a8df810">&#9670;&#160;</a></span>LL_I2C_DisableLastDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_DisableLastDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable DMA last transfer. </p>
+<dl class="section note"><dt>Nota</dt><dd>This action mean that next DMA EOT is not the last transfer. @rmtoll CR2 LAST LL_I2C_DisableLastDMA </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaec804e0ba925e4da924e35633bcdd14f" name="gaec804e0ba925e4da924e35633bcdd14f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec804e0ba925e4da924e35633bcdd14f">&#9670;&#160;</a></span>LL_I2C_DisableReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_DisableReset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable Reset of I2C peripheral. @rmtoll CR1 SWRST LL_I2C_DisableReset. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga83ddebb34169ed30d933aa4610ef062f" name="ga83ddebb34169ed30d933aa4610ef062f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83ddebb34169ed30d933aa4610ef062f">&#9670;&#160;</a></span>LL_I2C_DisableSMBusPECCompare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_DisableSMBusPECCompare </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). </p>
+<dl class="section note"><dt>Nota</dt><dd>Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance. @rmtoll CR1 PEC LL_I2C_DisableSMBusPECCompare </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4707ac0f5cc6322c3fe561bef44659a4" name="ga4707ac0f5cc6322c3fe561bef44659a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4707ac0f5cc6322c3fe561bef44659a4">&#9670;&#160;</a></span>LL_I2C_EnableBitPOS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_EnableBitPOS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable bit POS (master/host mode). </p>
+<dl class="section note"><dt>Nota</dt><dd>In that case, the ACK bit controls the (N)ACK of the next byte received or the PEC bit indicates that the next byte in shift register is a PEC. @rmtoll CR1 POS LL_I2C_EnableBitPOS </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab31d5756a0878cee1e2d940a50852b72" name="gab31d5756a0878cee1e2d940a50852b72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab31d5756a0878cee1e2d940a50852b72">&#9670;&#160;</a></span>LL_I2C_EnableLastDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_EnableLastDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable DMA last transfer. </p>
+<dl class="section note"><dt>Nota</dt><dd>This action mean that next DMA EOT is the last transfer. @rmtoll CR2 LAST LL_I2C_EnableLastDMA </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac24fb1275328978d493b98451a81fe1e" name="gac24fb1275328978d493b98451a81fe1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac24fb1275328978d493b98451a81fe1e">&#9670;&#160;</a></span>LL_I2C_EnableReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_EnableReset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable Reset of I2C peripheral. @rmtoll CR1 SWRST LL_I2C_EnableReset. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga01b5301e2f0173a24195d6b2607e2ae8" name="ga01b5301e2f0173a24195d6b2607e2ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01b5301e2f0173a24195d6b2607e2ae8">&#9670;&#160;</a></span>LL_I2C_EnableSMBusPECCompare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_EnableSMBusPECCompare </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). </p>
+<dl class="section note"><dt>Nota</dt><dd>Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance. </dd>
+<dd>
+This feature is cleared by hardware when the PEC byte is transferred or compared, or by a START or STOP condition, it is also cleared by software. @rmtoll CR1 PEC LL_I2C_EnableSMBusPECCompare </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga83e6d7fbef52a87ef221fba3487afe2b" name="ga83e6d7fbef52a87ef221fba3487afe2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83e6d7fbef52a87ef221fba3487afe2b">&#9670;&#160;</a></span>LL_I2C_GenerateStartCondition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_GenerateStartCondition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a START or RESTART condition. </p>
+<dl class="section note"><dt>Nota</dt><dd>The START bit can be set even if bus is BUSY or I2C is in slave mode. This action has no effect when RELOAD is set. @rmtoll CR1 START LL_I2C_GenerateStartCondition </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadf3921856d465ac13d1b89f4127b6a7c" name="gadf3921856d465ac13d1b89f4127b6a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf3921856d465ac13d1b89f4127b6a7c">&#9670;&#160;</a></span>LL_I2C_GenerateStopCondition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_GenerateStopCondition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a STOP condition after the current byte transfer (master mode). @rmtoll CR1 STOP LL_I2C_GenerateStopCondition. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf96bd7242fab2057cc1cfd658a6f7615" name="gaf96bd7242fab2057cc1cfd658a6f7615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf96bd7242fab2057cc1cfd658a6f7615">&#9670;&#160;</a></span>LL_I2C_GetSMBusPEC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint32_t LL_I2C_GetSMBusPEC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the SMBus Packet Error byte calculated. </p>
+<dl class="section note"><dt>Nota</dt><dd>Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance. @rmtoll SR2 PEC LL_I2C_GetSMBusPEC </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Value</td><td>between Min_Data=0x00 and Max_Data=0xFF </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gafaebe16879cc748a5f5d6b282061666d" name="gafaebe16879cc748a5f5d6b282061666d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafaebe16879cc748a5f5d6b282061666d">&#9670;&#160;</a></span>LL_I2C_GetTransferDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint32_t LL_I2C_GetTransferDirection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate the value of transfer direction. </p>
+<dl class="section note"><dt>Nota</dt><dd>RESET: Bus is in read transfer (peripheral point of view). SET: Bus is in write transfer (peripheral point of view). @rmtoll SR2 TRA LL_I2C_GetTransferDirection </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Returned</td><td>value can be one of the following values: <ul>
+<li><a class="el" href="../../d8/d93/group___i2_c___l_l___e_c___d_i_r_e_c_t_i_o_n.html#ga13b8b7e7c63899dfee28093f783ef7ea">LL_I2C_DIRECTION_WRITE</a> </li>
+<li><a class="el" href="../../d8/d93/group___i2_c___l_l___e_c___d_i_r_e_c_t_i_o_n.html#gabcce2b86c66c3af0c3aaf41bd01c709b">LL_I2C_DIRECTION_READ</a> </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3e6d7910b4e753a37a10d41dd079fd15" name="ga3e6d7910b4e753a37a10d41dd079fd15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e6d7910b4e753a37a10d41dd079fd15">&#9670;&#160;</a></span>LL_I2C_IsEnabledBitPOS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint32_t LL_I2C_IsEnabledBitPOS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if bit POS is enabled or disabled. @rmtoll CR1 POS LL_I2C_IsEnabledBitPOS. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">State</td><td>of bit (1 or 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga05a0e7cd9c8cba838d4ccef3fc0fbdac" name="ga05a0e7cd9c8cba838d4ccef3fc0fbdac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05a0e7cd9c8cba838d4ccef3fc0fbdac">&#9670;&#160;</a></span>LL_I2C_IsEnabledLastDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint32_t LL_I2C_IsEnabledLastDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if DMA last transfer is enabled or disabled. @rmtoll CR2 LAST LL_I2C_IsEnabledLastDMA. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">State</td><td>of bit (1 or 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3c6dbb65435d452a9eae61bd246943c5" name="ga3c6dbb65435d452a9eae61bd246943c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c6dbb65435d452a9eae61bd246943c5">&#9670;&#160;</a></span>LL_I2C_IsEnabledSMBusPECCompare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint32_t LL_I2C_IsEnabledSMBusPECCompare </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the SMBus Packet Error byte transfer or internal comparison is requested or not. </p>
+<dl class="section note"><dt>Nota</dt><dd>Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance. @rmtoll CR1 PEC LL_I2C_IsEnabledSMBusPECCompare </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">State</td><td>of bit (1 or 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga58bb8e732f716bf449b0b95a49e7421c" name="ga58bb8e732f716bf449b0b95a49e7421c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58bb8e732f716bf449b0b95a49e7421c">&#9670;&#160;</a></span>LL_I2C_IsResetEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint32_t LL_I2C_IsResetEnabled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the I2C peripheral is under reset state or not. @rmtoll CR1 SWRST LL_I2C_IsResetEnabled. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">State</td><td>of bit (1 or 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga003d01a59192ddd9765bfc5fd624f50d" name="ga003d01a59192ddd9765bfc5fd624f50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga003d01a59192ddd9765bfc5fd624f50d">&#9670;&#160;</a></span>LL_I2C_ReceiveData8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE uint8_t LL_I2C_ReceiveData8 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read Receive Data register. @rmtoll DR DR LL_I2C_ReceiveData8. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Value</td><td>between Min_Data=0x0 and Max_Data=0xFF </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0a834cd3b6d8208ad98d96775c920209" name="ga0a834cd3b6d8208ad98d96775c920209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a834cd3b6d8208ad98d96775c920209">&#9670;&#160;</a></span>LL_I2C_TransmitData8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__STATIC_INLINE void LL_I2C_TransmitData8 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d6b/struct_i2_c___type_def.html">I2C_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>I2Cx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>Data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write in Transmit Data Register . @rmtoll DR DR LL_I2C_TransmitData8. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">I2Cx</td><td>I2C Instance. </td></tr>
+    <tr><td class="paramname">Data</td><td>Value between Min_Data=0x0 and Max_Data=0xFF </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

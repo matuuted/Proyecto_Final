@@ -1,0 +1,95 @@
+\doxysection{Referencia de la estructura DS3231\+\_\+\+Time}
+\hypertarget{struct_d_s3231___time}{}\label{struct_d_s3231___time}\index{DS3231\_Time@{DS3231\_Time}}
+
+
+Estructura de tiempo.  
+
+
+
+
+{\ttfamily \#include $<$ds3231.\+h$>$}
+
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a46729a903be1a03cdb248fb48d84d4f5}{seconds}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a7acca8be0094a19be6e308ac05924c4f}{minutes}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a00a531a34a1d603329df5778f1203ab6}{hours}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a72369a1087b2aeffe374bb054cb97c12}{day}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a30ca8635d0267ef5190a408d7a134f7e}{date}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a3e00faf7fbf9805e9ec4d2edd6339050}{month}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_d_s3231___time_a7af2065789bc84419b8d5fe109be83b5}{year}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura de tiempo. \begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_d_s3231___time_doc-variable-members}
+\doxysubsection{Documentación de campos}
+\Hypertarget{struct_d_s3231___time_a30ca8635d0267ef5190a408d7a134f7e}\index{DS3231\_Time@{DS3231\_Time}!date@{date}}
+\index{date@{date}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a30ca8635d0267ef5190a408d7a134f7e} 
+uint8\+\_\+t date}
+
+0x04\+: día del mes \Hypertarget{struct_d_s3231___time_a72369a1087b2aeffe374bb054cb97c12}\index{DS3231\_Time@{DS3231\_Time}!day@{day}}
+\index{day@{day}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{day}{day}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a72369a1087b2aeffe374bb054cb97c12} 
+uint8\+\_\+t day}
+
+0x03\+: día de semana \Hypertarget{struct_d_s3231___time_a00a531a34a1d603329df5778f1203ab6}\index{DS3231\_Time@{DS3231\_Time}!hours@{hours}}
+\index{hours@{hours}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{hours}{hours}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a00a531a34a1d603329df5778f1203ab6} 
+uint8\+\_\+t hours}
+
+0x02\+: horas \begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}
+\Hypertarget{struct_d_s3231___time_a7acca8be0094a19be6e308ac05924c4f}\index{DS3231\_Time@{DS3231\_Time}!minutes@{minutes}}
+\index{minutes@{minutes}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{minutes}{minutes}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a7acca8be0094a19be6e308ac05924c4f} 
+uint8\+\_\+t minutes}
+
+0x01\+: minutos \begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}
+\Hypertarget{struct_d_s3231___time_a3e00faf7fbf9805e9ec4d2edd6339050}\index{DS3231\_Time@{DS3231\_Time}!month@{month}}
+\index{month@{month}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{month}{month}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a3e00faf7fbf9805e9ec4d2edd6339050} 
+uint8\+\_\+t month}
+
+0x05\+: mes, bit7=Century \Hypertarget{struct_d_s3231___time_a46729a903be1a03cdb248fb48d84d4f5}\index{DS3231\_Time@{DS3231\_Time}!seconds@{seconds}}
+\index{seconds@{seconds}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{seconds}{seconds}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a46729a903be1a03cdb248fb48d84d4f5} 
+uint8\+\_\+t seconds}
+
+0x00\+: segundos \begin{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}}.\end{Desc}
+\Hypertarget{struct_d_s3231___time_a7af2065789bc84419b8d5fe109be83b5}\index{DS3231\_Time@{DS3231\_Time}!year@{year}}
+\index{year@{year}!DS3231\_Time@{DS3231\_Time}}
+\doxysubsubsection{\texorpdfstring{year}{year}}
+{\footnotesize\ttfamily \label{struct_d_s3231___time_a7af2065789bc84419b8d5fe109be83b5} 
+uint8\+\_\+t year}
+
+0x06\+: año (00..99) 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/\mbox{\hyperlink{ds3231_8h}{ds3231.\+h}}\end{DoxyCompactItemize}

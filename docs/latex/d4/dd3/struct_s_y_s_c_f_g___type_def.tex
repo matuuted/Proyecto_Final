@@ -1,0 +1,83 @@
+\doxysection{Referencia de la estructura SYSCFG\+\_\+\+Type\+Def}
+\hypertarget{struct_s_y_s_c_f_g___type_def}{}\label{struct_s_y_s_c_f_g___type_def}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+
+
+System configuration controller.  
+
+
+
+
+{\ttfamily \#include $<$stm32f446xx.\+h$>$}
+
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_ab36c409d0a009e3ce5a89ac55d3ff194}{MEMRMP}}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_a2130abf1fefb63ce4c4b138fd8c9822a}{PMC}}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_a52f7bf8003ba69d66a4e86dea6eeab65}{EXTICR}} \mbox{[}4\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_afaf27b66c1edc60064db3fa6e693fb59}{RESERVED}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_a08ddbac546fa9928256654d31255c8c3}{CMPCR}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_a28d88d9a08aab1adbebea61c42ef901e}{RESERVED1}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_s_y_s_c_f_g___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+System configuration controller. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_s_y_s_c_f_g___type_def_doc-variable-members}
+\doxysubsection{Documentación de campos}
+\Hypertarget{struct_s_y_s_c_f_g___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!CFGR@{CFGR}}
+\index{CFGR@{CFGR}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{CFGR}{CFGR}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t CFGR}
+
+SYSCFG Configuration register, Address offset\+: 0x2C \Hypertarget{struct_s_y_s_c_f_g___type_def_a08ddbac546fa9928256654d31255c8c3}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!CMPCR@{CMPCR}}
+\index{CMPCR@{CMPCR}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{CMPCR}{CMPCR}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_a08ddbac546fa9928256654d31255c8c3} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t CMPCR}
+
+SYSCFG Compensation cell control register, Address offset\+: 0x20 \Hypertarget{struct_s_y_s_c_f_g___type_def_a52f7bf8003ba69d66a4e86dea6eeab65}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!EXTICR@{EXTICR}}
+\index{EXTICR@{EXTICR}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{EXTICR}{EXTICR}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_a52f7bf8003ba69d66a4e86dea6eeab65} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t EXTICR\mbox{[}4\mbox{]}}
+
+SYSCFG external interrupt configuration registers, Address offset\+: 0x08-\/0x14 \Hypertarget{struct_s_y_s_c_f_g___type_def_ab36c409d0a009e3ce5a89ac55d3ff194}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!MEMRMP@{MEMRMP}}
+\index{MEMRMP@{MEMRMP}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{MEMRMP}{MEMRMP}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_ab36c409d0a009e3ce5a89ac55d3ff194} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t MEMRMP}
+
+SYSCFG memory remap register, Address offset\+: 0x00 \Hypertarget{struct_s_y_s_c_f_g___type_def_a2130abf1fefb63ce4c4b138fd8c9822a}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!PMC@{PMC}}
+\index{PMC@{PMC}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{PMC}{PMC}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_a2130abf1fefb63ce4c4b138fd8c9822a} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t PMC}
+
+SYSCFG peripheral mode configuration register, Address offset\+: 0x04 \Hypertarget{struct_s_y_s_c_f_g___type_def_afaf27b66c1edc60064db3fa6e693fb59}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!RESERVED@{RESERVED}}
+\index{RESERVED@{RESERVED}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{RESERVED}{RESERVED}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_afaf27b66c1edc60064db3fa6e693fb59} 
+uint32\+\_\+t RESERVED\mbox{[}2\mbox{]}}
+
+Reserved, 0x18-\/0x1C \Hypertarget{struct_s_y_s_c_f_g___type_def_a28d88d9a08aab1adbebea61c42ef901e}\index{SYSCFG\_TypeDef@{SYSCFG\_TypeDef}!RESERVED1@{RESERVED1}}
+\index{RESERVED1@{RESERVED1}!SYSCFG\_TypeDef@{SYSCFG\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{RESERVED1}{RESERVED1}}
+{\footnotesize\ttfamily \label{struct_s_y_s_c_f_g___type_def_a28d88d9a08aab1adbebea61c42ef901e} 
+uint32\+\_\+t RESERVED1\mbox{[}2\mbox{]}}
+
+Reserved, 0x24-\/0x28 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Drivers/\+CMSIS/\+Device/\+ST/\+STM32\+F4xx/\+Include/\mbox{\hyperlink{stm32f446xx_8h}{stm32f446xx.\+h}}\end{DoxyCompactItemize}

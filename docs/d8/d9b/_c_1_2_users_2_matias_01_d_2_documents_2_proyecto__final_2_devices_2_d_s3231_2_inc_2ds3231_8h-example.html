@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Final – Medición de Inclinación: C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/Inc/ds3231.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Final – Medición de Inclinación<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Este proyecto utiliza la placa NUCLEO-STM32F446RE y permite detectar y visualizar en tiempo real la inclinación mediante el sensor MPU-6050.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('d8/d9b/_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">C:/Users/Matias D/Documents/Proyecto_Final/Devices/DS3231/Inc/ds3231.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a id="a0" name="a0"></a><a class="code hl_function" href="../../da/dfa/ds3231_8h.html#a1faa1f4d7a1be389faf658871da42f39">DS3231_Init</a>() == DS3231_OK) {</div>
+<div class="line">    (void)<a id="a1" name="a1"></a><a class="code hl_function" href="../../da/dfa/ds3231_8h.html#af422c0f37f5763d688ae3b815002ffda">DS3231_SetTime</a>(25, 9, 24, 3, 16, 20, 30); <span class="comment">// 2025-09-24 16:20:30</span></div>
+<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_struct" href="../../da/d31/struct_d_s3231___time.html">DS3231_Time</a> now;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a id="a3" name="a3"></a><a class="code hl_function" href="../../da/dfa/ds3231_8h.html#a13a4ba9b594d36f0e92ace12336426b6">DS3231_ReadTime</a>(&amp;now) == DS3231_OK) {</div>
+<div class="line">        uint8_t hh = now.<a id="a4" name="a4"></a><a class="code hl_variable" href="../../da/d31/struct_d_s3231___time.html#a00a531a34a1d603329df5778f1203ab6">hours</a>;</div>
+<div class="line">        uint8_t mi = now.<a id="a5" name="a5"></a><a class="code hl_variable" href="../../da/d31/struct_d_s3231___time.html#a7acca8be0094a19be6e308ac05924c4f">minutes</a>;</div>
+<div class="line">        uint8_t ss = now.<a id="a6" name="a6"></a><a class="code hl_variable" href="../../da/d31/struct_d_s3231___time.html#a46729a903be1a03cdb248fb48d84d4f5">seconds</a>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="ads3231_8h_html_a13a4ba9b594d36f0e92ace12336426b6"><div class="ttname"><a href="../../da/dfa/ds3231_8h.html#a13a4ba9b594d36f0e92ace12336426b6">DS3231_ReadTime</a></div><div class="ttdeci">DS3231_Status DS3231_ReadTime(DS3231_Time *time)</div><div class="ttdoc">Lee la hora actual desde el DS3231.</div><div class="ttdef"><b>Definition</b> ds3231.c:32</div></div>
+<div class="ttc" id="ads3231_8h_html_a1faa1f4d7a1be389faf658871da42f39"><div class="ttname"><a href="../../da/dfa/ds3231_8h.html#a1faa1f4d7a1be389faf658871da42f39">DS3231_Init</a></div><div class="ttdeci">DS3231_Status DS3231_Init(void)</div><div class="ttdoc">Verifica la presencia del DS3231 en el bus de I2C.</div><div class="ttdef"><b>Definition</b> ds3231.c:26</div></div>
+<div class="ttc" id="ads3231_8h_html_af422c0f37f5763d688ae3b815002ffda"><div class="ttname"><a href="../../da/dfa/ds3231_8h.html#af422c0f37f5763d688ae3b815002ffda">DS3231_SetTime</a></div><div class="ttdeci">DS3231_Status DS3231_SetTime(uint8_t year, uint8_t month, uint8_t date, uint8_t day, uint8_t hour, uint8_t min, uint8_t sec)</div><div class="ttdoc">Configura la fecha y hora del RTC.</div><div class="ttdef"><b>Definition</b> ds3231.c:73</div></div>
+<div class="ttc" id="astruct_d_s3231___time_html"><div class="ttname"><a href="../../da/d31/struct_d_s3231___time.html">DS3231_Time</a></div><div class="ttdoc">Estructura de tiempo.</div><div class="ttdef"><b>Definition</b> ds3231.h:34</div></div>
+<div class="ttc" id="astruct_d_s3231___time_html_a00a531a34a1d603329df5778f1203ab6"><div class="ttname"><a href="../../da/d31/struct_d_s3231___time.html#a00a531a34a1d603329df5778f1203ab6">DS3231_Time::hours</a></div><div class="ttdeci">uint8_t hours</div><div class="ttdef"><b>Definition</b> ds3231.h:37</div></div>
+<div class="ttc" id="astruct_d_s3231___time_html_a46729a903be1a03cdb248fb48d84d4f5"><div class="ttname"><a href="../../da/d31/struct_d_s3231___time.html#a46729a903be1a03cdb248fb48d84d4f5">DS3231_Time::seconds</a></div><div class="ttdeci">uint8_t seconds</div><div class="ttdef"><b>Definition</b> ds3231.h:35</div></div>
+<div class="ttc" id="astruct_d_s3231___time_html_a7acca8be0094a19be6e308ac05924c4f"><div class="ttname"><a href="../../da/d31/struct_d_s3231___time.html#a7acca8be0094a19be6e308ac05924c4f">DS3231_Time::minutes</a></div><div class="ttdeci">uint8_t minutes</div><div class="ttdef"><b>Definition</b> ds3231.h:36</div></div>
+</div><!-- fragment --><div class="fragment"></div><!-- fragment --><p> <a class="el" href="../../da/dfa/ds3231_8h.html" title="Driver del RTC DS3231 utilizando dev_i2cm.">D/Documents/Proyecto_Final/Devices/DS3231/Inc/ds3231.h</a> </p>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

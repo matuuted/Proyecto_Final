@@ -1,0 +1,49 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+MPU6050/\+Inc/mpu6050.h}
+\hypertarget{mpu6050_8h}{}\label{mpu6050_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050.h}}
+
+
+Driver del MPU6050 utilizando dev\+\_\+i2cm.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}mpu6050\+\_\+registers.\+h"{}}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_m_p_u6050___data}{MPU6050\+\_\+\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_m_p_u6050___data_raw}{MPU6050\+\_\+\+Data\+Raw}}
+\item 
+struct \mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\+\_\+\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mpu6050_8h_a74798186d0faa3446e6d56af518c8d00}\label{mpu6050_8h_a74798186d0faa3446e6d56af518c8d00} 
+enum {\bfseries MPU6050\+\_\+\+Status} \{ \newline
+{\bfseries MPU6050\+\_\+\+OK} = 0
+, {\bfseries MPU6050\+\_\+\+ERROR} = -\/1
+, {\bfseries MPU6050\+\_\+\+TIMEOUT} = -\/2
+, {\bfseries MPU6050\+\_\+\+NOT\+\_\+\+READY} = -\/3
+, \newline
+{\bfseries MPU6050\+\_\+\+INVALID\+\_\+\+PARAM} = -\/4
+, {\bfseries MPU6050\+\_\+\+BUSY} = -\/5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mpu6050_8h_a366929085978072e2c8f0b0868bbc61b}\label{mpu6050_8h_a366929085978072e2c8f0b0868bbc61b} 
+MPU6050\+\_\+\+Status {\bfseries MPU6050\+\_\+\+Init} (\mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\+\_\+\+Handler}} \texorpdfstring{$\ast$}{*}device)
+\item 
+\Hypertarget{mpu6050_8h_a99b4fdad5afbac0225a49ab9cf5fe509}\label{mpu6050_8h_a99b4fdad5afbac0225a49ab9cf5fe509} 
+MPU6050\+\_\+\+Status {\bfseries MPU6050\+\_\+\+Read} (\mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\+\_\+\+Handler}} \texorpdfstring{$\ast$}{*}device)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Driver del MPU6050 utilizando dev\+\_\+i2cm. 
+
+API utilizada para leer y escribir registros del MPU6050. 

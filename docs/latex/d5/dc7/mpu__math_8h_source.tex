@@ -1,0 +1,22 @@
+\doxysection{mpu\+\_\+math.\+h}
+\hypertarget{mpu__math_8h_source}{}\label{mpu__math_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu\_math.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu\_math.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ RAD\_TO\_DEG}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ RAD\_TO\_DEG\ (180.0f\ /\ 3.14159265358979323846f)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ ======\ Cálculo\ de\ inclinación\ ======}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ Fórmula:\ atan2f(-\/Ax,\ sqrt(Ay\string^2\ +\ Az\string^2))\ *\ RAD\_TO\_DEG}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Devuelve\ el\ ángulo\ de\ inclinación\ respecto\ del\ eje\ X\ (en\ grados).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ ax,\ ay,\ az\ deben\ estar\ expresados\ en\ "{}g"{}\ (aceleración\ normalizada).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ mpu\_get\_angle\_deg(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay,\ \textcolor{keywordtype}{float}\ az)}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{return}\ atanf(-\/ax\ /\ sqrtf(ay*ay\ +\ az*az))\ *\ RAD\_TO\_DEG;}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}

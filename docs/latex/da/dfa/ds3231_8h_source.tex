@@ -1,0 +1,65 @@
+\doxysection{ds3231.\+h}
+\hypertarget{ds3231_8h_source}{}\label{ds3231_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231.h}}
+\mbox{\hyperlink{ds3231_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ DS3231\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ DS3231\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ ENUMS\ Y\ STRUCTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ DS3231\_OK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \ 0,\ \textcolor{comment}{//\ OK}}
+\DoxyCodeLine{00024\ \ \ \ \ DS3231\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ =\ -\/1,\ \textcolor{comment}{//\ Error\ genérico\ de\ HAL}}
+\DoxyCodeLine{00025\ \ \ \ \ DS3231\_TIMEOUT\ \ \ \ \ \ \ \ \ \ =\ -\/2,\ \textcolor{comment}{//\ Timeout\ de\ comunicación\ I2C}}
+\DoxyCodeLine{00026\ \ \ \ \ DS3231\_NOT\_READY\ \ \ \ \ \ \ \ =\ -\/3,\ \textcolor{comment}{//\ El\ DS3231\ no\ respondió\ al\ address}}
+\DoxyCodeLine{00027\ \ \ \ \ DS3231\_INVALID\_PARAM\ \ \ \ =\ -\/4,\ \textcolor{comment}{//\ Parámetros\ inválidos}}
+\DoxyCodeLine{00028\ \ \ \ \ DS3231\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ =\ -\/5,\ \textcolor{comment}{//\ HAL\ Busy}}
+\DoxyCodeLine{00029\ \}\ DS3231\_Status;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a46729a903be1a03cdb248fb48d84d4f5}{seconds}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a7acca8be0094a19be6e308ac05924c4f}{minutes}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a00a531a34a1d603329df5778f1203ab6}{hours}};\ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a72369a1087b2aeffe374bb054cb97c12}{day}};\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a30ca8635d0267ef5190a408d7a134f7e}{date}};\ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a3e00faf7fbf9805e9ec4d2edd6339050}{month}};\ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_d_s3231___time_a7af2065789bc84419b8d5fe109be83b5}{year}};\ \ \ \ }
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{struct_d_s3231___time}{DS3231\_Time}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ dec2bcd(uint8\_t\ value)\ \{\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ (uint8\_t)(((value/10)\ <<\ 4)\ |\ (value\ \%\ 10));\ }
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ bcd2dec(uint8\_t\ value)\ \{\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ (uint8\_t)(((value\ >>\ 4)\ *\ 10)\ +\ (value\ \&\ 0x0F));\ }
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ API\ pública\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ DS3231\_Status\ \mbox{\hyperlink{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39}{DS3231\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ DS3231\_Status\ \mbox{\hyperlink{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6}{DS3231\_ReadTime}}(\mbox{\hyperlink{struct_d_s3231___time}{DS3231\_Time}}\ *time);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00093\ DS3231\_Status\ \mbox{\hyperlink{ds3231_8h_af422c0f37f5763d688ae3b815002ffda}{DS3231\_SetTime}}(uint8\_t\ year,\ uint8\_t\ month,\ uint8\_t\ date,\ uint8\_t\ day,\ uint8\_t\ hour,\ uint8\_t\ min,\ uint8\_t\ sec);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DS3231\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

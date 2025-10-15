@@ -1,0 +1,120 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/src/dev/dev\+\_\+uart.c}
+\hypertarget{dev__uart_8c}{}\label{dev__uart_8c}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/src/dev/dev\_uart.c@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/src/dev/dev\_uart.c}}
+
+
+This file provides code for the configuration of the UART.  
+
+
+{\ttfamily \#include "{}dev\+\_\+uart.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{dev__uart_8c_a1bfa844d168effdeefbef65eeb86ce8f}{uart\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa la UART. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{dev__uart_8c_aee185905f5ab14c71a4e602f959d9979}{uart\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Desinicializa la UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev__uart_8c_af39ecc336dacb5da49f6bf5093952abe}{uart\+Send\+String}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}pstring)
+\begin{DoxyCompactList}\small\item\em Envía una cadena de bytes por UART finalizada en \textquotesingle{}\textbackslash{}0\textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev__uart_8c_a5f7272d7b83bf68319beb9c9acbb3f22}{uart\+Send\+String\+Size}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}pstring, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Envía una cantidad específica de bytes por UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev__uart_8c_aeffd5a15e15e28b5261f17b864ad28c4}{uart\+Receive\+String\+Size}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}pstring, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Recibe una cantidad de bytes por UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+This file provides code for the configuration of the UART. 
+
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\label{doc-func-members}
+\Hypertarget{dev__uart_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{dev__uart_8c_aee185905f5ab14c71a4e602f959d9979}\index{dev\_uart.c@{dev\_uart.c}!uartDeInit@{uartDeInit}}
+\index{uartDeInit@{uartDeInit}!dev\_uart.c@{dev\_uart.c}}
+\doxysubsubsection{\texorpdfstring{uartDeInit()}{uartDeInit()}}
+{\footnotesize\ttfamily \label{dev__uart_8c_aee185905f5ab14c71a4e602f959d9979} 
+bool uart\+De\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desinicializa la UART. 
+
+\begin{DoxyReturn}{Devuelve}
+true si se finalizo correctamente, false si hubo algún problema. 
+\end{DoxyReturn}
+\Hypertarget{dev__uart_8c_a1bfa844d168effdeefbef65eeb86ce8f}\index{dev\_uart.c@{dev\_uart.c}!uartInit@{uartInit}}
+\index{uartInit@{uartInit}!dev\_uart.c@{dev\_uart.c}}
+\doxysubsubsection{\texorpdfstring{uartInit()}{uartInit()}}
+{\footnotesize\ttfamily \label{dev__uart_8c_a1bfa844d168effdeefbef65eeb86ce8f} 
+bool uart\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la UART. 
+
+\begin{DoxyReturn}{Devuelve}
+true si se inicializó bien, false si hubo algún problema en la configuracion. 
+\end{DoxyReturn}
+\Hypertarget{dev__uart_8c_aeffd5a15e15e28b5261f17b864ad28c4}\index{dev\_uart.c@{dev\_uart.c}!uartReceiveStringSize@{uartReceiveStringSize}}
+\index{uartReceiveStringSize@{uartReceiveStringSize}!dev\_uart.c@{dev\_uart.c}}
+\doxysubsubsection{\texorpdfstring{uartReceiveStringSize()}{uartReceiveStringSize()}}
+{\footnotesize\ttfamily \label{dev__uart_8c_aeffd5a15e15e28b5261f17b864ad28c4} 
+void uart\+Receive\+String\+Size (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{pstring}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Recibe una cantidad de bytes por UART. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pstring} & Puntero al buffer donde se guardarán los datos. \\
+\hline
+{\em size} & Cantidad de bytes a recibir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void 
+\end{DoxyReturn}
+\Hypertarget{dev__uart_8c_af39ecc336dacb5da49f6bf5093952abe}\index{dev\_uart.c@{dev\_uart.c}!uartSendString@{uartSendString}}
+\index{uartSendString@{uartSendString}!dev\_uart.c@{dev\_uart.c}}
+\doxysubsubsection{\texorpdfstring{uartSendString()}{uartSendString()}}
+{\footnotesize\ttfamily \label{dev__uart_8c_af39ecc336dacb5da49f6bf5093952abe} 
+void uart\+Send\+String (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{pstring}{}\end{DoxyParamCaption})}
+
+
+
+Envía una cadena de bytes por UART finalizada en \textquotesingle{}\textbackslash{}0\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pstring} & Puntero a la cadena a enviar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void 
+\end{DoxyReturn}
+\Hypertarget{dev__uart_8c_a5f7272d7b83bf68319beb9c9acbb3f22}\index{dev\_uart.c@{dev\_uart.c}!uartSendStringSize@{uartSendStringSize}}
+\index{uartSendStringSize@{uartSendStringSize}!dev\_uart.c@{dev\_uart.c}}
+\doxysubsubsection{\texorpdfstring{uartSendStringSize()}{uartSendStringSize()}}
+{\footnotesize\ttfamily \label{dev__uart_8c_a5f7272d7b83bf68319beb9c9acbb3f22} 
+void uart\+Send\+String\+Size (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{pstring}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Envía una cantidad específica de bytes por UART. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pstring} & Puntero al buffer de datos. \\
+\hline
+{\em size} & Cantidad de bytes a enviar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void 
+\end{DoxyReturn}

@@ -1,0 +1,58 @@
+\doxysection{dev\+\_\+i2cs\+\_\+api.\+h}
+\hypertarget{dev__i2cs__api_8h_source}{}\label{dev__i2cs__api_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api/dev\_i2cs\_api.h@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/api/dev\_i2cs\_api.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ DEV\_I2CS\_API\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ DEV\_I2CS\_API\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{api_8h}{api.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DEV\_I2CS\_API\_ID\ 0}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ API\ Identifiers\ */}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum}\ DEV\_I2CS\_API\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ I2CS\_INITSTART\ =\ 0,}
+\DoxyCodeLine{00012\ \ \ \ \ I2CS\_DEINIT\ =\ 1,}
+\DoxyCodeLine{00013\ \ \ \ \ I2C2\_ENABLEACKNOWLEDGE\ =\ 2,}
+\DoxyCodeLine{00014\ \ \ \ \ I2C2\_DISABLEACKNOWLEDGE\ =\ 3,}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*\ API\ Function\ List\ */}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ DEV\_I2CS\_FUNCTIONS\_COUNT\ 4}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ FPTRS\ DEV\_I2CS\_FPTRS[DEV\_I2CS\_FUNCTIONS\_COUNT];}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ I2CS\_SLAVE\_ADDR\ 0x50}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum}\ I2CS\_STATE\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ I2CS\_STATE\_READY\ =\ 0,}
+\DoxyCodeLine{00030\ \ \ \ \ I2CS\_STATE\_GET\_ADDR\ =\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ I2CS\_STATE\_SET\_ADDR\ =\ 2,}
+\DoxyCodeLine{00034\ \ \ \ \ I2CS\_STATE\_GET\_DATA\ =\ 3,}
+\DoxyCodeLine{00036\ \ \ \ \ I2CS\_STATE\_SET\_DATA\ =\ 4,}
+\DoxyCodeLine{00038\ \ \ \ \ I2CS\_STATE\_NACK\ =\ 5,}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ HAL\_StatusTypeDef\ \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a13abebc24eb99a94c8824cdd8ef4f2fb}{I2CS\_InitStart}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ HAL\_StatusTypeDef\ \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a63dd2d0759f85fa6ad6f074c67d626fe}{I2CS\_DeInit}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ HAL\_StatusTypeDef\ \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_a297ceca2a18671a981c8ad3382480e12}{I2C2\_EnableAcknowledge}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ HAL\_StatusTypeDef\ \mbox{\hyperlink{fw_2app_2mcu_2src_2dev_2dev__i2cs_8c_ab1dee84d359addfa9a5ece87ac1ef9d4}{I2C2\_DisableAcknowledge}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ }
+\DoxyCodeLine{00086\ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_DEV\_\_API\_H}}
+
+\end{DoxyCode}

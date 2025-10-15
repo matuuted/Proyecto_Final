@@ -1,0 +1,50 @@
+\doxysection{Referencia de la estructura SM\+\_\+\+Handler}
+\hypertarget{struct_s_m___handler}{}\label{struct_s_m___handler}\index{SM\_Handler@{SM\_Handler}}
+
+
+Estructura de control que contiene todas las variables de la SM principal.  
+
+
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_s_m___handler_a27fb35297ecb7f21f1dce222e59ff99f}\label{struct_s_m___handler_a27fb35297ecb7f21f1dce222e59ff99f} 
+SM\+\_\+\+State {\bfseries state}
+\item 
+\Hypertarget{struct_s_m___handler_adf73d378bf148db1fd5dff5352baed5c}\label{struct_s_m___handler_adf73d378bf148db1fd5dff5352baed5c} 
+\mbox{\hyperlink{struct_m_p_u6050___handler}{MPU6050\+\_\+\+Handler}} {\bfseries mpu}
+\item 
+\Hypertarget{struct_s_m___handler_ac43beab52ab5966aacdb48a4cadb3e25}\label{struct_s_m___handler_ac43beab52ab5966aacdb48a4cadb3e25} 
+\mbox{\hyperlink{struct_d_s3231___time}{DS3231\+\_\+\+Time}} {\bfseries rtc}
+\item 
+\Hypertarget{struct_s_m___handler_aeaf6a20e2b084fd07c844b871d1c2f59}\label{struct_s_m___handler_aeaf6a20e2b084fd07c844b871d1c2f59} 
+float {\bfseries angle\+\_\+deg}
+\item 
+\Hypertarget{struct_s_m___handler_acb8d855c11458ad066166fc584e32b1c}\label{struct_s_m___handler_acb8d855c11458ad066166fc584e32b1c} 
+float {\bfseries angle\+\_\+filt}
+\item 
+\Hypertarget{struct_s_m___handler_aae4c86990951e260343d103e7034d821}\label{struct_s_m___handler_aae4c86990951e260343d103e7034d821} 
+uint32\+\_\+t {\bfseries blink\+\_\+ms}
+\item 
+\Hypertarget{struct_s_m___handler_aa4ae87645d1d58300259d7bf9e533f62}\label{struct_s_m___handler_aa4ae87645d1d58300259d7bf9e533f62} 
+uint32\+\_\+t {\bfseries blink\+\_\+acc}
+\item 
+\Hypertarget{struct_s_m___handler_a664caad48154de21ade1e675530cf681}\label{struct_s_m___handler_a664caad48154de21ade1e675530cf681} 
+uint32\+\_\+t {\bfseries tick\+\_\+ms}
+\item 
+\Hypertarget{struct_s_m___handler_a92a968cecf05f689c1a43d7534d011dc}\label{struct_s_m___handler_a92a968cecf05f689c1a43d7534d011dc} 
+uint32\+\_\+t {\bfseries lcd\+\_\+div}
+\item 
+\Hypertarget{struct_s_m___handler_a08bcdf555974863df2a61aa70788810e}\label{struct_s_m___handler_a08bcdf555974863df2a61aa70788810e} 
+uint32\+\_\+t {\bfseries uart\+\_\+div}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura de control que contiene todas las variables de la SM principal. 
+
+Esta estructura conserva el estado actual del sistema, los datos de sensores, y los contadores asociados al ciclo de muestreo. 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/src/sys/\mbox{\hyperlink{fw_2app_2mcu_2src_2sys_2sys__sm_8c}{sys\+\_\+sm.\+c}}\end{DoxyCompactItemize}

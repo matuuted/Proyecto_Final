@@ -1,0 +1,35 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231\+\_\+port.h}
+\hypertarget{ds3231__port_8h}{}\label{ds3231__port_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231\_port.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Inc/ds3231\_port.h}}
+
+
+Driver del RTC DS3231 utilizando dev\+\_\+i2cm.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}dev\+\_\+i2cm.\+h"{}}\newline
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga8076305a342fb38bb70a8dc3555993ae}{DS3231\+\_\+\+ADDRESS}}~(0x68)
+\item 
+\#define {\bfseries DS3231\+\_\+\+RETRY\+\_\+\+COUNT}~(3)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___r_t_c_ga2a6a9e0b47b60f701561c1a6fe968337}{DS3231\+\_\+is\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica la presencia del RTC DS3231 en el bus I2C. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___r_t_c_ga953cfaa0df07c95fc7d8aaea1ac3052f}{DS3231\+\_\+register\+\_\+write}} (uint8\+\_\+t reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Escribe un registro del DS3231. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___r_t_c_gabb75fc60dd29d5be768acb3c24796864}{DS3231\+\_\+register\+\_\+block\+\_\+write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Escribe un bloque de datos del DS3231. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___r_t_c_gabfa05638e00f1afcd1877be79d763e21}{DS3231\+\_\+register\+\_\+read}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Lee un registro del DS3231. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___r_t_c_ga353dec10ce236fb9c02bca308821d6e7}{DS3231\+\_\+register\+\_\+block\+\_\+read}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Lee un registro del DS3231. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Driver del RTC DS3231 utilizando dev\+\_\+i2cm. 
+
+API utilizada para leer y escribir registros del RTC DS3231. 

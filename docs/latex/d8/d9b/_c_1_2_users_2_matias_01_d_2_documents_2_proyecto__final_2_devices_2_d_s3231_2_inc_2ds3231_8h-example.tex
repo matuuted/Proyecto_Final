@@ -1,0 +1,21 @@
+\doxysection{C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h}
+\hypertarget{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}{}\label{_c_1_2_users_2_matias_01_d_2_documents_2_proyecto__final_2_devices_2_d_s3231_2_inc_2ds3231_8h-example}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{ds3231_8h_a1faa1f4d7a1be389faf658871da42f39}{DS3231\_Init}}()\ ==\ DS3231\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ (void)\mbox{\hyperlink{ds3231_8h_af422c0f37f5763d688ae3b815002ffda}{DS3231\_SetTime}}(25,\ 9,\ 24,\ 3,\ 16,\ 20,\ 30);\ \textcolor{comment}{//\ 2025-\/09-\/24\ 16:20:30}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_d_s3231___time}{DS3231\_Time}}\ now;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{ds3231_8h_a13a4ba9b594d36f0e92ace12336426b6}{DS3231\_ReadTime}}(\&now)\ ==\ DS3231\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ uint8\_t\ hh\ =\ now.\mbox{\hyperlink{struct_d_s3231___time_a00a531a34a1d603329df5778f1203ab6}{hours}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ uint8\_t\ mi\ =\ now.\mbox{\hyperlink{struct_d_s3231___time_a7acca8be0094a19be6e308ac05924c4f}{minutes}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ uint8\_t\ ss\ =\ now.\mbox{\hyperlink{struct_d_s3231___time_a46729a903be1a03cdb248fb48d84d4f5}{seconds}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \doxylink{ds3231_8h}{D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Inc/ds3231.\+h} 

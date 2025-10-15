@@ -1,0 +1,49 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/inc/dev/dev\+\_\+i2cm.h}
+\hypertarget{dev__i2cm_8h}{}\label{dev__i2cm_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/dev/dev\_i2cm.h@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/inc/dev/dev\_i2cm.h}}
+
+
+Capa de I2C Master (HAL) para STM32.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_e_v___i2_c_m_gafa3215f0aa766367f5d34bee80929152}{I2\+C\+\_\+\+TIMEOUT}}~(5000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga29d1d5bf3c57039940faa3601ea8d3bf}{I2\+CM\+\_\+\+Init\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa I2\+C1 a 400 k\+Hz, 7-\/bit, sin dual address. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga1b5664928497631a73d21cc164c2683d}{I2\+CM\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Desinicializa I2\+C1. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga8d0aae78b2c2c14f3e513211dffafbcc}{I2\+CM\+\_\+\+Write}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Escribe un buffer en un esclavo I²C. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_ga86a9c7298258aa62d3ad18c62087cfb1}{I2\+CM\+\_\+\+Read}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Lee un buffer crudo desde un esclavo I²C (no lee dirección interna). \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_gab61d6e6c5f098a0570e5af1ccfe05a42}{I2\+CM\+\_\+\+Read\+\_\+\+Sr}} (uint8\+\_\+t address, uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Lee bytes desde un registro interno. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___d_e_v___i2_c_m_gaaa296d609dbf38a083dabcd4006ad8c9}{I2\+CM\+\_\+\+Is\+Device\+Ready}} (uint8\+\_\+t address, uint32\+\_\+t trials)
+\begin{DoxyCompactList}\small\item\em Verifica si un esclavo responde (ACK) en la dirección dada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Capa de I2C Master (HAL) para STM32. 
+
+\begin{DoxyAuthor}{Autor}
+\texorpdfstring{$>$}{>} Matias D. \texorpdfstring{$<$}{<} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+2025
+\end{DoxyDate}
+Contiene operaciones I²C Master del proyecto.
+
+\begin{DoxyNote}{Nota}
+
+\begin{DoxyItemize}
+\item La dirección del esclavo se pasa en 7-\/bit (p.\+ej. 0x68) y la capa hace (addr\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}1).
+\item Timeout por defecto\+: I2\+C\+\_\+\+TIMEOUT (ms). 
+\end{DoxyItemize}
+\end{DoxyNote}

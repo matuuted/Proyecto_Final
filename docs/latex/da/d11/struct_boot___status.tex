@@ -1,0 +1,35 @@
+\doxysection{Referencia de la estructura Boot\+\_\+\+Status}
+\hypertarget{struct_boot___status}{}\label{struct_boot___status}\index{Boot\_Status@{Boot\_Status}}
+
+
+Estructura utilizada en el proceso de inicialización de dispositivos.  
+
+
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_boot___status_abd4b2be52317a17ead88a8886c12bc08}\label{struct_boot___status_abd4b2be52317a17ead88a8886c12bc08} 
+\mbox{\hyperlink{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a9a1771f1c13e930cd386130919f3ce93}{Device\+\_\+\+Init\+\_\+\+Stage}} {\bfseries init\+\_\+stage}
+\item 
+\Hypertarget{struct_boot___status_a5c137742adc3121b739b0fb440d44e77}\label{struct_boot___status_a5c137742adc3121b739b0fb440d44e77} 
+uint8\+\_\+t {\bfseries attempt\+\_\+count}
+\item 
+\Hypertarget{struct_boot___status_ac0537b3ce4a7cb211c43193dcb933038}\label{struct_boot___status_ac0537b3ce4a7cb211c43193dcb933038} 
+bool {\bfseries lcd\+\_\+ready}
+\item 
+\Hypertarget{struct_boot___status_abdc5e0a18d254ebdb18186eba350e015}\label{struct_boot___status_abdc5e0a18d254ebdb18186eba350e015} 
+bool {\bfseries rtc\+\_\+ready}
+\item 
+\Hypertarget{struct_boot___status_a043a0104ecc64906af56a88611c77855}\label{struct_boot___status_a043a0104ecc64906af56a88611c77855} 
+bool {\bfseries mpu\+\_\+ready}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura utilizada en el proceso de inicialización de dispositivos. 
+
+Permite reintentar los periféricos que fallaron, evitando reinicios innecesarios de los dispositivos ya inicializados. 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/fw/app/mcu/src/sys/\mbox{\hyperlink{fw_2app_2mcu_2src_2sys_2sys__sm_8c}{sys\+\_\+sm.\+c}}\end{DoxyCompactItemize}

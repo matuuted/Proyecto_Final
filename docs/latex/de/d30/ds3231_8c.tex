@@ -1,0 +1,95 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+DS3231/\+Src/ds3231.c}
+\hypertarget{ds3231_8c}{}\label{ds3231_8c}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Src/ds3231.c@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/DS3231/Src/ds3231.c}}
+
+
+Implementación del driver DS3231, utilizando \doxylink{ds3231__port_8c}{ds3231\+\_\+port.\+c}.  
+
+
+{\ttfamily \#include "{}ds3231.\+h"{}}\newline
+{\ttfamily \#include "{}ds3231\+\_\+registers.\+h"{}}\newline
+{\ttfamily \#include "{}ds3231\+\_\+port.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+DS3231\+\_\+\+Status \mbox{\hyperlink{ds3231_8c_a1faa1f4d7a1be389faf658871da42f39}{DS3231\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica la presencia del DS3231 en el bus de I2C. \end{DoxyCompactList}\item 
+DS3231\+\_\+\+Status \mbox{\hyperlink{ds3231_8c_a13a4ba9b594d36f0e92ace12336426b6}{DS3231\+\_\+\+Read\+Time}} (\mbox{\hyperlink{struct_d_s3231___time}{DS3231\+\_\+\+Time}} \texorpdfstring{$\ast$}{*}time)
+\begin{DoxyCompactList}\small\item\em Lee la hora actual desde el DS3231. \end{DoxyCompactList}\item 
+DS3231\+\_\+\+Status \mbox{\hyperlink{ds3231_8c_af422c0f37f5763d688ae3b815002ffda}{DS3231\+\_\+\+Set\+Time}} (uint8\+\_\+t year, uint8\+\_\+t month, uint8\+\_\+t date, uint8\+\_\+t day, uint8\+\_\+t hour, uint8\+\_\+t min, uint8\+\_\+t sec)
+\begin{DoxyCompactList}\small\item\em Configura la fecha y hora del RTC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementación del driver DS3231, utilizando \doxylink{ds3231__port_8c}{ds3231\+\_\+port.\+c}. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{ds3231_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{ds3231_8c_a1faa1f4d7a1be389faf658871da42f39}\index{ds3231.c@{ds3231.c}!DS3231\_Init@{DS3231\_Init}}
+\index{DS3231\_Init@{DS3231\_Init}!ds3231.c@{ds3231.c}}
+\doxysubsubsection{\texorpdfstring{DS3231\_Init()}{DS3231\_Init()}}
+{\footnotesize\ttfamily \label{ds3231_8c_a1faa1f4d7a1be389faf658871da42f39} 
+DS3231\+\_\+\+Status DS3231\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica la presencia del DS3231 en el bus de I2C. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em void.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+DS3231\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\Hypertarget{ds3231_8c_a13a4ba9b594d36f0e92ace12336426b6}\index{ds3231.c@{ds3231.c}!DS3231\_ReadTime@{DS3231\_ReadTime}}
+\index{DS3231\_ReadTime@{DS3231\_ReadTime}!ds3231.c@{ds3231.c}}
+\doxysubsubsection{\texorpdfstring{DS3231\_ReadTime()}{DS3231\_ReadTime()}}
+{\footnotesize\ttfamily \label{ds3231_8c_a13a4ba9b594d36f0e92ace12336426b6} 
+DS3231\+\_\+\+Status DS3231\+\_\+\+Read\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_s3231___time}{DS3231\+\_\+\+Time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Lee la hora actual desde el DS3231. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em time} & Estructura Time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+DS3231\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}
+\Hypertarget{ds3231_8c_af422c0f37f5763d688ae3b815002ffda}\index{ds3231.c@{ds3231.c}!DS3231\_SetTime@{DS3231\_SetTime}}
+\index{DS3231\_SetTime@{DS3231\_SetTime}!ds3231.c@{ds3231.c}}
+\doxysubsubsection{\texorpdfstring{DS3231\_SetTime()}{DS3231\_SetTime()}}
+{\footnotesize\ttfamily \label{ds3231_8c_af422c0f37f5763d688ae3b815002ffda} 
+DS3231\+\_\+\+Status DS3231\+\_\+\+Set\+Time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{year}{, }\item[{uint8\+\_\+t}]{month}{, }\item[{uint8\+\_\+t}]{date}{, }\item[{uint8\+\_\+t}]{day}{, }\item[{uint8\+\_\+t}]{hour}{, }\item[{uint8\+\_\+t}]{min}{, }\item[{uint8\+\_\+t}]{sec}{}\end{DoxyParamCaption})}
+
+
+
+Configura la fecha y hora del RTC. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em yy} & Año (00-\/99) \\
+\hline
+{\em mm} & Mes (1-\/12) \\
+\hline
+{\em dd} & Día del mes (1-\/31) \\
+\hline
+{\em dow} & Día de semana (1-\/7) \\
+\hline
+{\em hh} & Hora (0-\/23) \\
+\hline
+{\em mi} & Minutos (0-\/59) \\
+\hline
+{\em ss} & Segundos (0-\/59) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+DS3231\+\_\+\+OK si funciono correctamente. 
+\end{DoxyReturn}

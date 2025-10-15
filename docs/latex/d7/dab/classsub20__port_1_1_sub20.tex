@@ -1,0 +1,111 @@
+\doxysection{Referencia de la clase Sub20}
+\hypertarget{classsub20__port_1_1_sub20}{}\label{classsub20__port_1_1_sub20}\index{Sub20@{Sub20}}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a4ba290359b55ebcd9c1f910e56f1ecaa}\label{classsub20__port_1_1_sub20_a4ba290359b55ebcd9c1f910e56f1ecaa} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str\texorpdfstring{$\vert$}{|}None sn=None)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a8987aa5431ff32ea9a412315c2440b88}\label{classsub20__port_1_1_sub20_a8987aa5431ff32ea9a412315c2440b88} 
+{\bfseries \+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a780cd2fad7a0717d6734e505f2c453b9}\label{classsub20__port_1_1_sub20_a780cd2fad7a0717d6734e505f2c453b9} 
+{\bfseries \+\_\+\+\_\+exit\+\_\+\+\_\+} (self, et, ev, tb)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a8ab79e14e24aa440dcd1d9e822eb1f1c}\label{classsub20__port_1_1_sub20_a8ab79e14e24aa440dcd1d9e822eb1f1c} 
+{\bfseries close} (self)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_ae229ccc25ce5f9e176c721c25d102c88}\label{classsub20__port_1_1_sub20_ae229ccc25ce5f9e176c721c25d102c88} 
+str {\bfseries get\+\_\+sn} (self)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_afdbc4262476e80a316faf7473066f15c}\label{classsub20__port_1_1_sub20_afdbc4262476e80a316faf7473066f15c} 
+int {\bfseries i2c\+\_\+set\+\_\+freq} (self, int freq=100\+\_\+000)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_aedf779c48d89571fc0cfea96f85614cc}\label{classsub20__port_1_1_sub20_aedf779c48d89571fc0cfea96f85614cc} 
+list\mbox{[}str\mbox{]} {\bfseries scan\+\_\+i2c} (self)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a3447329a20252da35610104b06731a3f}\label{classsub20__port_1_1_sub20_a3447329a20252da35610104b06731a3f} 
+int {\bfseries i2c\+\_\+writell} (self, int sa, data, int\texorpdfstring{$\vert$}{|}None ma=None, int ma\+\_\+sz=0)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_ae24bc5d558110f46a9e4e3aad4a4db56}\label{classsub20__port_1_1_sub20_ae24bc5d558110f46a9e4e3aad4a4db56} 
+bytes {\bfseries i2c\+\_\+readll} (self, int sa, int size, int\texorpdfstring{$\vert$}{|}None ma=None, int ma\+\_\+sz=0)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a0ebf30051b36f53bc3d7dfded4ae5b50}\label{classsub20__port_1_1_sub20_a0ebf30051b36f53bc3d7dfded4ae5b50} 
+bytes {\bfseries i2c\+\_\+transfer} (self, int sa, bytes wr, int rd\+\_\+size)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_aa704ed2f44240dad01b4363d9eece4c5}\label{classsub20__port_1_1_sub20_aa704ed2f44240dad01b4363d9eece4c5} 
+int {\bfseries spi\+\_\+set\+\_\+config} (self, int flags)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_ae0b2f944b136efef36d93cba8ae48562}\label{classsub20__port_1_1_sub20_ae0b2f944b136efef36d93cba8ae48562} 
+bytes {\bfseries spi\+\_\+rw} (self, bytes out, str ess="{}0\+L"{})
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a9af410e361cd7063e0bc703cfc3fd02e}\label{classsub20__port_1_1_sub20_a9af410e361cd7063e0bc703cfc3fd02e} 
+int {\bfseries spi\+\_\+write} (self, bytes out, str ess="{}0\+L"{})
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a4f3ee24b96b0695ef6ae1e41686e1825}\label{classsub20__port_1_1_sub20_a4f3ee24b96b0695ef6ae1e41686e1825} 
+bytes {\bfseries spi\+\_\+read} (self, int nbytes, str ess="{}0\+L"{})
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a37ec1a4c11a83f2fd9d3e5a13c62dd91}\label{classsub20__port_1_1_sub20_a37ec1a4c11a83f2fd9d3e5a13c62dd91} 
+int {\bfseries gpio\+\_\+set\+\_\+config} (self, int set\+\_\+bits, int mask, int bank=0)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a65c426bca79a7bb48a4bf3efe3548da9}\label{classsub20__port_1_1_sub20_a65c426bca79a7bb48a4bf3efe3548da9} 
+int {\bfseries gpio\+\_\+read} (self, int bank=0)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_aef72101a792ba45363c4fdc13c35b1d0}\label{classsub20__port_1_1_sub20_aef72101a792ba45363c4fdc13c35b1d0} 
+int {\bfseries gpio\+\_\+write} (self, int set\+\_\+bits, int mask, int bank=0)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_af8fe4c9fc095863efdf6230ba019a973}\label{classsub20__port_1_1_sub20_af8fe4c9fc095863efdf6230ba019a973} 
+int {\bfseries i2c\+\_\+write} (self, int sa, int reg, data)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a5e1fccdb20c88620553119c5f1ba5008}\label{classsub20__port_1_1_sub20_a5e1fccdb20c88620553119c5f1ba5008} 
+bytes {\bfseries i2c\+\_\+read} (self, int sa, int reg, int size)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a0c3056562c920f243d599c8edcf8e82e}\label{classsub20__port_1_1_sub20_a0c3056562c920f243d599c8edcf8e82e} 
+int {\bfseries i2c\+\_\+write\+\_\+reg16} (self, int sa, int reg, data)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_ab6d90dc1b0cbfe33612032a3e1d6c16e}\label{classsub20__port_1_1_sub20_ab6d90dc1b0cbfe33612032a3e1d6c16e} 
+bytes {\bfseries i2c\+\_\+read\+\_\+reg16} (self, int sa, int reg, int size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a5e36941b3d856737e81516acd45edc50}\label{classsub20__port_1_1_sub20_a5e36941b3d856737e81516acd45edc50} 
+{\bfseries h} = None
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a7276bd20c5842e712da638d25ceb6d92}\label{classsub20__port_1_1_sub20_a7276bd20c5842e712da638d25ceb6d92} 
+{\bfseries sn} = sn
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a4ff448825ac8d60fb84e8ac38d63db56}\label{classsub20__port_1_1_sub20_a4ff448825ac8d60fb84e8ac38d63db56} 
+bool {\bfseries \+\_\+require} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a3df37248d360ccff335a9589a03d7301}\label{classsub20__port_1_1_sub20_a3df37248d360ccff335a9589a03d7301} 
+{\bfseries \+\_\+bytes\+\_\+from} (buf, n)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_a9c33dde952711e1520d60dedc2b6c9ac}\label{classsub20__port_1_1_sub20_a9c33dde952711e1520d60dedc2b6c9ac} 
+bool {\bfseries \+\_\+compare\+\_\+sn} (h, str\texorpdfstring{$\vert$}{|}None sn)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_aaa4b296bf38d00e8597d4bcaf375541b}\label{classsub20__port_1_1_sub20_aaa4b296bf38d00e8597d4bcaf375541b} 
+bytes {\bfseries \+\_\+coerce\+\_\+bytes} (data)
+\item 
+\Hypertarget{classsub20__port_1_1_sub20_ad71773dde2fd449a28dcd8fbd305ea66}\label{classsub20__port_1_1_sub20_ad71773dde2fd449a28dcd8fbd305ea66} 
+tuple\mbox{[}int, int\mbox{]} {\bfseries \+\_\+auto\+\_\+ma\+\_\+sz} (int\texorpdfstring{$\vert$}{|}None ma, int\texorpdfstring{$\vert$}{|}None ma\+\_\+sz)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\begin{DoxyVerb}Driver SUB-20 orientado a uso continuo:
+- Abre una vez (constructor), configura una vez.
+- Operaciones NO reabren ni reconfiguran.
+- Con `with` se cierra solo.
+\end{DoxyVerb}
+ 
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/py/\+Drivers/sub20\+\_\+py/sub20\+\_\+port.\+py\end{DoxyCompactItemize}

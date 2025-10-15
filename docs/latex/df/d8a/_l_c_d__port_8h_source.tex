@@ -1,0 +1,29 @@
+\doxysection{LCD\+\_\+port.\+h}
+\hypertarget{_l_c_d__port_8h_source}{}\label{_l_c_d__port_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2/Inc/LCD\_port.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2/Inc/LCD\_port.h}}
+\mbox{\hyperlink{_l_c_d__port_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ LCD\_PORT\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ LCD\_PORT\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dev__i2cm_8h}{dev\_i2cm.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}LCD\_registers.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ LCD\_RETRY\_COUNT}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#define\ LCD\_RETRY\_COUNT\ \ \ 2}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Escritura\ */}}
+\DoxyCodeLine{00021\ HAL\_StatusTypeDef\ LCD\_register\_write(uint8\_t\ value);\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LCD\_PORT\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

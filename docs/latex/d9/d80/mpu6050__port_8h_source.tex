@@ -1,0 +1,39 @@
+\doxysection{mpu6050\+\_\+port.\+h}
+\hypertarget{mpu6050__port_8h_source}{}\label{mpu6050__port_8h_source}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050\_port.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Inc/mpu6050\_port.h}}
+\mbox{\hyperlink{mpu6050__port_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MPU6050\_PORT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MPU6050\_PORT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dev__i2cm_8h}{dev\_i2cm.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MPU6050\_ADDRESS\ \ \ \ \ \ \ \ (0x69)}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MPU6050\_RETRY\_COUNT\ \ \ \ \ \ (3)\ \ \ \ \ }}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ HAL\_StatusTypeDef\ \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga033cbe0a29774dbe4799d7aca1ba1f97}{MPU6050\_is\_ready}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ HAL\_StatusTypeDef\ \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga499d2bf6f0996ec6b5119df46f896a2f}{MPU6050\_register\_write}}(uint8\_t\ reg,\ uint8\_t\ data);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ HAL\_StatusTypeDef\ \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga0646c3cfbbbcab6528a3572445c65029}{MPU6050\_register\_block\_write}}(uint8\_t\ *data,\ uint16\_t\ len);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ HAL\_StatusTypeDef\ \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga2d1875b33d16220aad44eacbca09ee50}{MPU6050\_register\_read}}(uint8\_t\ reg,\ uint8\_t\ *data);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ HAL\_StatusTypeDef\ \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga80288a2c3048c386f8f724d0917e2095}{MPU6050\_register\_block\_read}}(uint8\_t\ reg,\ uint8\_t\ *data,\ uint16\_t\ len);}
+\DoxyCodeLine{00066\ \ \textcolor{comment}{//\ end\ group\ MPU6050\_PORT}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MPU6050\_PORT\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+MPU6050/\+Src/mpu6050\+\_\+port.c}
+\hypertarget{mpu6050__port_8c}{}\label{mpu6050__port_8c}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Src/mpu6050\_port.c@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/MPU6050/Src/mpu6050\_port.c}}
+
+
+Implementación del driver MPU6050 usando dev\+\_\+i2cm (HAL I²C).  
+
+
+{\ttfamily \#include "{}mpu6050\+\_\+port.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga033cbe0a29774dbe4799d7aca1ba1f97}{MPU6050\+\_\+is\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica la presencia del MPU6050 en el bus I2C. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga499d2bf6f0996ec6b5119df46f896a2f}{MPU6050\+\_\+register\+\_\+write}} (uint8\+\_\+t reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Escribe un registro del MPU6050. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga0646c3cfbbbcab6528a3572445c65029}{MPU6050\+\_\+register\+\_\+block\+\_\+write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Escribe un bloque de datos del MPU6050. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga2d1875b33d16220aad44eacbca09ee50}{MPU6050\+\_\+register\+\_\+read}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Lee un registro del MPU6050. \end{DoxyCompactList}\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group___m_p_u6050___p_o_r_t_ga80288a2c3048c386f8f724d0917e2095}{MPU6050\+\_\+register\+\_\+block\+\_\+read}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Lee un registro del MPU6050. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementación del driver MPU6050 usando dev\+\_\+i2cm (HAL I²C). 
+

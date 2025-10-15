@@ -1,0 +1,207 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Devices/\+LCD16x2/\+Inc/dev\+\_\+\+LCD.h}
+\hypertarget{dev___l_c_d_8h}{}\label{dev___l_c_d_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2/Inc/dev\_LCD.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Devices/LCD16x2/Inc/dev\_LCD.h}}
+
+
+Driver para LCD 16x2 (HD44780) vía I²C con backpack PCF8574.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}LCD\+\_\+port.\+h"{}}\newline
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dev___l_c_d_8h_afa3938c4bd2d6c656eedae37d94dc273}\label{dev___l_c_d_8h_afa3938c4bd2d6c656eedae37d94dc273} 
+\#define {\bfseries DEV\+\_\+\+LCD\+\_\+\+COLS}~16
+\begin{DoxyCompactList}\small\item\em Cantidad de columnas del display. \end{DoxyCompactList}\item 
+\Hypertarget{dev___l_c_d_8h_a16b8bb09239b77ef51983fcb98fd5567}\label{dev___l_c_d_8h_a16b8bb09239b77ef51983fcb98fd5567} 
+\#define {\bfseries DEV\+\_\+\+LCD\+\_\+\+ROWS}~2
+\begin{DoxyCompactList}\small\item\em Cantidad de filas del display. \end{DoxyCompactList}\item 
+\Hypertarget{dev___l_c_d_8h_ac3ad842c2ae96f1bb740c2ef1a7f0126}\label{dev___l_c_d_8h_ac3ad842c2ae96f1bb740c2ef1a7f0126} 
+\#define {\bfseries DEV\+\_\+\+LCD\+\_\+\+COLS\+\_\+0}~0
+\begin{DoxyCompactList}\small\item\em Columna inicial por del display. \end{DoxyCompactList}\item 
+\Hypertarget{dev___l_c_d_8h_a824c7a3de8b041af2cf5df17c20d1b2f}\label{dev___l_c_d_8h_a824c7a3de8b041af2cf5df17c20d1b2f} 
+\#define {\bfseries DEV\+\_\+\+LCD\+\_\+\+ROWS\+\_\+0}~0
+\begin{DoxyCompactList}\small\item\em Primera fila del display. \end{DoxyCompactList}\item 
+\Hypertarget{dev___l_c_d_8h_aa21e8565f0b0124a8567df6f262badba}\label{dev___l_c_d_8h_aa21e8565f0b0124a8567df6f262badba} 
+\#define {\bfseries DEV\+\_\+\+LCD\+\_\+\+ROWS\+\_\+1}~1
+\begin{DoxyCompactList}\small\item\em Segunda fila del display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{dev___l_c_d_8h_a458da1781d3e79af8d24bf770935488c}{LCD\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa el LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\+\_\+\+Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Limpia el display y posiciona el cursor en (0,0). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_a84a77d2c5c50ee994f79bcebc6a6fa1c}{LCD\+\_\+\+Set\+Cursor}} (uint8\+\_\+t col, uint8\+\_\+t row)
+\begin{DoxyCompactList}\small\item\em Posiciona el cursor en (col, row). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_afc8e4657a816c658ff6598551ce476ed}{LCD\+\_\+\+Write\+Char}} (char c)
+\begin{DoxyCompactList}\small\item\em Escribe un carácter en la posición actual del cursor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_a3757c616ea16d44a433de63a3916a62d}{LCD\+\_\+\+Write}} (const char \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Escribe una cadena ASCII (terminada en \textquotesingle{}\textbackslash{}0\textquotesingle{}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_a5042d70ba51bede98f9036747600211c}{LCD\+\_\+\+Write\+At}} (uint8\+\_\+t col, uint8\+\_\+t row, char \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Escribe una cadena en la posición determinada (col,row). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_a07fda1c26af1d5eca4b5cbaa46fc86f4}{LCD\+\_\+\+Print\+Centered}} (uint8\+\_\+t row, char \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Centra un texto en la fila indicada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_adc038e8c2d3cddcbf4ac742e7837078e}{LCD\+\_\+\+Cursor}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Habilita u deshabilita el cursor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dev___l_c_d_8h_a5655b2022c4273728f1132f5e613cbd3}{LCD\+\_\+\+Blink\+Cursor}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Habilita o deshabilita el parpadeo del cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Driver para LCD 16x2 (HD44780) vía I²C con backpack PCF8574. 
+
+API para inicializar el display LCD, posicionar el cursor y escribir texto. 
+
+\label{doc-func-members}
+\Hypertarget{dev___l_c_d_8h_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{dev___l_c_d_8h_a5655b2022c4273728f1132f5e613cbd3}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_BlinkCursor@{LCD\_BlinkCursor}}
+\index{LCD\_BlinkCursor@{LCD\_BlinkCursor}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_BlinkCursor()}{LCD\_BlinkCursor()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_a5655b2022c4273728f1132f5e613cbd3} 
+void LCD\+\_\+\+Blink\+Cursor (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})}
+
+
+
+Habilita o deshabilita el parpadeo del cursor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em enable} & true\+: parpadeo ON; false\+: OFF. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dev___l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_Clear@{LCD\_Clear}}
+\index{LCD\_Clear@{LCD\_Clear}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Clear()}{LCD\_Clear()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245} 
+void LCD\+\_\+\+Clear (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Limpia el display y posiciona el cursor en (0,0). 
+
+Envía {\ttfamily 0x01} (Clear Display). \begin{DoxyNote}{Nota}
+Requiere delay de (≈2 ms). 
+\end{DoxyNote}
+\Hypertarget{dev___l_c_d_8h_adc038e8c2d3cddcbf4ac742e7837078e}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_Cursor@{LCD\_Cursor}}
+\index{LCD\_Cursor@{LCD\_Cursor}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cursor()}{LCD\_Cursor()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_adc038e8c2d3cddcbf4ac742e7837078e} 
+void LCD\+\_\+\+Cursor (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})}
+
+
+
+Habilita u deshabilita el cursor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em enable} & true\+: cursor visible; false\+: oculto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dev___l_c_d_8h_a458da1781d3e79af8d24bf770935488c}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_Init@{LCD\_Init}}
+\index{LCD\_Init@{LCD\_Init}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Init()}{LCD\_Init()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_a458da1781d3e79af8d24bf770935488c} 
+bool LCD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el LCD. 
+
+
+\begin{DoxyEnumerate}
+\item Ejecuta la secuencia de wake-\/up,
+\item Envía Function Set,
+\item Enciende el display
+\item Limpia y configura el entry mode. \begin{DoxyReturn}{Devuelve}
+true si completó la secuencia correctamente. 
+\end{DoxyReturn}
+
+\end{DoxyEnumerate}\Hypertarget{dev___l_c_d_8h_a07fda1c26af1d5eca4b5cbaa46fc86f4}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_PrintCentered@{LCD\_PrintCentered}}
+\index{LCD\_PrintCentered@{LCD\_PrintCentered}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_PrintCentered()}{LCD\_PrintCentered()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_a07fda1c26af1d5eca4b5cbaa46fc86f4} 
+void LCD\+\_\+\+Print\+Centered (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Centra un texto en la fila indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em row} & Fila destino. \\
+\hline
+{\em s} & Cadena a centrar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dev___l_c_d_8h_a84a77d2c5c50ee994f79bcebc6a6fa1c}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_SetCursor@{LCD\_SetCursor}}
+\index{LCD\_SetCursor@{LCD\_SetCursor}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_SetCursor()}{LCD\_SetCursor()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_a84a77d2c5c50ee994f79bcebc6a6fa1c} 
+void LCD\+\_\+\+Set\+Cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col}{, }\item[{uint8\+\_\+t}]{row}{}\end{DoxyParamCaption})}
+
+
+
+Posiciona el cursor en (col, row). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em col} & Columna (0..DEV\+\_\+\+LCD\+\_\+\+COLS-\/1) \\
+\hline
+{\em row} & Fila (0..DEV\+\_\+\+LCD\+\_\+\+ROWS-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Usa las direcciones base de DDRAM por fila (ej. 0x00 y 0x40 en 16x2). 
+\end{DoxyNote}
+\Hypertarget{dev___l_c_d_8h_a3757c616ea16d44a433de63a3916a62d}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_Write@{LCD\_Write}}
+\index{LCD\_Write@{LCD\_Write}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Write()}{LCD\_Write()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_a3757c616ea16d44a433de63a3916a62d} 
+void LCD\+\_\+\+Write (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Escribe una cadena ASCII (terminada en \textquotesingle{}\textbackslash{}0\textquotesingle{}). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em s} & Puntero a cadena. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dev___l_c_d_8h_a5042d70ba51bede98f9036747600211c}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_WriteAt@{LCD\_WriteAt}}
+\index{LCD\_WriteAt@{LCD\_WriteAt}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_WriteAt()}{LCD\_WriteAt()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_a5042d70ba51bede98f9036747600211c} 
+void LCD\+\_\+\+Write\+At (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col}{, }\item[{uint8\+\_\+t}]{row}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Escribe una cadena en la posición determinada (col,row). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em col} & Columna a donde se va a escribir la cadena. \\
+\hline
+{\em row} & Fila a donde se va a escribir la cadena. \\
+\hline
+{\em s} & Puntero a cadena. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dev___l_c_d_8h_afc8e4657a816c658ff6598551ce476ed}\index{dev\_LCD.h@{dev\_LCD.h}!LCD\_WriteChar@{LCD\_WriteChar}}
+\index{LCD\_WriteChar@{LCD\_WriteChar}!dev\_LCD.h@{dev\_LCD.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_WriteChar()}{LCD\_WriteChar()}}
+{\footnotesize\ttfamily \label{dev___l_c_d_8h_afc8e4657a816c658ff6598551ce476ed} 
+void LCD\+\_\+\+Write\+Char (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Escribe un carácter en la posición actual del cursor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em c} & Carácter ASCII a imprimir. \\
+\hline
+\end{DoxyParams}

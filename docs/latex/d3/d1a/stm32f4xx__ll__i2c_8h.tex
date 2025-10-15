@@ -1,0 +1,345 @@
+\doxysection{Referencia del archivo C\+:/\+Users/\+Matias D/\+Documents/\+Proyecto\+\_\+\+Final/\+Drivers/\+STM32\+F4xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32f4xx\+\_\+ll\+\_\+i2c.h}
+\hypertarget{stm32f4xx__ll__i2c_8h}{}\label{stm32f4xx__ll__i2c_8h}\index{C:/Users/Matias D/Documents/Proyecto\_Final/Drivers/STM32F4xx\_HAL\_Driver/Inc/stm32f4xx\_ll\_i2c.h@{C:/Users/Matias D/Documents/Proyecto\_Final/Drivers/STM32F4xx\_HAL\_Driver/Inc/stm32f4xx\_ll\_i2c.h}}
+
+
+Header file of I2C LL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries LL\+\_\+\+I2\+C\+\_\+\+MAX\+\_\+\+SPEED\+\_\+\+STANDARD}~100000U
+\item 
+\#define {\bfseries LL\+\_\+\+I2\+C\+\_\+\+MAX\+\_\+\+SPEED\+\_\+\+FAST}~400000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga15670aba03d440f956a76b14c30878ac}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+SB}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6935c920da59d755d0cf834548a70ec4}{I2\+C\+\_\+\+SR1\+\_\+\+SB}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_gab55c477d2bcd7b57f15313ed2354bb3b}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+ADDR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3db361a4d9dd84b187085a11d933b45d}{I2\+C\+\_\+\+SR1\+\_\+\+ADDR}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga3672ccca3651e09c796e7c0630c053f9}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+BTF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafb279f85d78cfe5abd3eeb0b40a65ab1}{I2\+C\+\_\+\+SR1\+\_\+\+BTF}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga9229e38cf74aa381e67618b751fe8770}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+ADD10}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6faaa55a1e48aa7c1f2b69669901445d}{I2\+C\+\_\+\+SR1\+\_\+\+ADD10}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_gae3e95ac5baad1a3fa2fb0936da5d1c78}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+STOPF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaafcea4cdbe2f6da31566c897fa893a7c}{I2\+C\+\_\+\+SR1\+\_\+\+STOPF}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga4795b1e533368b207eb9f7ca152519e3}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+RXNE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf6ebe33c992611bc2e25bbb01c1441a5}{I2\+C\+\_\+\+SR1\+\_\+\+RXNE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga750705feb3537fe34590595294ba4e59}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+TXE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafdc4da49c163910203255e384591b6f7}{I2\+C\+\_\+\+SR1\+\_\+\+TXE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga20e0e4a62ce9338c7b7656a9c9034b90}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+BERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1d12990c90ab0757dcfea150ea50b227}{I2\+C\+\_\+\+SR1\+\_\+\+BERR}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga0a048cbab065839d4786ad9b52cbbc28}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+ARLO}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacbc52f6ec6172c71d8b026a22c2f69d2}{I2\+C\+\_\+\+SR1\+\_\+\+ARLO}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_gafde27aadf8e9f7238aa3f6e949b60c73}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+AF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga62aa2496d4b3955214a16a7bd998fd88}{I2\+C\+\_\+\+SR1\+\_\+\+AF}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga292ffa7213ae551a1eb308b893e2a936}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+OVR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gad42d2435d2e64bf710c701c9b17adfb4}{I2\+C\+\_\+\+SR1\+\_\+\+OVR}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga692826e74684b2d990c7304a526d328f}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+PECERR}}~I2\+C\+\_\+\+ISR\+\_\+\+PECERR
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_gab42677c88c2f53b6896964ff668a15dd}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+TIMEOUT}}~I2\+C\+\_\+\+ISR\+\_\+\+TIMEOUT
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga97d45a759c16bfd18d2fba128fcce127}{LL\+\_\+\+I2\+C\+\_\+\+SR1\+\_\+\+SMALERT}}~I2\+C\+\_\+\+ISR\+\_\+\+SMALERT
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga439ca63f2656e83071ed3b7c07fa87ed}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+MSL}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga75cc361adf0e72e33d6771ebfa17b52d}{I2\+C\+\_\+\+SR2\+\_\+\+MSL}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga65bd94b35a8a6b31ffe4c2e626ed705e}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+BUSY}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3b1e75a82da73ae2873cff1cd27c3179}{I2\+C\+\_\+\+SR2\+\_\+\+BUSY}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga718e2228a0a234c7f7f261905e31dcc7}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+TRA}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga288b20416b42a79e591aa80d9a690fca}{I2\+C\+\_\+\+SR2\+\_\+\+TRA}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga0971bd7b923586c17fe68bcc2d7a3998}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+GENCALL}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf3aeb79cbe04f7ec1e3c2615921c4fab}{I2\+C\+\_\+\+SR2\+\_\+\+GENCALL}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_gafe75bc69974334f841d1e2ce36c4150d}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+SMBDEFAULT}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafcf50334903013177a8c6f4e36b8d6fe}{I2\+C\+\_\+\+SR2\+\_\+\+SMBDEFAULT}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga74d360b44a1024e84afa6f83bede5a64}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+SMBHOST}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa07cf3e404f9f57e98d1ba3793079c80}{I2\+C\+\_\+\+SR2\+\_\+\+SMBHOST}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___g_e_t___f_l_a_g_ga026d698d4af8c35f9c2458e3e9c1e794}{LL\+\_\+\+I2\+C\+\_\+\+SR2\+\_\+\+DUALF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga79a6a21835e06d9bc48009f4269b7798}{I2\+C\+\_\+\+SR2\+\_\+\+DUALF}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___i_t_ga02d3ff3c3c1ffb45b87f6dbb11b2bb1f}{LL\+\_\+\+I2\+C\+\_\+\+CR2\+\_\+\+ITEVTEN}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3b1ebaf8173090ec469b055b98e585d2}{I2\+C\+\_\+\+CR2\+\_\+\+ITEVTEN}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___i_t_ga6d3c432670f0525684dcaefd80b13848}{LL\+\_\+\+I2\+C\+\_\+\+CR2\+\_\+\+ITBUFEN}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2efbe5d96ed0ce447a45a62e8317a68a}{I2\+C\+\_\+\+CR2\+\_\+\+ITBUFEN}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___i_t_ga44f7a913225cb08fe27d0085387550c0}{LL\+\_\+\+I2\+C\+\_\+\+CR2\+\_\+\+ITERREN}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6f14ae48e4609c2b3645211234cba974}{I2\+C\+\_\+\+CR2\+\_\+\+ITERREN}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___o_w_n_a_d_d_r_e_s_s1_gaaf1d5f9748c13b795aa3615bbe2bb1f2}{LL\+\_\+\+I2\+C\+\_\+\+OWNADDRESS1\+\_\+7\+BIT}}~0x00004000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___o_w_n_a_d_d_r_e_s_s1_ga088aa5bd3c077ebdbfb2008d08ba7a40}{LL\+\_\+\+I2\+C\+\_\+\+OWNADDRESS1\+\_\+10\+BIT}}~(uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7d8df80cd27313c896e887aae81fa639}{I2\+C\+\_\+\+OAR1\+\_\+\+ADDMODE}} \texorpdfstring{$\vert$}{|} 0x00004000U)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___d_u_t_y_c_y_c_l_e_ga13e2ca4d6bb9a065cb1ebd9c5ddb78eb}{LL\+\_\+\+I2\+C\+\_\+\+DUTYCYCLE\+\_\+2}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___d_u_t_y_c_y_c_l_e_gaef023a2e538e7f3608dd387b7099997a}{LL\+\_\+\+I2\+C\+\_\+\+DUTYCYCLE\+\_\+16\+\_\+9}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga851c8a6b598d54c1a805b1632a4078e5}{I2\+C\+\_\+\+CCR\+\_\+\+DUTY}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___c_l_o_c_k___s_p_e_e_d___m_o_d_e_gaf644831b3458137d43174cb06b8caef9}{LL\+\_\+\+I2\+C\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+STANDARD\+\_\+\+MODE}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___c_l_o_c_k___s_p_e_e_d___m_o_d_e_ga3579cc6a5e4e40256a16fb14409b2f7b}{LL\+\_\+\+I2\+C\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+FAST\+\_\+\+MODE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaea64e5d7eba609ac9a84964bc0bc2def}{I2\+C\+\_\+\+CCR\+\_\+\+FS}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___p_e_r_i_p_h_e_r_a_l___m_o_d_e_ga6799d1407dc379d9db4086188d52ecec}{LL\+\_\+\+I2\+C\+\_\+\+MODE\+\_\+\+I2C}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___p_e_r_i_p_h_e_r_a_l___m_o_d_e_gac942c06816d9d9c18e46bd567fad9bb8}{LL\+\_\+\+I2\+C\+\_\+\+MODE\+\_\+\+SMBUS\+\_\+\+HOST}}~(uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4cfee7b020a49bd037fa7cf27c796abc}{I2\+C\+\_\+\+CR1\+\_\+\+SMBUS}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga001198ff898802888edf58f56d5371c9}{I2\+C\+\_\+\+CR1\+\_\+\+SMBTYPE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4598185d9092edfbf943464bcbb342ac}{I2\+C\+\_\+\+CR1\+\_\+\+ENARP}})
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___p_e_r_i_p_h_e_r_a_l___m_o_d_e_gade62f3b77d4c0e2999bc3a7ddc48b21f}{LL\+\_\+\+I2\+C\+\_\+\+MODE\+\_\+\+SMBUS\+\_\+\+DEVICE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4cfee7b020a49bd037fa7cf27c796abc}{I2\+C\+\_\+\+CR1\+\_\+\+SMBUS}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___p_e_r_i_p_h_e_r_a_l___m_o_d_e_gace4dc7d9d88f1afc1b88637e3b71fc57}{LL\+\_\+\+I2\+C\+\_\+\+MODE\+\_\+\+SMBUS\+\_\+\+DEVICE\+\_\+\+ARP}}~(uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4cfee7b020a49bd037fa7cf27c796abc}{I2\+C\+\_\+\+CR1\+\_\+\+SMBUS}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4598185d9092edfbf943464bcbb342ac}{I2\+C\+\_\+\+CR1\+\_\+\+ENARP}})
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___i2_c___a_c_k_n_o_w_l_e_d_g_e_ga25c958493ed8a59d94a2d1c551e327b3}{LL\+\_\+\+I2\+C\+\_\+\+ACK}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf933b105259a4bc46a957576adb8d96d}{I2\+C\+\_\+\+CR1\+\_\+\+ACK}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___i2_c___a_c_k_n_o_w_l_e_d_g_e_ga3143a9ba21c4dfda59ee6033bdd4f0e9}{LL\+\_\+\+I2\+C\+\_\+\+NACK}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___d_i_r_e_c_t_i_o_n_ga13b8b7e7c63899dfee28093f783ef7ea}{LL\+\_\+\+I2\+C\+\_\+\+DIRECTION\+\_\+\+WRITE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga288b20416b42a79e591aa80d9a690fca}{I2\+C\+\_\+\+SR2\+\_\+\+TRA}}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_c___d_i_r_e_c_t_i_o_n_gabcce2b86c66c3af0c3aaf41bd01c709b}{LL\+\_\+\+I2\+C\+\_\+\+DIRECTION\+\_\+\+READ}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___w_r_i_t_e___r_e_a_d_ga580a3c4961ea2ed6b777ada5b6f549b3}{LL\+\_\+\+I2\+C\+\_\+\+Write\+Reg}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+REG\+\_\+\+\_\+,  \+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Write a value in I2C register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___w_r_i_t_e___r_e_a_d_gac688bfa1e8a7e1ea22e380fa7a219373}{LL\+\_\+\+I2\+C\+\_\+\+Read\+Reg}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+REG\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Read a value in I2C register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_gad071134e1b8c2d8f4a3c7a0e22119e01}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+\+FREQ\+\_\+\+HZ\+\_\+\+TO\+\_\+\+MHZ}}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Convert Peripheral Clock Frequency in Mhz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_ga9dcac320f2c5915813d8cc25bab90b4c}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+\+FREQ\+\_\+\+MHZ\+\_\+\+TO\+\_\+\+HZ}}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Convert Peripheral Clock Frequency in Hz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_gaf27c31a58fe8d160b31df4bc204c3dff}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+\+RISE\+\_\+\+TIME}}(\+\_\+\+\_\+\+FREQRANGE\+\_\+\+\_\+,  \+\_\+\+\_\+\+SPEED\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Compute I2C Clock rising time. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_ga883a8e21fd9bba9f57a546359f2061bd}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+\+SPEED\+\_\+\+TO\+\_\+\+CCR}}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+SPEED\+\_\+\+\_\+,  \+\_\+\+\_\+\+DUTYCYCLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Compute Speed clock range to a Clock Control Register (I2\+C\+\_\+\+CCR\+\_\+\+CCR) value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_ga5665e4f2a57a0373abb1007fcbfd85cb}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+\+SPEED\+\_\+\+STANDARD\+\_\+\+TO\+\_\+\+CCR}}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+SPEED\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Compute Speed Standard clock range to a Clock Control Register (I2\+C\+\_\+\+CCR\+\_\+\+CCR) value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_gac63dad5d7c229ec43eb5c8e1cf2821af}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+\+SPEED\+\_\+\+FAST\+\_\+\+TO\+\_\+\+CCR}}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+SPEED\+\_\+\+\_\+,  \+\_\+\+\_\+\+DUTYCYCLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Compute Speed Fast clock range to a Clock Control Register (I2\+C\+\_\+\+CCR\+\_\+\+CCR) value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_ga630da736ba7165e3f8ce00058d67465b}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+10\+BIT\+\_\+\+ADDRESS}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Get the Least significant bits of a 10-\/Bits address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_ga6d2d4407a1affe4b4536d993d6316921}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+10\+BIT\+\_\+\+HEADER\+\_\+\+WRITE}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Convert a 10-\/Bits address to a 10-\/Bits header with Write direction. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___l_l___e_m___exported___macros___helper_ga39c1bfe2ae81b8beff9179fb3dda9dcd}{\+\_\+\+\_\+\+LL\+\_\+\+I2\+C\+\_\+10\+BIT\+\_\+\+HEADER\+\_\+\+READ}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Convert a 10-\/Bits address to a 10-\/Bits header with Read direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga78ac1dda0c0e04eb30a13cc832a6ded7}{LL\+\_\+\+I2\+C\+\_\+\+Enable}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable I2C peripheral (PE = 1). @rmtoll CR1 PE LL\+\_\+\+I2\+C\+\_\+\+Enable. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga218b512af0f025d16ab71d74d63749ad}{LL\+\_\+\+I2\+C\+\_\+\+Disable}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable I2C peripheral (PE = 0). @rmtoll CR1 PE LL\+\_\+\+I2\+C\+\_\+\+Disable. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga7fe069180fb3a9333d4d5c1fc259e953}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the I2C peripheral is enabled or disabled. @rmtoll CR1 PE LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gaa4963e2181de0b265180802dd421b7d3}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+DMAReq\+\_\+\+TX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable DMA transmission requests. @rmtoll CR2 DMAEN LL\+\_\+\+I2\+C\+\_\+\+Enable\+DMAReq\+\_\+\+TX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga00d10291881eb457ed4ad07d17a5da4f}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+DMAReq\+\_\+\+TX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable DMA transmission requests. @rmtoll CR2 DMAEN LL\+\_\+\+I2\+C\+\_\+\+Disable\+DMAReq\+\_\+\+TX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gad2f3f7c8e61623d46faae20c43d3ccf8}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+DMAReq\+\_\+\+TX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if DMA transmission requests are enabled or disabled. @rmtoll CR2 DMAEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+DMAReq\+\_\+\+TX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga079521afe06718f5f8589efa12883c42}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+DMAReq\+\_\+\+RX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable DMA reception requests. @rmtoll CR2 DMAEN LL\+\_\+\+I2\+C\+\_\+\+Enable\+DMAReq\+\_\+\+RX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga8fe3d1cb8bacd9999454ee34cb6572ee}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+DMAReq\+\_\+\+RX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable DMA reception requests. @rmtoll CR2 DMAEN LL\+\_\+\+I2\+C\+\_\+\+Disable\+DMAReq\+\_\+\+RX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga0182f0b25fc8f4dead000ea1f30452f6}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+DMAReq\+\_\+\+RX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if DMA reception requests are enabled or disabled. @rmtoll CR2 DMAEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+DMAReq\+\_\+\+RX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gad5aec452205398076d8f3ffb8a7d9ccf}{LL\+\_\+\+I2\+C\+\_\+\+DMA\+\_\+\+Get\+Reg\+Addr}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the data register address used for DMA transfer. @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+DMA\+\_\+\+Get\+Reg\+Addr. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gab00e40dce5a5936e225e371e9a9fd6c1}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Clock\+Stretching}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable Clock stretching. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga7f2f3932ba083a2fd110e820bb102b6e}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Clock\+Stretching}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable Clock stretching. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gaec37df2e4e2e9dccf6909c0102eefbb0}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Clock\+Stretching}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if Clock stretching is enabled or disabled. @rmtoll CR1 NOSTRETCH LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Clock\+Stretching. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga41300183f289e062fc1c0a24d02d990b}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+General\+Call}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable General Call. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga6c9c49ed087b4ab9279d11aa44d1e3b1}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+General\+Call}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable General Call. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga16e684c29d7ee5f5aa96282e000a42ce}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+General\+Call}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if General Call is enabled or disabled. @rmtoll CR1 ENGC LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+General\+Call. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gad7675e676d88ea828eb6faf86199db63}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Own\+Address1}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Own\+Address1, uint32\+\_\+t Own\+Addr\+Size)
+\begin{DoxyCompactList}\small\item\em Set the Own Address1. @rmtoll OAR1 ADD0 LL\+\_\+\+I2\+C\+\_\+\+Set\+Own\+Address1~\newline
+ OAR1 ADD1\+\_\+7 LL\+\_\+\+I2\+C\+\_\+\+Set\+Own\+Address1~\newline
+ OAR1 ADD8\+\_\+9 LL\+\_\+\+I2\+C\+\_\+\+Set\+Own\+Address1~\newline
+ OAR1 ADDMODE LL\+\_\+\+I2\+C\+\_\+\+Set\+Own\+Address1. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga1c77670f8a11d3a55a5e4a70906f12e7}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Own\+Address2}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Own\+Address2)
+\begin{DoxyCompactList}\small\item\em Set the 7bits Own Address2. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga1291cc39c3fce749c747dd96302708fb}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Own\+Address2}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable acknowledge on Own Address2 match address. @rmtoll OAR2 ENDUAL LL\+\_\+\+I2\+C\+\_\+\+Enable\+Own\+Address2. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga38d7e673dcb6df39a42e48aa0abf62c0}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Own\+Address2}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable acknowledge on Own Address2 match address. @rmtoll OAR2 ENDUAL LL\+\_\+\+I2\+C\+\_\+\+Disable\+Own\+Address2. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga795d291e6d0c29935a113b67be2771d1}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Own\+Address2}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if Own Address1 acknowledge is enabled or disabled. @rmtoll OAR2 ENDUAL LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Own\+Address2. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gadd325fd30a11b658825d870900526e79}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Periph\+Clock}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Periph\+Clock)
+\begin{DoxyCompactList}\small\item\em Configure the Peripheral clock frequency. @rmtoll CR2 FREQ LL\+\_\+\+I2\+C\+\_\+\+Set\+Periph\+Clock. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gac34c95d18d5ea7bec4a27c17084ca882}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Periph\+Clock}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the Peripheral clock frequency. @rmtoll CR2 FREQ LL\+\_\+\+I2\+C\+\_\+\+Get\+Periph\+Clock. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga726f040841e017e3a3931744e61b3027}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Duty\+Cycle}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Configure the Duty cycle (Fast mode only). @rmtoll CCR DUTY LL\+\_\+\+I2\+C\+\_\+\+Set\+Duty\+Cycle. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga0a960c21e8a67da30f6b1dafa78e412d}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Duty\+Cycle}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the Duty cycle (Fast mode only). @rmtoll CCR DUTY LL\+\_\+\+I2\+C\+\_\+\+Get\+Duty\+Cycle. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gab3eeaa856cbb3989751a80e307ca830f}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Clock\+Speed\+Mode}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Clock\+Speed\+Mode)
+\begin{DoxyCompactList}\small\item\em Configure the I2C master clock speed mode. @rmtoll CCR FS LL\+\_\+\+I2\+C\+\_\+\+Set\+Clock\+Speed\+Mode. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gaec42a61b59c5e22037dacfd5e8e79b15}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Clock\+Speed\+Mode}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the the I2C master speed mode. @rmtoll CCR FS LL\+\_\+\+I2\+C\+\_\+\+Get\+Clock\+Speed\+Mode. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gac7ca4cbd0d731c453e42902f62cb28ea}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Rise\+Time}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Rise\+Time)
+\begin{DoxyCompactList}\small\item\em Configure the SCL, SDA rising time. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga988d16c7d0de038193b4f1e6d2daf21b}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Rise\+Time}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the SCL, SDA rising time. @rmtoll TRISE TRISE LL\+\_\+\+I2\+C\+\_\+\+Get\+Rise\+Time. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gadfea5081cf9719dfd21575e6550d313c}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Clock\+Period}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Clock\+Period)
+\begin{DoxyCompactList}\small\item\em Configure the SCL high and low period. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gac6f0e2bd17a7995dfd6c136e9d0946aa}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Clock\+Period}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the SCL high and low period. @rmtoll CCR CCR LL\+\_\+\+I2\+C\+\_\+\+Get\+Clock\+Period. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga4f09e760554902e8595287ce8e988bc3}{LL\+\_\+\+I2\+C\+\_\+\+Config\+Speed}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Periph\+Clock, uint32\+\_\+t Clock\+Speed, uint32\+\_\+t Duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Configure the SCL speed. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gaa74f457cd020fb8846058015ddd62d2a}{LL\+\_\+\+I2\+C\+\_\+\+Set\+Mode}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Peripheral\+Mode)
+\begin{DoxyCompactList}\small\item\em Configure peripheral mode. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga0c93341c5c5a6f863e4b6134e575b7f8}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Mode}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get peripheral mode. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gada5922d5cc32a3f452d5e22c854aeeb0}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+SMBus\+Alert}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable SMBus alert (Host or Device mode) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga5850fcb9e1cd5e97fa4bd1ba877cb52c}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+SMBus\+Alert}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable SMBus alert (Host or Device mode) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gaa2a66a419d62276a78e78933a8e4ed92}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+SMBus\+Alert}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if SMBus alert (Host or Device mode) is enabled or disabled. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga60b909567774c40b3885b0b121539d40}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+SMBus\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable SMBus Packet Error Calculation (PEC). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_ga5e753a0bd39c99c3748a66026ad0121e}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+SMBus\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable SMBus Packet Error Calculation (PEC). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___configuration_gad877683772655c4c57b16a326f27eaa2}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+SMBus\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if SMBus Packet Error Calculation (PEC) is enabled or disabled. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga6c5c75bb1803fff51847355d5b4d7410}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+TX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable TXE interrupt. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+TX~\newline
+ CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+TX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga875ad02a029b17ba1ff49e7608cc5828}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+TX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable TXE interrupt. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+TX~\newline
+ CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+TX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga1f71e9ed0f7a15437e7a330c3b6f01e9}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+TX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the TXE Interrupt is enabled or disabled. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+TX~\newline
+ CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+TX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga81fd12085a6737c811d569c0cfdff5ed}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+RX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable RXNE interrupt. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+RX~\newline
+ CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+RX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_gadbeba4be7327c073d88bea731f354502}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+RX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable RXNE interrupt. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+RX~\newline
+ CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+RX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga435d4da8be726e641cfa294b4830a7a3}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+RX}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the RXNE Interrupt is enabled or disabled. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+RX~\newline
+ CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+RX. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_gafdd48bb2e407753ca58d45daf4727a6c}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+EVT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable Events interrupts. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga85ebba78f1f78f3bbb0e166a93f02342}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+EVT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable Events interrupts. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_gacf9dd9556809d120c8d10d8f68f691c1}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+EVT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if Events interrupts are enabled or disabled. @rmtoll CR2 ITEVTEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+EVT. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga2ccbc408ba76c95742e132f21f35acfc}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+BUF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable Buffer interrupts. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga33401bf22e601e2e8d40fd7485ff80e6}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+BUF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable Buffer interrupts. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga937c2754654e5539c0fdd473038ed2da}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+BUF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if Buffer interrupts are enabled or disabled. @rmtoll CR2 ITBUFEN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+BUF. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_gae33dcf5992582783f15357c3d1056f45}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+IT\+\_\+\+ERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable Error interrupts. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_ga022a0d8037d138a2ccd0ba31a2b87e0b}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+IT\+\_\+\+ERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable Error interrupts. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___i_t___management_gaa6cc078a8606ed4231e62e3a929fd944}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+ERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if Error interrupts are enabled or disabled. @rmtoll CR2 ITERREN LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+IT\+\_\+\+ERR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga229d40dc4298602dc77c399c534166a3}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+TXE}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Transmit data register empty flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaad55daf96ad698c71d206aced0d94bf7}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BTF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Byte Transfer Finished flag. RESET\+: When Data byte transfer not done. SET\+: When Data byte transfer succeeded. @rmtoll SR1 BTF LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BTF. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga9e3fbc162f05362e645ef9065c90156f}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+RXNE}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Receive data register not empty flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga02bdbfdc9a68caf636621ed4902ef62c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+SB}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Start Bit (master mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga393015c1af4c7ac7b6c7070b44d78218}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADDR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Address sent (master mode) or Address matched flag (slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga5f4ee8c018d3d361ed3abca2b7ca0371}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ADD10}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of 10-\/bit header sent (master mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga779a0c1055fc1cfdb940f7badf8561b9}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+AF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Acknowledge failure flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga0b61b6b4136802c2fe8fef4941c4eb31}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+STOP}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Stop detection flag (slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga31ef73ed230923d26a320c39d8093c9c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Bus error flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga22c4c91757b465891f86bf88fcf9bf24}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+ARLO}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Arbitration lost flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaa365c84a762d6d89c9bc7bffa7c9cdb3}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+OVR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Overrun/\+Underrun flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga866ba447c3e3637afbdf33905952b842}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+PECERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus PEC error flag in reception. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaead82b8eee90fa68a81090820da7c027}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+TIMEOUT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus Timeout detection flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga01d9faa9cce55af47016ac2fb845359c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+ALERT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus alert flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga4f3d5dd696245946287d72e2f7e753a8}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+BUSY}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Bus Busy flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga2f119259a2c634087585dc0e2c34ea72}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+DUAL}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Dual flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaa665a3127711ff705d8fc0fdc3271b74}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBHOST}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus Host address reception (Slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga5dafabf25cad492bd9297ffeef00931c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+SMBus\+Flag\+\_\+\+SMBDEFAULT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of SMBus Device default address reception (Slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga8f3df03ce443d209798f798d24b483c4}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+GENCALL}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of General call address reception (Slave mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga2bd9a19aed8897b8a35fb37979b3a0d6}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Active\+Flag\+\_\+\+MSL}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the status of Master/\+Slave flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gad93a2562784d95546c48e726d5f75f2f}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ADDR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Address Matched flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga9fafb6c17a6a4d97d7b2415fd7d76553}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+AF}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Acknowledge failure flag. @rmtoll SR1 AF LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+AF. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gacdc9fd799331e8e63695bdfe1fd6e767}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+STOP}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Stop detection flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga54de8e54e194267ef65c7634f517a819}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+BERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Bus error flag. @rmtoll SR1 BERR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+BERR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gaaac1db2bcdf8562c00c341fc2ba5d120}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ARLO}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Arbitration lost flag. @rmtoll SR1 ARLO LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+ARLO. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_gae72f96cc80e3ec2183473f5539d26957}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+OVR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear Overrun/\+Underrun flag. @rmtoll SR1 OVR LL\+\_\+\+I2\+C\+\_\+\+Clear\+Flag\+\_\+\+OVR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga67062fbeb8882e6a801ab9d79f60ea04}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+PECERR}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear SMBus PEC error flag. @rmtoll SR1 PECERR LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+PECERR. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga2d9d675cecff0e07798d5448213e8c1a}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+TIMEOUT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear SMBus Timeout detection flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___f_l_a_g__management_ga3baa8f6e47c248b3b999351540598aad}{LL\+\_\+\+I2\+C\+\_\+\+Clear\+SMBus\+Flag\+\_\+\+ALERT}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Clear SMBus Alert flag. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gac24fb1275328978d493b98451a81fe1e}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Reset}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable Reset of I2C peripheral. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Enable\+Reset. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gaec804e0ba925e4da924e35633bcdd14f}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Reset}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable Reset of I2C peripheral. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Disable\+Reset. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga58bb8e732f716bf449b0b95a49e7421c}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Reset\+Enabled}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the I2C peripheral is under reset state or not. @rmtoll CR1 SWRST LL\+\_\+\+I2\+C\+\_\+\+Is\+Reset\+Enabled. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga1e0e578274422f439207bf8640db7699}{LL\+\_\+\+I2\+C\+\_\+\+Acknowledge\+Next\+Data}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t Type\+Acknowledge)
+\begin{DoxyCompactList}\small\item\em Prepare the generation of a ACKnowledge or Non ACKnowledge condition after the address receive match code or next received byte. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga83e6d7fbef52a87ef221fba3487afe2b}{LL\+\_\+\+I2\+C\+\_\+\+Generate\+Start\+Condition}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Generate a START or RESTART condition. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gadf3921856d465ac13d1b89f4127b6a7c}{LL\+\_\+\+I2\+C\+\_\+\+Generate\+Stop\+Condition}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Generate a STOP condition after the current byte transfer (master mode). @rmtoll CR1 STOP LL\+\_\+\+I2\+C\+\_\+\+Generate\+Stop\+Condition. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga4707ac0f5cc6322c3fe561bef44659a4}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Bit\+POS}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable bit POS (master/host mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga87e12dc4d102c910e89c58e856ca6871}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Bit\+POS}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable bit POS (master/host mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga3e6d7910b4e753a37a10d41dd079fd15}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Bit\+POS}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if bit POS is enabled or disabled. @rmtoll CR1 POS LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Bit\+POS. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gafaebe16879cc748a5f5d6b282061666d}{LL\+\_\+\+I2\+C\+\_\+\+Get\+Transfer\+Direction}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Indicate the value of transfer direction. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gab31d5756a0878cee1e2d940a50852b72}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+Last\+DMA}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable DMA last transfer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gac152eff240d4ab092aed07c56a8df810}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+Last\+DMA}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable DMA last transfer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga05a0e7cd9c8cba838d4ccef3fc0fbdac}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Last\+DMA}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if DMA last transfer is enabled or disabled. @rmtoll CR2 LAST LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+Last\+DMA. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga01b5301e2f0173a24195d6b2607e2ae8}{LL\+\_\+\+I2\+C\+\_\+\+Enable\+SMBus\+PECCompare}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Enable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga83ddebb34169ed30d933aa4610ef062f}{LL\+\_\+\+I2\+C\+\_\+\+Disable\+SMBus\+PECCompare}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Disable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode). \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga3c6dbb65435d452a9eae61bd246943c5}{LL\+\_\+\+I2\+C\+\_\+\+Is\+Enabled\+SMBus\+PECCompare}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Check if the SMBus Packet Error byte transfer or internal comparison is requested or not. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_gaf96bd7242fab2057cc1cfd658a6f7615}{LL\+\_\+\+I2\+C\+\_\+\+Get\+SMBus\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Get the SMBus Packet Error byte calculated. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint8\+\_\+t \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga003d01a59192ddd9765bfc5fd624f50d}{LL\+\_\+\+I2\+C\+\_\+\+Receive\+Data8}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Read Receive Data register. @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+Receive\+Data8. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group___i2_c___l_l___e_f___data___management_ga0a834cd3b6d8208ad98d96775c920209}{LL\+\_\+\+I2\+C\+\_\+\+Transmit\+Data8}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Write in Transmit Data Register . @rmtoll DR DR LL\+\_\+\+I2\+C\+\_\+\+Transmit\+Data8. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Header file of I2C LL module. 
+
+\begin{DoxyAuthor}{Autor}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2016 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
