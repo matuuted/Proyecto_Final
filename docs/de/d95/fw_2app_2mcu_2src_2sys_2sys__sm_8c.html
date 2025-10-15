@@ -93,7 +93,7 @@ $(function(){initNavTree('de/d95/fw_2app_2mcu_2src_2sys_2sys__sm_8c.html','../..
 </div><!--header-->
 <div class="contents">
 
-<p>Implementación de la máquina de estados principal del sistema.  
+<p>Máquina de estados principal del sistema.  
 <a href="#details">Más...</a></p>
 <div class="textblock"><code>#include &quot;sys_sm.h&quot;</code><br />
 <code>#include &quot;FreeRTOS.h&quot;</code><br />
@@ -127,11 +127,11 @@ defines</h2></td></tr>
 <tr class="memitem:a5f44877bb23fb397a658ecd081cb5712" id="r_a5f44877bb23fb397a658ecd081cb5712"><td class="memItemLeft" align="right" valign="top"><a id="a5f44877bb23fb397a658ecd081cb5712" name="a5f44877bb23fb397a658ecd081cb5712"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>UART_REFRESH_DIV</b>&#160;&#160;&#160;5</td></tr>
 <tr class="memitem:af5abd28c44c29b7397c84f1fec4b1d84" id="r_af5abd28c44c29b7397c84f1fec4b1d84"><td class="memItemLeft" align="right" valign="top"><a id="af5abd28c44c29b7397c84f1fec4b1d84" name="af5abd28c44c29b7397c84f1fec4b1d84"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALPHA</b>&#160;&#160;&#160;0.2f</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALPHA</b>&#160;&#160;&#160;0.2f                /* Filtro utilizado para el calculo del angulo*/</td></tr>
 <tr class="memitem:a9e8aaf9c28f704136d8fc1ba043b6bf5" id="r_a9e8aaf9c28f704136d8fc1ba043b6bf5"><td class="memItemLeft" align="right" valign="top"><a id="a9e8aaf9c28f704136d8fc1ba043b6bf5" name="a9e8aaf9c28f704136d8fc1ba043b6bf5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>STR_LENGTH</b>&#160;&#160;&#160;<a class="el" href="../../dd/d54/dev___l_c_d_8h.html#afa3938c4bd2d6c656eedae37d94dc273">DEV_LCD_COLS</a> + 1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STR_LENGTH</b>&#160;&#160;&#160;<a class="el" href="../../dd/d54/dev___l_c_d_8h.html#afa3938c4bd2d6c656eedae37d94dc273">DEV_LCD_COLS</a> + 1    /* 16 Caracteres del LCD + \0 */</td></tr>
 <tr class="memitem:ab0aa36e1bdc251eaaada3e409312d8ae" id="r_ab0aa36e1bdc251eaaada3e409312d8ae"><td class="memItemLeft" align="right" valign="top"><a id="ab0aa36e1bdc251eaaada3e409312d8ae" name="ab0aa36e1bdc251eaaada3e409312d8ae"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BOOT_MAX_TRIES</b>&#160;&#160;&#160;3        /* Numero de intentos de inicialización por periférico */</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BOOT_MAX_TRIES</b>&#160;&#160;&#160;3                            /* Numero de intentos de inicialización por periférico */</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumeraciones</h2></td></tr>
@@ -144,26 +144,25 @@ Enumeraciones</h2></td></tr>
 &#160;&#160;<b>DEV_INIT_ERROR</b>
 <br />
  }</td></tr>
-<tr class="memdesc:a9a1771f1c13e930cd386130919f3ce93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicialización de periféricos durante el arranque del sistema. <br /></td></tr>
+<tr class="memdesc:a9a1771f1c13e930cd386130919f3ce93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de inicialización de periféricos durante el arranque del sistema. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a6fcdcaff4e6bfff5e8dc9aa8a033bce6" id="r_a6fcdcaff4e6bfff5e8dc9aa8a033bce6"><td class="memItemLeft" align="right" valign="top">HAL_StatusTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fcdcaff4e6bfff5e8dc9aa8a033bce6">SM_InitOS</a> (void)</td></tr>
 <tr class="memdesc:a6fcdcaff4e6bfff5e8dc9aa8a033bce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea e inicializa la tarea principal de la máquina de estados, utilizando el FreeRTOS proporcionado por el CubeMX.  <br /></td></tr>
-<tr class="memitem:a221be4011b053587c845d04751aeacc7" id="r_a221be4011b053587c845d04751aeacc7"><td class="memItemLeft" align="right" valign="top"><a id="a221be4011b053587c845d04751aeacc7" name="a221be4011b053587c845d04751aeacc7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SM_Iter</b> (void *argument)</td></tr>
-<tr class="memdesc:a221be4011b053587c845d04751aeacc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que ejecuta la máquina de estados. <br /></td></tr>
+<tr class="memitem:a221be4011b053587c845d04751aeacc7" id="r_a221be4011b053587c845d04751aeacc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a221be4011b053587c845d04751aeacc7">SM_Iter</a> (void *argument)</td></tr>
+<tr class="memdesc:a221be4011b053587c845d04751aeacc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máquina de estados principal del sistema.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Implementación de la máquina de estados principal del sistema. </p>
-<p>La SM coordina la inicialización de los periféricos (LCD, RTC, MPU6050) de manera secuencial, luego procede a realizar la lectura periódica de sensores, el renderizado en pantalla y la señalización visual mediante el parpadeo del LED.</p>
-<p>Ciclo principal (~100 ms):</p><ol type="1">
+<div class="textblock"><p>Máquina de estados principal del sistema. </p>
+<p>Esta SM se encarga de coordinar todo el flujo del dispositivo: arranca los periféricos (LCD, RTC, MPU6050), realiza las lecturas periódicas y muestra la información tanto en pantalla como por UART. Además, controla el parpadeo del LED según el ángulo de inclinación detectado.</p>
+<p>Ciclo principal (≈100 ms):</p><ol type="1">
 <li>Lee los sensores.</li>
-<li>Calcula ángulo.</li>
-<li>Ajusta frecuencia de parpadeo según el angulo de inclinación.</li>
-<li>Actualiza la informacion en el LCD y la UART.</li>
+<li>Calcula el ángulo de inclinación.</li>
+<li>Ajusta la frecuencia del LED según el ángulo.</li>
+<li>Actualiza la hora y el ángulo en LCD y UART.</li>
 </ol>
-<p>Estructura de estados: ST_INIT | → ST_READ_SENSORS → ST_UPDATE_LED → ST_UPDATE_UART → loop</p>
+<p>Flujo de estados: ST_INIT ↓ ST_READ_SENSORS → ST_UPDATE_LED → ST_UPDATE_UART → (vuelve a leer)</p>
 <dl class="section author"><dt>Autor</dt><dd>Matías Durante </dd></dl>
 <dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025 </dd></dl>
@@ -183,8 +182,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SM_Iter</b> (void *ar
 <p>Configuración del ciclo de muestreo y actualización del sistema. </p>
 <ul>
 <li>El loop principal corre cada 100 ms (PERIOD_100MS).</li>
-<li>La UART (si se usa) cada 500 ms (PERIOD_500MS).</li>
-<li>El RTC se lee y se actualizan los valores del LCD cada 1 segundo. </li>
+<li>Se lee la información del RTC y se actualizan los valores del LCD cada 1 segundo. </li>
 </ul>
 
 </div>
@@ -212,6 +210,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SM_Iter</b> (void *ar
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a221be4011b053587c845d04751aeacc7" name="a221be4011b053587c845d04751aeacc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221be4011b053587c845d04751aeacc7">&#9670;&#160;</a></span>SM_Iter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SM_Iter </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>argument</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Máquina de estados principal del sistema. </p>
+<p>Tarea que ejecuta la máquina de estados.</p>
+<p>Estados:</p><ul>
+<li>ST_INIT: Inicializa periféricos. Si inicializan correctamente, se pasa al estado ST_READ_SENSORS; En caso de falla luego de los reintentos, se pasa al estado ST_ERROR.</li>
+<li>ST_READ_SENSORS: Lee la información del MPU6050, filtra el ángulo y pasa a ST_UPDATE_LED.</li>
+<li>ST_UPDATE_LED: Ajusta el periodo de parpadeo según el ángulo; pasa a ST_UPDATE_UART.</li>
+<li>ST_UPDATE_UART: Envía hora y ángulo por UART; vuelve a ST_READ_SENSORS.</li>
+<li>ST_ERROR: Muestra un mensaje de error en el LCD y reinicia el MCU.</li>
+<li>RTC: Actualiza el LCD cada 1 s con hora y ángulo.</li>
+<li>LED: Parpadea según la inclinación calculada. </li>
+</ul>
 
 </div>
 </div>

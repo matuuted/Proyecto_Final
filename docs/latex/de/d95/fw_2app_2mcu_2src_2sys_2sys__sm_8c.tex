@@ -2,7 +2,7 @@
 \hypertarget{fw_2app_2mcu_2src_2sys_2sys__sm_8c}{}\label{fw_2app_2mcu_2src_2sys_2sys__sm_8c}\index{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/src/sys/sys\_sm.c@{C:/Users/Matias D/Documents/Proyecto\_Final/fw/app/mcu/src/sys/sys\_sm.c}}
 
 
-Implementación de la máquina de estados principal del sistema.  
+Máquina de estados principal del sistema.  
 
 
 {\ttfamily \#include "{}sys\+\_\+sm.\+h"{}}\newline
@@ -40,13 +40,13 @@ struct \mbox{\hyperlink{struct_boot___status}{Boot\+\_\+\+Status}}
 \#define {\bfseries UART\+\_\+\+REFRESH\+\_\+\+DIV}~5
 \item 
 \Hypertarget{fw_2app_2mcu_2src_2sys_2sys__sm_8c_af5abd28c44c29b7397c84f1fec4b1d84}\label{fw_2app_2mcu_2src_2sys_2sys__sm_8c_af5abd28c44c29b7397c84f1fec4b1d84} 
-\#define {\bfseries ALPHA}~0.\+2f
+\#define {\bfseries ALPHA}~0.\+2f                /\texorpdfstring{$\ast$}{*} Filtro utilizado para el calculo del angulo\texorpdfstring{$\ast$}{*}/
 \item 
 \Hypertarget{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a9e8aaf9c28f704136d8fc1ba043b6bf5}\label{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a9e8aaf9c28f704136d8fc1ba043b6bf5} 
-\#define {\bfseries STR\+\_\+\+LENGTH}~\mbox{\hyperlink{dev___l_c_d_8h_afa3938c4bd2d6c656eedae37d94dc273}{DEV\+\_\+\+LCD\+\_\+\+COLS}} + 1
+\#define {\bfseries STR\+\_\+\+LENGTH}~\mbox{\hyperlink{dev___l_c_d_8h_afa3938c4bd2d6c656eedae37d94dc273}{DEV\+\_\+\+LCD\+\_\+\+COLS}} + 1    /\texorpdfstring{$\ast$}{*} 16 Caracteres del LCD + \textbackslash{}0 \texorpdfstring{$\ast$}{*}/
 \item 
 \Hypertarget{fw_2app_2mcu_2src_2sys_2sys__sm_8c_ab0aa36e1bdc251eaaada3e409312d8ae}\label{fw_2app_2mcu_2src_2sys_2sys__sm_8c_ab0aa36e1bdc251eaaada3e409312d8ae} 
-\#define {\bfseries BOOT\+\_\+\+MAX\+\_\+\+TRIES}~3        /\texorpdfstring{$\ast$}{*} Numero de intentos de inicialización por periférico \texorpdfstring{$\ast$}{*}/
+\#define {\bfseries BOOT\+\_\+\+MAX\+\_\+\+TRIES}~3                            /\texorpdfstring{$\ast$}{*} Numero de intentos de inicialización por periférico \texorpdfstring{$\ast$}{*}/
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumeraciones}
 \begin{DoxyCompactItemize}
@@ -60,31 +60,30 @@ enum \mbox{\hyperlink{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a9a1771f1c13e930cd38613
 , \newline
 {\bfseries DEV\+\_\+\+INIT\+\_\+\+ERROR}
  \}
-\begin{DoxyCompactList}\small\item\em Inicialización de periféricos durante el arranque del sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estado de inicialización de periféricos durante el arranque del sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
 HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a6fcdcaff4e6bfff5e8dc9aa8a033bce6}{SM\+\_\+\+Init\+OS}} (void)
 \begin{DoxyCompactList}\small\item\em Crea e inicializa la tarea principal de la máquina de estados, utilizando el Free\+RTOS proporcionado por el Cube\+MX. \end{DoxyCompactList}\item 
-\Hypertarget{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a221be4011b053587c845d04751aeacc7}\label{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a221be4011b053587c845d04751aeacc7} 
-void {\bfseries SM\+\_\+\+Iter} (void \texorpdfstring{$\ast$}{*}argument)
-\begin{DoxyCompactList}\small\item\em Tarea que ejecuta la máquina de estados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a221be4011b053587c845d04751aeacc7}{SM\+\_\+\+Iter}} (void \texorpdfstring{$\ast$}{*}argument)
+\begin{DoxyCompactList}\small\item\em Máquina de estados principal del sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
-Implementación de la máquina de estados principal del sistema. 
+Máquina de estados principal del sistema. 
 
-La SM coordina la inicialización de los periféricos (LCD, RTC, MPU6050) de manera secuencial, luego procede a realizar la lectura periódica de sensores, el renderizado en pantalla y la señalización visual mediante el parpadeo del LED.
+Esta SM se encarga de coordinar todo el flujo del dispositivo\+: arranca los periféricos (LCD, RTC, MPU6050), realiza las lecturas periódicas y muestra la información tanto en pantalla como por UART. Además, controla el parpadeo del LED según el ángulo de inclinación detectado.
 
-Ciclo principal (\texorpdfstring{$\sim$}{\string~}100 ms)\+:
+Ciclo principal (≈100 ms)\+:
 \begin{DoxyEnumerate}
 \item Lee los sensores.
-\item Calcula ángulo.
-\item Ajusta frecuencia de parpadeo según el angulo de inclinación.
-\item Actualiza la informacion en el LCD y la UART.
+\item Calcula el ángulo de inclinación.
+\item Ajusta la frecuencia del LED según el ángulo.
+\item Actualiza la hora y el ángulo en LCD y UART.
 \end{DoxyEnumerate}
 
-Estructura de estados\+: ST\+\_\+\+INIT \texorpdfstring{$\vert$}{|} → ST\+\_\+\+READ\+\_\+\+SENSORS → ST\+\_\+\+UPDATE\+\_\+\+LED → ST\+\_\+\+UPDATE\+\_\+\+UART → loop
+Flujo de estados\+: ST\+\_\+\+INIT ↓ ST\+\_\+\+READ\+\_\+\+SENSORS → ST\+\_\+\+UPDATE\+\_\+\+LED → ST\+\_\+\+UPDATE\+\_\+\+UART → (vuelve a leer)
 
 \begin{DoxyAuthor}{Autor}
 Matías Durante 
@@ -113,8 +112,7 @@ Configuración del ciclo de muestreo y actualización del sistema.
 
 \begin{DoxyItemize}
 \item El loop principal corre cada 100 ms (PERIOD\+\_\+100\+MS).
-\item La UART (si se usa) cada 500 ms (PERIOD\+\_\+500\+MS).
-\item El RTC se lee y se actualizan los valores del LCD cada 1 segundo. 
+\item Se lee la información del RTC y se actualizan los valores del LCD cada 1 segundo. 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -135,3 +133,25 @@ Crea e inicializa la tarea principal de la máquina de estados, utilizando el Fr
 {\em HAL\+\_\+\+OK} & si la tarea fue creada correctamente. \\
 \hline
 \end{DoxyRetVals}
+\Hypertarget{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a221be4011b053587c845d04751aeacc7}\index{sys\_sm.c@{sys\_sm.c}!SM\_Iter@{SM\_Iter}}
+\index{SM\_Iter@{SM\_Iter}!sys\_sm.c@{sys\_sm.c}}
+\doxysubsubsection{\texorpdfstring{SM\_Iter()}{SM\_Iter()}}
+{\footnotesize\ttfamily \label{fw_2app_2mcu_2src_2sys_2sys__sm_8c_a221be4011b053587c845d04751aeacc7} 
+void SM\+\_\+\+Iter (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argument}{}\end{DoxyParamCaption})}
+
+
+
+Máquina de estados principal del sistema. 
+
+Tarea que ejecuta la máquina de estados.
+
+Estados\+:
+\begin{DoxyItemize}
+\item ST\+\_\+\+INIT\+: Inicializa periféricos. Si inicializan correctamente, se pasa al estado ST\+\_\+\+READ\+\_\+\+SENSORS; En caso de falla luego de los reintentos, se pasa al estado ST\+\_\+\+ERROR.
+\item ST\+\_\+\+READ\+\_\+\+SENSORS\+: Lee la información del MPU6050, filtra el ángulo y pasa a ST\+\_\+\+UPDATE\+\_\+\+LED.
+\item ST\+\_\+\+UPDATE\+\_\+\+LED\+: Ajusta el periodo de parpadeo según el ángulo; pasa a ST\+\_\+\+UPDATE\+\_\+\+UART.
+\item ST\+\_\+\+UPDATE\+\_\+\+UART\+: Envía hora y ángulo por UART; vuelve a ST\+\_\+\+READ\+\_\+\+SENSORS.
+\item ST\+\_\+\+ERROR\+: Muestra un mensaje de error en el LCD y reinicia el MCU.
+\item RTC\+: Actualiza el LCD cada 1 s con hora y ángulo.
+\item LED\+: Parpadea según la inclinación calculada. 
+\end{DoxyItemize}

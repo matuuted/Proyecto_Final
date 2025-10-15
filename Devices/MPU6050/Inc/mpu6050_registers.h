@@ -14,7 +14,7 @@
 #define MPU6050_REG_CONFIG         0x1A
 #define MPU6050_REG_GYRO_CONFIG    0x1B
 #define MPU6050_REG_ACCEL_CONFIG   0x1C
-#define MPU6050_REG_ACCEL          0x3B   /* Burst: AX..AZ, TEMP, GX..GZ (14 bytes) */
+#define MPU6050_REG_ACCEL          0x3B
 #define MPU6050_REG_PWR_MGMT_1     0x6B
 
 /* --------------- Máscaras / shifts utilizados ---------- */

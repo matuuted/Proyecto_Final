@@ -41,19 +41,13 @@ HAL_StatusTypeDef DBG_InitOS(void)
 void DBG_Iter(void *argument)
 {
     for (;;) {
-        uint32_t f = osThreadFlagsWait(OS_NOTIFY_I2C_COMMAND,
-                                       osFlagsWaitAny,
-                                       osWaitForever);
+        uint32_t f = osThreadFlagsWait(OS_NOTIFY_I2C_COMMAND, osFlagsWaitAny, osWaitForever);
 
-        if ((int32_t)f < 0) {
-            // NO return; porque matarías la task
-            continue;
-        }
+        if ((int32_t)f < 0) continue;
 
-        // por las dudas, limpiar (idempotente)
         osThreadFlagsClear(OS_NOTIFY_I2C_COMMAND);
 
-        // Procesar el comando recibido por I2C
+        /* Procesar el comando y ejecutar la funcion. */
         exec_fn(command.buffer);
     }
 }

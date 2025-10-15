@@ -22,7 +22,7 @@ Además, esta inclinación se ve reflejada en el **LED** con una frecuencia de p
    Se configuran los periféricos (I²C, UART, GPIO) y se verifica la presencia del LCD, MPU-6050 y DS3231.  
 
 2. **Lectura de Datos:**  
-   Se adquieren los valores de aceleración desde el MPU-6050.  
+   Se obtienen los valores de aceleración desde el MPU-6050.  
 
 3. **Procesamiento:**  
    Se aplica un filtro simple para calcular el ángulo, que luego se vera representado en el parpadeo del LED.  

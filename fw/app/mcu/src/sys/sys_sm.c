@@ -2,22 +2,23 @@
 /**
   ******************************************************************************
   * @file    sys_sm.c
-  * @brief   Implementación de la máquina de estados principal del sistema.
+  * @brief   Máquina de estados principal del sistema.
   *
-  * La SM coordina la inicialización de los periféricos (LCD, RTC, MPU6050) de manera secuencial,
-  * luego procede a realizar la lectura periódica de sensores, el renderizado en pantalla y la señalización
-  * visual mediante el parpadeo del LED. 
+  * Esta SM se encarga de coordinar todo el flujo del dispositivo: arranca los 
+  * periféricos (LCD, RTC, MPU6050), realiza las lecturas periódicas y muestra 
+  * la información tanto en pantalla como por UART. Además, controla el parpadeo 
+  * del LED según el ángulo de inclinación detectado.
   *
-  * Ciclo principal (~100 ms):
+  * Ciclo principal (≈100 ms):
   *   1. Lee los sensores.
-  *   2. Calcula ángulo.
-  *   3. Ajusta frecuencia de parpadeo según el angulo de inclinación.
-  *   4. Actualiza la informacion en el LCD y la UART.
+  *   2. Calcula el ángulo de inclinación.
+  *   3. Ajusta la frecuencia del LED según el ángulo.
+  *   4. Actualiza la hora y el ángulo en LCD y UART.
   *
-  * Estructura de estados:
+  * Flujo de estados:
   *   ST_INIT 
-  *     |
-  *     → ST_READ_SENSORS → ST_UPDATE_LED → ST_UPDATE_UART → loop
+  *     ↓
+  *   ST_READ_SENSORS → ST_UPDATE_LED → ST_UPDATE_UART → (vuelve a leer)
   *
   * @author   Matías Durante
   * @version  1.0
@@ -51,18 +52,17 @@
  * @brief Configuración del ciclo de muestreo y actualización del sistema.
  * 
  * - El loop principal corre cada 100 ms (PERIOD_100MS).
- * - La UART (si se usa) cada 500 ms (PERIOD_500MS).
- * - El RTC se lee y se actualizan los valores del LCD cada 1 segundo.
+ * - Se lee la información del RTC y se actualizan los valores del LCD cada 1 segundo.
  */
 #define SAMPLE_PERIOD_MS        100
 #define PERIOD_100MS            pdMS_TO_TICKS(100) 
 #define PERIOD_1S               pdMS_TO_TICKS(1000)
 #define UART_REFRESH_DIV        5   
-#define ALPHA                   0.2f     // Filtro IIR para el angulo
-#define STR_LENGTH              DEV_LCD_COLS + 1 // 16 Caracteres del LCD + \0
+#define ALPHA                   0.2f                /* Filtro utilizado para el calculo del angulo*/
+#define STR_LENGTH              DEV_LCD_COLS + 1    /* 16 Caracteres del LCD + \0 */
 
 #ifndef BOOT_MAX_TRIES        
-#define BOOT_MAX_TRIES 3        /* Numero de intentos de inicialización por periférico */
+#define BOOT_MAX_TRIES 3                            /* Numero de intentos de inicialización por periférico */
 #endif
 
 /* ========================================================================== */
@@ -70,7 +70,7 @@
 /* ========================================================================== */
 
 /**
- * @brief Inicialización de periféricos durante el arranque del sistema.
+ * @brief Estado de inicialización de periféricos durante el arranque del sistema.
  */
 typedef enum {
     DEV_INIT_LCD = 0,
@@ -94,9 +94,9 @@ typedef struct {
 
     float        angle_deg;
     float        angle_filt;
-    uint32_t     blink_ms;     // periodo de parpadeo actual
-    uint32_t     blink_acc;    // acumulador para togglear
-    uint32_t     tick_ms;      // “latido” del loop (SAMPLE_PERIOD_MS)
+    uint32_t     blink_ms;
+    uint32_t     blink_acc;
+    uint32_t     tick_ms;      
     uint32_t     lcd_div;
     uint32_t     uart_div;
 } SM_Handler;
@@ -154,11 +154,11 @@ static uint32_t angle_to_period_ms(float angle_deg)
  */
 static inline int angle_to_int(float angle_deg)
 {
-    if (angle_deg != angle_deg) angle_deg = 0.0;        // Si el valor es NaN, se reemplaza por  -> 0
+    if (angle_deg != angle_deg) angle_deg = 0.0;        /*  Si el valor es NaN, se reemplaza por  -> 0 */
 
     int angle = (angle_deg >= 0.0) ? (int)(angle_deg + 0.5) : (int)(angle_deg - 0.5);
 
-    // Limito el angulo a +- 90 grados para evitar problemas de lecturas.
+    /* Limito el angulo a +- 90 grados para evitar problemas de lecturas. */
     if (angle >  90) angle =  90;
     if (angle < -90) angle = -90;
     return angle;
@@ -172,9 +172,14 @@ static inline int angle_to_int(float angle_deg)
 static void format_text(const DS3231_Time *t, float angle_deg, char *line0, char *line1)
 {
     int angle = angle_to_int(angle_deg);
-    snprintf(line0, STR_LENGTH, "Hora:%02u:%02u:%02u", t->hours, t->minutes, t->seconds);  // Línea 0: "Hora:HH:MM:SS"
-    snprintf(line1, STR_LENGTH, "Incl:%3d%c", angle, (char)0xDF);                          // Línea 1: "Incl: %3d°"  -> 0xDF = símbolo °
+    snprintf(line0, STR_LENGTH, "Hora:%02u:%02u:%02u", t->hours, t->minutes, t->seconds);  /* Línea 0: "Hora:HH:MM:SS" */
+    snprintf(line1, STR_LENGTH, "Incl:%3d%c", angle, (char)0xDF);                          /* Línea 1: "Incl: %3d°"  -> 0xDF = símbolo ° */
 }
+
+/**
+ * @brief Enviar por UART una línea de texto formateada con información de tiempo y un ángulo en grados.
+ * 
+ */
 
 static void uart_send_data(const DS3231_Time *t, float angle_deg)
 {
@@ -197,7 +202,7 @@ static void uart_send_data(const DS3231_Time *t, float angle_deg)
  */
 static void show_boot_message(const char* line1, const char* line2)
 {
-    if (!boot_status.lcd_ready) return; // Si el LCD no está listo aún, salimos de la funcion.
+    if (!boot_status.lcd_ready) return;
 
     LCD_Clear();
     LCD_PrintCentered(DEV_LCD_ROWS_0, (char*)line1);
@@ -313,13 +318,26 @@ HAL_StatusTypeDef SM_InitOS(void)
     return (SMTaskHandle == NULL) ? HAL_ERROR : HAL_OK;
 }
 
+/**
+ * @brief Máquina de estados principal del sistema.
+ *
+ * Estados:
+ *  - ST_INIT: Inicializa periféricos. Si inicializan correctamente, se pasa al estado ST_READ_SENSORS; En caso de falla luego de los reintentos, se pasa al estado ST_ERROR.
+ *  - ST_READ_SENSORS: Lee la información del MPU6050, filtra el ángulo y pasa a ST_UPDATE_LED.
+ *  - ST_UPDATE_LED: Ajusta el periodo de parpadeo según el ángulo; pasa a ST_UPDATE_UART.
+ *  - ST_UPDATE_UART: Envía hora y ángulo por UART; vuelve a ST_READ_SENSORS.
+ *  - ST_ERROR: Muestra un mensaje de error en el LCD y reinicia el MCU.
+ *
+ *  - RTC: Actualiza el LCD cada 1 s con hora y ángulo.
+ *  - LED: Parpadea según la inclinación calculada.
+ */
 void SM_Iter(void *argument)
 {
     (void)argument;
 
     
     TickType_t last_wake = xTaskGetTickCount(); /* Tick del sistema, utilizado para mantener el timing preciso en el loop. */
-    TickType_t last_rtc  = last_wake;   /* referencia para lectura 1 Hz del RTC. */
+    TickType_t last_rtc  = last_wake;           /* referencia para lectura 1 Hz del RTC. */
 
     for (;;)
     {
@@ -327,12 +345,6 @@ void SM_Iter(void *argument)
         {
             case ST_INIT:
             {
-                /* =========================================================
-                * ST_INIT
-                * ---------------------------------------------------------
-                * Etapa de arranque: inicializa los periféricos uno a uno.
-                * Si todos los módulos responden, la SM pasa al funcionamiento en loop.
-                * ========================================================= */
                 Device_Init_Stage device_init = run_device_initialization();
 
                 if (device_init == DEV_INIT_COMPLETE) {
@@ -350,19 +362,13 @@ void SM_Iter(void *argument)
                     break;
                 }
 
-                // Todavía se encuentra inicializando los perifericos → espera y vuelve a intentar
+                /* Todavía se encuentra inicializando los perifericos. Espera y vuelve a intentar */
                 osDelay(50);
             }
             break;
 
             case ST_READ_SENSORS:
             {
-                /* =========================================================
-                * ST_READ_SENSORS
-                * ---------------------------------------------------------
-                * Lee el acelerómetro (MPU6050)
-                * Calcula el ángulo de inclinación que se utiliza para actualizar la frecuencia del LED. 
-                * ========================================================= */
                 if (MPU6050_Read(&sm.mpu) == MPU6050_OK) {
                     float pitch = mpu_get_angle_deg(sm.mpu.data.accel_x, sm.mpu.data.accel_y, sm.mpu.data.accel_z);
                     sm.angle_filt = (ALPHA * pitch) + (1.0f - ALPHA) * sm.angle_filt;
@@ -374,11 +380,6 @@ void SM_Iter(void *argument)
 
             case ST_UPDATE_LED:
             {
-                /* =========================================================
-                * ST_UPDATE_LED
-                * ---------------------------------------------------------
-                * Actualiza el parpadeo del LED según el ángulo leido.
-                * ========================================================= */
                 sm.blink_ms = angle_to_period_ms(sm.angle_deg);
                 sm.state = ST_UPDATE_UART;
             }
@@ -386,11 +387,6 @@ void SM_Iter(void *argument)
 
             case ST_UPDATE_UART:
             {
-                /* =========================================================
-                * ST_UART_UPDATE
-                * ---------------------------------------------------------
-                * Envia la informacion por la UART con la hora y el ángulo actual.
-                * ========================================================= */
                 uart_send_data(&sm.rtc, sm.angle_deg);
                 sm.state = ST_READ_SENSORS;
             }
@@ -398,11 +394,6 @@ void SM_Iter(void *argument)
 
             case ST_ERROR:
             {
-                /* =========================================================
-                * ST_ERROR
-                * ---------------------------------------------------------
-                * Informa en pantalla el error en la inicializacion y reinicia el sistema.
-                * ========================================================= */
                 if (boot_status.lcd_ready) {
                     LCD_Clear();
                     LCD_PrintCentered(DEV_LCD_ROWS_0,"Error boot");

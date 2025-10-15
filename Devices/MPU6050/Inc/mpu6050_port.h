@@ -19,7 +19,7 @@ extern "C" {
  *  @{
  */
 
- /** Dirección 7-bit del MPU6050 (0x68) */
+ /** Dirección I2C del MPU6050 (0x69) */
 #define MPU6050_ADDRESS        (0x69)
 
 /**< Cantidad de reintentos en I2CM_IsDeviceReady */
@@ -27,7 +27,7 @@ extern "C" {
 
 /**
  * @brief  Verifica la presencia del MPU6050 en el bus I2C.
- * @return Retorna HAL_OK si responde al address 0x68.
+ * @return Retorna HAL_OK si responde al address 0x69.
  */
 HAL_StatusTypeDef MPU6050_is_ready(void);
 
