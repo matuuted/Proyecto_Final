@@ -60,6 +60,7 @@
 #define UART_REFRESH_DIV        5   
 #define ALPHA                   0.2f                /* Filtro utilizado para el calculo del angulo*/
 #define STR_LENGTH              DEV_LCD_COLS + 1    /* 16 Caracteres del LCD + \0 */
+#define UART_STR_LENGTH         48                  /* 48 Caracteres enviados por la UART */
 
 #ifndef BOOT_MAX_TRIES        
 #define BOOT_MAX_TRIES 3                            /* Numero de intentos de inicialización por periférico */
@@ -190,7 +191,7 @@ static void format_text(const DS3231_Time *t, float angle_deg, char *line0, char
 
 static void uart_send_data(const DS3231_Time *t, float angle_deg)
 {
-    char line0[STR_LENGTH], line1[STR_LENGTH], out[48];
+    char line0[STR_LENGTH], line1[STR_LENGTH], out[UART_STR_LENGTH];
     format_text(t, angle_deg, line0, line1);
     int n = snprintf(out, sizeof(out), "%s | %s\r\n", line0, line1);
     if (n > 0) {
