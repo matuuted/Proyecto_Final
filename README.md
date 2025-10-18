@@ -45,6 +45,14 @@ Además, esta inclinación se ve reflejada en el **LED** con una frecuencia de p
 
 ---
 
+## Documentación
+
+La documentación del proyecto final, la cual fué generada con **Doxygen**, se encuentra disponible en el siguiente enlace:
+
+- [Ver documentación](https://matuuted.github.io/Proyecto_Final/)
+
+---
+
 ##  Autor
 **Matías Durante**  
 Proyecto Final
