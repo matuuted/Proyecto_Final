@@ -26,6 +26,7 @@
 #include "app_sm.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "dev_uart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

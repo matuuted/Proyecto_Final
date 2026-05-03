@@ -29,7 +29,6 @@ static void devices_Init(void)
   DEV_GPIO_Init();
   if (I2CM_InitStart()  != HAL_OK) Error_Handler();
   if (I2CS_InitStart()  != HAL_OK) Error_Handler();
-  if (!uartInit()) Error_Handler();
 }
 
 /**
@@ -47,6 +46,7 @@ int main(void)
 
   if (DBG_InitOS() != HAL_OK) Error_Handler();
   if (SM_InitOS()  != HAL_OK) Error_Handler();
+  if (Comm_InitOS() != HAL_OK) Error_Handler();
 
   osKernelStart();
 

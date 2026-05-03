@@ -36,6 +36,7 @@ extern "C" {
 #include "sys_dbg_api.h"
 #include "dev_uart.h"
 #include "app_sm.h"
+#include "esp_comm.h"
 #include <stdbool.h>
 
 /* Private includes ----------------------------------------------------------*/

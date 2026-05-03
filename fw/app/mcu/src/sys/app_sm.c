@@ -38,6 +38,7 @@
 #include "ds3231.h"
 #include "dev_gpio_cfg.h"
 #include "dev_uart.h"
+#include "esp_comm.h"
 
 #include <string.h>
 #include <stdbool.h>
@@ -381,6 +382,20 @@ void SM_Task(void *argument)
                         s_sm.state           = ST_DISPENSING;
                         s_sm.led_acc_ms      = 0;
                     }
+
+                    /* Enviar telemetría al ESP32 en cada lectura del RTC (cada ~1s) */
+                    Comm_Data tel = {
+                        .tankWeight  = 0.0f,
+                        .plateWeight = 0.0f,
+                        .hour        = s_sm.rtc.hours,
+                        .minute      = s_sm.rtc.minutes,
+                        .second      = s_sm.rtc.seconds,
+                        .day         = s_sm.rtc.date,
+                        .month       = s_sm.rtc.month,
+                        .year        = s_sm.rtc.year,
+                        .weekday     = s_sm.rtc.day,
+                    };
+                    Comm_SendData(&tel);
                 }
             }
             break;
@@ -407,6 +422,12 @@ void SM_Task(void *argument)
                     s_sm.state             = ST_IDLE;
                     s_sm.led_acc_ms        = 0;
                     xQueueReset(s_event_queue);
+
+                    /* Notificar al ESP32 UNA SOLA VEZ al terminar la dispensación */
+                    Comm_SendFeedingDone(50,
+                        s_sm.dispense_source == EVT_BUTTON ? "Manual" : "Programado",
+                        s_sm.rtc.hours,
+                        s_sm.rtc.minutes);
                 }
             }
             break;
