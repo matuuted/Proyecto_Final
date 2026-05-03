@@ -62,3 +62,8 @@ py/reg/log
 Debug/
 **/Debug/
 **/debug/
+
+.cproject
+.project
+.settings/
+*.launch

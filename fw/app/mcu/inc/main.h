@@ -35,7 +35,7 @@ extern "C" {
 #include "dev_gpio.h"
 #include "sys_dbg_api.h"
 #include "dev_uart.h"
-#include "sys_sm.h"
+#include "app_sm.h"
 #include <stdbool.h>
 
 /* Private includes ----------------------------------------------------------*/

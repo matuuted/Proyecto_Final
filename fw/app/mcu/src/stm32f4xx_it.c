@@ -22,6 +22,10 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "dev_gpio_cfg.h"
+#include "app_sm.h"
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -174,5 +178,22 @@ void TIM7_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+
+void EXTI15_10_IRQHandler(void)
+{
+    HAL_GPIO_EXTI_IRQHandler(B1_Pin);
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin != B1_Pin) return;
+
+    static TickType_t last_press = 0;
+    TickType_t now = xTaskGetTickCountFromISR();
+    if ((now - last_press) < pdMS_TO_TICKS(200U)) return;
+
+    last_press = now;
+    Dispenser_PostButtonEvent();
+}
 
 /* USER CODE END 1 */
