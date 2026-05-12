@@ -34,11 +34,13 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
-#include "cmsis_os.h"
+#include "cmsis_os2.h"
 #include "ds3231.h"
 #include "dev_gpio_cfg.h"
 #include "dev_uart.h"
 #include "esp_comm.h"
+#include "dev_motor.h"
+#include "dev_hx711.h"
 
 #include <string.h>
 #include <stdbool.h>
@@ -131,7 +133,7 @@ typedef struct {
     bool         last_slot_fired;   /**< Guards against re-firing same minute.  */
     uint8_t      last_fired_hour;   /**< Hour of last fired slot.               */
     uint8_t      last_fired_min;    /**< Minute of last fired slot.             */
-    TickType_t   dispense_start;    /**< Timestamp when dispensing started.     */
+
     bool         dispensing_active; /**< Entry action guard                     */
     SM_Event    dispense_source;    /**< Source of current dispense event.      */
 } SM_Handler;
@@ -295,9 +297,6 @@ HAL_StatusTypeDef SM_InitOS(void)
     s_sm.state   = ST_INIT;
     s_boot.stage = DEV_INIT_RTC;
 
-
-    HAL_GPIO_WritePin(MOTOR_GPIO_Port, MOTOR_GPIO_Pin, GPIO_PIN_RESET);
-
     /* Create the event queue — depth 4, each item is one SM_Event */
     s_event_queue = xQueueCreate(4, sizeof(SM_Event));
     if (s_event_queue == NULL) return HAL_ERROR;
@@ -325,8 +324,6 @@ void SM_Task(void *argument)
 {
     (void)argument;
 
-    TickType_t last_wake = xTaskGetTickCount();
-
     for (;;)
     {
         switch (s_sm.state)
@@ -337,19 +334,8 @@ void SM_Task(void *argument)
             case ST_INIT:
             {
                 Device_Init_Stage stage = run_device_initialization();
-
-                if (stage == DEV_INIT_COMPLETE)
-                {
-                    s_sm.state = ST_IDLE;
-                    break;
-                }
-
-                if (stage == DEV_INIT_ERROR)
-                {
-                    s_sm.state = ST_ERROR;
-                    break;
-                }
-
+                if (stage == DEV_INIT_COMPLETE) { s_sm.state = ST_IDLE;  break; }
+                if (stage == DEV_INIT_ERROR)    { s_sm.state = ST_ERROR; break; }
                 osDelay(50);
             }
             break;
@@ -361,19 +347,18 @@ void SM_Task(void *argument)
             {
                 SM_Event evt = EVT_NONE;
 
-                if (xQueueReceive(s_event_queue, &evt, IDLE_POLL_MS) == pdTRUE)
+                /* Bloquear hasta 1s — timeout natural del polling del RTC */
+                xQueueReceive(s_event_queue, &evt, IDLE_POLL_MS);
+
+                if (evt == EVT_BUTTON)
                 {
-                    /* Manual button press — go dispense immediately */
-                    if (evt == EVT_BUTTON)
-                    {
-                        s_sm.dispense_source = EVT_BUTTON;
-                        s_sm.state      = ST_DISPENSING;
-                        s_sm.led_acc_ms = 0;
-                        break;
-                    }
+                    s_sm.dispense_source = EVT_BUTTON;
+                    s_sm.state           = ST_DISPENSING;
+                    s_sm.led_acc_ms      = 0;
+                    break;
                 }
 
-                /* Queue timeout: check RTC against schedule */
+                /* Leer RTC y mandar telemetría en cada ciclo (timeout o EVT_NONE) */
                 if (DS3231_ReadTime(&s_sm.rtc) == DS3231_OK)
                 {
                     if (schedule_check(&s_sm.rtc))
@@ -381,12 +366,17 @@ void SM_Task(void *argument)
                         s_sm.dispense_source = EVT_SCHEDULED;
                         s_sm.state           = ST_DISPENSING;
                         s_sm.led_acc_ms      = 0;
+                        break;
                     }
 
-                    /* Enviar telemetría al ESP32 en cada lectura del RTC (cada ~1s) */
+                    float tankGrams  = 0.0f;
+                    float plateGrams = 0.0f;
+                    HX711_ReadGrams(HX711_CH_TANK,  &tankGrams);
+                    HX711_ReadGrams(HX711_CH_PLATE, &plateGrams);
+
                     Comm_Data tel = {
-                        .tankWeight  = 0.0f,
-                        .plateWeight = 0.0f,
+                        .tankWeight  = tankGrams / 1000.0f,
+                        .plateWeight = plateGrams,
                         .hour        = s_sm.rtc.hours,
                         .minute      = s_sm.rtc.minutes,
                         .second      = s_sm.rtc.seconds,
@@ -397,33 +387,36 @@ void SM_Task(void *argument)
                     };
                     Comm_SendData(&tel);
                 }
+
+                led_update(1000U);
             }
             break;
 
             /* ----------------------------------------------------------------
-             * ST_DISPENSING — activate actuator for DISPENSER_ACTIVE_MS
+             * ST_DISPENSING — motor gira MOTOR_DEFAULT_STEPS pasos via TIM2 IRQ
              * -------------------------------------------------------------- */
             case ST_DISPENSING:
             {
                 if (!s_sm.dispensing_active)
                 {
+                    xQueueReset(s_event_queue);
                     log_dispense_event(&s_sm.rtc, s_sm.dispense_source);
-                    HAL_GPIO_WritePin(MOTOR_GPIO_Port, MOTOR_GPIO_Pin, GPIO_PIN_SET);
-                    s_sm.dispense_start = xTaskGetTickCount();
+                    Motor_Dispense(MOTOR_DEFAULT_STEPS, MOTOR_DIR_CW);
                     s_sm.dispensing_active = true;
                 }
 
-                /* Check if dispense duration has elapsed */
-                TickType_t elapsed = xTaskGetTickCount() - s_sm.dispense_start;
-                if (elapsed >= pdMS_TO_TICKS(DISPENSER_ACTIVE_MS))
+                /* Ceder CPU 100ms — la IRQ del TIM2 cuenta los pasos en background */
+                SM_Event evt = EVT_NONE;
+                xQueueReceive(s_event_queue, &evt, pdMS_TO_TICKS(100));
+                led_update(100U);
+
+                if (Motor_IsDone())
                 {
-                    HAL_GPIO_WritePin(MOTOR_GPIO_Port, MOTOR_GPIO_Pin, GPIO_PIN_RESET);
                     s_sm.dispensing_active = false;
                     s_sm.state             = ST_IDLE;
                     s_sm.led_acc_ms        = 0;
                     xQueueReset(s_event_queue);
 
-                    /* Notificar al ESP32 UNA SOLA VEZ al terminar la dispensación */
                     Comm_SendFeedingDone(50,
                         s_sm.dispense_source == EVT_BUTTON ? "Manual" : "Programado",
                         s_sm.rtc.hours,
@@ -447,16 +440,5 @@ void SM_Task(void *argument)
                 s_sm.state = ST_INIT;
             break;
         }
-
-        /* --------------------------------------------------------------------
-         * LED update — runs every TASK_PERIOD_MS regardless of state
-         * (except ST_DISPENSING which uses vTaskDelay internally)
-         * ------------------------------------------------------------------ */
-        if (s_sm.state != ST_ERROR)
-        {
-            led_update(100U);
-        }
-
-        vTaskDelayUntil(&last_wake, TASK_PERIOD_MS);
     }
 }

@@ -17,6 +17,7 @@
 
 #include "esp_comm.h"
 #include "dev_uart.h"
+#include "dev_hx711.h"
 #include "app_sm.h"
 #include "ds3231.h"
 
@@ -150,16 +151,35 @@ static void handle_dispense(const char *json)
 }
 
 /**
- * @brief  Procesa el comando "tare".
+ * @brief  Procesa el comando "tare" — tara ambas galgas HX711.
  */
 static void handle_tare(void)
 {
-    /*
-     * Placeholder: aquí iría la lógica real de tara del sensor de peso.
-     * Por ahora, notificamos al ESP32 que se completó.
-     */
-    uartSendString((uint8_t *)"[COMM] Tara solicitada.\r\n");
-    Comm_SendTareDone();
+    uartSendString((uint8_t *)"[COMM] Tara iniciada...\r\n");
+
+    HX711_Status st = HX711_TareAll();
+
+    if (st == HX711_OK) {
+        /* Leer después de tarar para confirmar que da ~0 */
+        float tank = 0.0f, plate = 0.0f;
+        HX711_ReadGrams(HX711_CH_TANK,  &tank);
+        HX711_ReadGrams(HX711_CH_PLATE, &plate);
+
+        uint8_t buf[128];
+        int tank_int  = (int)tank;
+        int tank_dec  = (int)((tank  - tank_int)  * 100);
+        int plate_int = (int)plate;
+        int plate_dec = (int)((plate - plate_int) * 10);
+        snprintf((char *)buf, sizeof(buf),
+                 "[COMM] Tara OK — Tanque: %d.%02dg  Plato: %d.%01dg\r\n",
+                 tank_int, tank_dec, plate_int, plate_dec);
+        uartSendString(buf);
+
+        Comm_SendTareDone();
+    } else {
+        uartSendString((uint8_t *)"[COMM] Error en tara — HX711 no responde.\r\n");
+        Comm_SendTareDone();
+    }
 }
 
 /**

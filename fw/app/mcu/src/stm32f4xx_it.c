@@ -197,4 +197,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     Dispenser_PostButtonEvent();
 }
 
+void TIM2_IRQHandler(void) { Motor_TIM2_IRQHandler(); }
+
 /* USER CODE END 1 */

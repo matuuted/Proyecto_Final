@@ -1,0 +1,302 @@
+/**
+ * @file    dev_oled.c
+ * @brief   Driver para display OLED 128×64 SSD1315 vía I²C1.
+ *
+ * @details
+ *  Protocolo I²C del SSD1315:
+ *    [ADDR] [CTRL_CMD  0x00] [cmd]       → enviar comando
+ *    [ADDR] [CTRL_DATA 0x40] [d0..dN]   → enviar datos de píxeles
+ *
+ *  Modo horizontal: al completar una columna salta a la siguiente,
+ *  al completar una página salta a la siguiente → ideal para volcar
+ *  el buffer completo en una sola transacción I²C.
+ *
+ * @author  Matías Durante
+ * @version 1.0
+ * @date    2025
+ */
+
+#include "dev_oled.h"
+#include "oled_registers.h"
+#include "cmsis_os2.h"
+#include <string.h>
+#include <stdio.h>
+
+/* =========================================================================== */
+/*                          FUENTE 6×8 (ASCII 32–127)                         */
+/* =========================================================================== */
+/* Cada carácter: 6 bytes. Byte = columna, bit0 = fila superior.              */
+static const uint8_t s_font[][OLED_FONT_W] = {
+    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, // 32 ' '
+    { 0x00, 0x00, 0x5F, 0x00, 0x00, 0x00 }, // 33 '!'
+    { 0x00, 0x07, 0x00, 0x07, 0x00, 0x00 }, // 34 '"'
+    { 0x14, 0x7F, 0x14, 0x7F, 0x14, 0x00 }, // 35 '#'
+    { 0x24, 0x2A, 0x7F, 0x2A, 0x12, 0x00 }, // 36 '$'
+    { 0x23, 0x13, 0x08, 0x64, 0x62, 0x00 }, // 37 '%'
+    { 0x36, 0x49, 0x55, 0x22, 0x50, 0x00 }, // 38 '&'
+    { 0x00, 0x05, 0x03, 0x00, 0x00, 0x00 }, // 39 '''
+    { 0x00, 0x1C, 0x22, 0x41, 0x00, 0x00 }, // 40 '('
+    { 0x00, 0x41, 0x22, 0x1C, 0x00, 0x00 }, // 41 ')'
+    { 0x08, 0x2A, 0x1C, 0x2A, 0x08, 0x00 }, // 42 '*'
+    { 0x08, 0x08, 0x3E, 0x08, 0x08, 0x00 }, // 43 '+'
+    { 0x00, 0x50, 0x30, 0x00, 0x00, 0x00 }, // 44 ','
+    { 0x08, 0x08, 0x08, 0x08, 0x08, 0x00 }, // 45 '-'
+    { 0x00, 0x60, 0x60, 0x00, 0x00, 0x00 }, // 46 '.'
+    { 0x20, 0x10, 0x08, 0x04, 0x02, 0x00 }, // 47 '/'
+    { 0x3E, 0x51, 0x49, 0x45, 0x3E, 0x00 }, // 48 '0'
+    { 0x00, 0x42, 0x7F, 0x40, 0x00, 0x00 }, // 49 '1'
+    { 0x42, 0x61, 0x51, 0x49, 0x46, 0x00 }, // 50 '2'
+    { 0x21, 0x41, 0x45, 0x4B, 0x31, 0x00 }, // 51 '3'
+    { 0x18, 0x14, 0x12, 0x7F, 0x10, 0x00 }, // 52 '4'
+    { 0x27, 0x45, 0x45, 0x45, 0x39, 0x00 }, // 53 '5'
+    { 0x3C, 0x4A, 0x49, 0x49, 0x30, 0x00 }, // 54 '6'
+    { 0x01, 0x71, 0x09, 0x05, 0x03, 0x00 }, // 55 '7'
+    { 0x36, 0x49, 0x49, 0x49, 0x36, 0x00 }, // 56 '8'
+    { 0x06, 0x49, 0x49, 0x29, 0x1E, 0x00 }, // 57 '9'
+    { 0x00, 0x36, 0x36, 0x00, 0x00, 0x00 }, // 58 ':'
+    { 0x00, 0x56, 0x36, 0x00, 0x00, 0x00 }, // 59 ';'
+    { 0x00, 0x08, 0x14, 0x22, 0x41, 0x00 }, // 60 '<'
+    { 0x14, 0x14, 0x14, 0x14, 0x14, 0x00 }, // 61 '='
+    { 0x41, 0x22, 0x14, 0x08, 0x00, 0x00 }, // 62 '>'
+    { 0x02, 0x01, 0x51, 0x09, 0x06, 0x00 }, // 63 '?'
+    { 0x32, 0x49, 0x79, 0x41, 0x3E, 0x00 }, // 64 '@'
+    { 0x7E, 0x11, 0x11, 0x11, 0x7E, 0x00 }, // 65 'A'
+    { 0x7F, 0x49, 0x49, 0x49, 0x36, 0x00 }, // 66 'B'
+    { 0x3E, 0x41, 0x41, 0x41, 0x22, 0x00 }, // 67 'C'
+    { 0x7F, 0x41, 0x41, 0x22, 0x1C, 0x00 }, // 68 'D'
+    { 0x7F, 0x49, 0x49, 0x49, 0x41, 0x00 }, // 69 'E'
+    { 0x7F, 0x09, 0x09, 0x09, 0x01, 0x00 }, // 70 'F'
+    { 0x3E, 0x41, 0x49, 0x49, 0x7A, 0x00 }, // 71 'G'
+    { 0x7F, 0x08, 0x08, 0x08, 0x7F, 0x00 }, // 72 'H'
+    { 0x00, 0x41, 0x7F, 0x41, 0x00, 0x00 }, // 73 'I'
+    { 0x20, 0x40, 0x41, 0x3F, 0x01, 0x00 }, // 74 'J'
+    { 0x7F, 0x08, 0x14, 0x22, 0x41, 0x00 }, // 75 'K'
+    { 0x7F, 0x40, 0x40, 0x40, 0x40, 0x00 }, // 76 'L'
+    { 0x7F, 0x02, 0x04, 0x02, 0x7F, 0x00 }, // 77 'M'
+    { 0x7F, 0x04, 0x08, 0x10, 0x7F, 0x00 }, // 78 'N'
+    { 0x3E, 0x41, 0x41, 0x41, 0x3E, 0x00 }, // 79 'O'
+    { 0x7F, 0x09, 0x09, 0x09, 0x06, 0x00 }, // 80 'P'
+    { 0x3E, 0x41, 0x51, 0x21, 0x5E, 0x00 }, // 81 'Q'
+    { 0x7F, 0x09, 0x19, 0x29, 0x46, 0x00 }, // 82 'R'
+    { 0x46, 0x49, 0x49, 0x49, 0x31, 0x00 }, // 83 'S'
+    { 0x01, 0x01, 0x7F, 0x01, 0x01, 0x00 }, // 84 'T'
+    { 0x3F, 0x40, 0x40, 0x40, 0x3F, 0x00 }, // 85 'U'
+    { 0x1F, 0x20, 0x40, 0x20, 0x1F, 0x00 }, // 86 'V'
+    { 0x3F, 0x40, 0x38, 0x40, 0x3F, 0x00 }, // 87 'W'
+    { 0x63, 0x14, 0x08, 0x14, 0x63, 0x00 }, // 88 'X'
+    { 0x07, 0x08, 0x70, 0x08, 0x07, 0x00 }, // 89 'Y'
+    { 0x61, 0x51, 0x49, 0x45, 0x43, 0x00 }, // 90 'Z'
+    { 0x00, 0x7F, 0x41, 0x41, 0x00, 0x00 }, // 91 '['
+    { 0x02, 0x04, 0x08, 0x10, 0x20, 0x00 }, // 92 '\'
+    { 0x00, 0x41, 0x41, 0x7F, 0x00, 0x00 }, // 93 ']'
+    { 0x04, 0x02, 0x01, 0x02, 0x04, 0x00 }, // 94 '^'
+    { 0x40, 0x40, 0x40, 0x40, 0x40, 0x00 }, // 95 '_'
+    { 0x00, 0x01, 0x02, 0x04, 0x00, 0x00 }, // 96 '`'
+    { 0x20, 0x54, 0x54, 0x54, 0x78, 0x00 }, // 97 'a'
+    { 0x7F, 0x48, 0x44, 0x44, 0x38, 0x00 }, // 98 'b'
+    { 0x38, 0x44, 0x44, 0x44, 0x20, 0x00 }, // 99 'c'
+    { 0x38, 0x44, 0x44, 0x48, 0x7F, 0x00 }, // 100 'd'
+    { 0x38, 0x54, 0x54, 0x54, 0x18, 0x00 }, // 101 'e'
+    { 0x08, 0x7E, 0x09, 0x01, 0x02, 0x00 }, // 102 'f'
+    { 0x08, 0x14, 0x54, 0x54, 0x3C, 0x00 }, // 103 'g'
+    { 0x7F, 0x08, 0x04, 0x04, 0x78, 0x00 }, // 104 'h'
+    { 0x00, 0x44, 0x7D, 0x40, 0x00, 0x00 }, // 105 'i'
+    { 0x20, 0x40, 0x44, 0x3D, 0x00, 0x00 }, // 106 'j'
+    { 0x7F, 0x10, 0x28, 0x44, 0x00, 0x00 }, // 107 'k'
+    { 0x00, 0x41, 0x7F, 0x40, 0x00, 0x00 }, // 108 'l'
+    { 0x7C, 0x04, 0x18, 0x04, 0x78, 0x00 }, // 109 'm'
+    { 0x7C, 0x08, 0x04, 0x04, 0x78, 0x00 }, // 110 'n'
+    { 0x38, 0x44, 0x44, 0x44, 0x38, 0x00 }, // 111 'o'
+    { 0x7C, 0x14, 0x14, 0x14, 0x08, 0x00 }, // 112 'p'
+    { 0x08, 0x14, 0x14, 0x18, 0x7C, 0x00 }, // 113 'q'
+    { 0x7C, 0x08, 0x04, 0x04, 0x08, 0x00 }, // 114 'r'
+    { 0x48, 0x54, 0x54, 0x54, 0x20, 0x00 }, // 115 's'
+    { 0x04, 0x3F, 0x44, 0x40, 0x20, 0x00 }, // 116 't'
+    { 0x3C, 0x40, 0x40, 0x20, 0x7C, 0x00 }, // 117 'u'
+    { 0x1C, 0x20, 0x40, 0x20, 0x1C, 0x00 }, // 118 'v'
+    { 0x3C, 0x40, 0x30, 0x40, 0x3C, 0x00 }, // 119 'w'
+    { 0x44, 0x28, 0x10, 0x28, 0x44, 0x00 }, // 120 'x'
+    { 0x0C, 0x50, 0x50, 0x50, 0x3C, 0x00 }, // 121 'y'
+    { 0x44, 0x64, 0x54, 0x4C, 0x44, 0x00 }, // 122 'z'
+    { 0x00, 0x08, 0x36, 0x41, 0x00, 0x00 }, // 123 '{'
+    { 0x00, 0x00, 0x7F, 0x00, 0x00, 0x00 }, // 124 '|'
+    { 0x00, 0x41, 0x36, 0x08, 0x00, 0x00 }, // 125 '}'
+    { 0x08, 0x08, 0x2A, 0x1C, 0x08, 0x00 }, // 126
+    { 0x08, 0x1C, 0x2A, 0x08, 0x08, 0x00 }, // 127
+};
+
+/* =========================================================================== */
+/*                          BUFFER INTERNO                                     */
+/* =========================================================================== */
+/* buf[0] = OLED_CTRL_DATA, buf[1..1024] = píxeles (8 páginas × 128 cols)    */
+static uint8_t s_buf[1 + OLED_BUF_SIZE];
+
+/* =========================================================================== */
+/*                          FUNCIONES PRIVADAS                                 */
+/* =========================================================================== */
+
+static void buf_clear(void)
+{
+    memset(s_buf + 1, 0x00, OLED_BUF_SIZE);
+    s_buf[0] = OLED_CTRL_DATA;
+}
+
+static void buf_flush(void)
+{
+    /* Configurar ventana: col 0-127, page 0-7 */
+    OLED_port_send_cmd(OLED_CMD_SET_COL_ADDR);
+    OLED_port_send_cmd(0x00);
+    OLED_port_send_cmd(0x7F);
+    OLED_port_send_cmd(OLED_CMD_SET_PAGE_ADDR);
+    OLED_port_send_cmd(0x00);
+    OLED_port_send_cmd(0x07);
+
+    OLED_port_flush(s_buf, sizeof(s_buf));
+}
+
+static void buf_put_char(uint8_t col, uint8_t page, char c)
+{
+    if (c < 32 || c > 127) c = ' ';
+    uint16_t offset = 1U + (uint16_t)page * OLED_WIDTH + col;
+    const uint8_t *g = s_font[(uint8_t)c - 32];
+    for (uint8_t i = 0; i < OLED_FONT_W && (col + i) < OLED_WIDTH; i++)
+        s_buf[offset + i] = g[i];
+}
+
+static void buf_draw_hline(uint8_t page)
+{
+    uint16_t offset = 1U + (uint16_t)page * OLED_WIDTH;
+    for (uint8_t i = 0; i < OLED_WIDTH; i++)
+        s_buf[offset + i] = 0xFF;
+}
+
+static const char *weekday_str(uint8_t wd)
+{
+    switch (wd) {
+        case 1: return "Lun"; case 2: return "Mar"; case 3: return "Mie";
+        case 4: return "Jue"; case 5: return "Vie"; case 6: return "Sab";
+        case 7: return "Dom"; default: return "---";
+    }
+}
+
+/* =========================================================================== */
+/*                          PANTALLAS PREDEFINIDAS                             */
+/* =========================================================================== */
+
+static void screen_weights(const OLED_Data *d)
+{
+    char line[22];
+
+    OLED_PutString(14, 0, "Guardian Pet");
+    buf_draw_hline(1);
+
+    OLED_PutString(0, 2, "Tanque:");
+    int tk_int = (int)d->tankKg;
+    int tk_dec = (int)((d->tankKg - (float)tk_int) * 1000.0f);
+    if (tk_dec < 0) tk_dec = -tk_dec;
+    snprintf(line, sizeof(line), "  %d.%03d kg", tk_int, tk_dec);
+    OLED_PutString(0, 3, line);
+
+    OLED_PutString(0, 5, "Plato:");
+    snprintf(line, sizeof(line), "  %d g", (int)d->plateGrams);
+    OLED_PutString(0, 6, line);
+}
+
+static void screen_clock(const OLED_Data *d)
+{
+    char line[22];
+
+    OLED_PutString(14, 0, "Guardian Pet");
+    buf_draw_hline(1);
+
+    snprintf(line, sizeof(line), "  %02d:%02d:%02d",
+             d->hour, d->minute, d->second);
+    OLED_PutString(0, 3, line);
+
+    snprintf(line, sizeof(line), " %s %02d/%02d/%02d",
+             weekday_str(d->weekday), d->day, d->month, d->year);
+    OLED_PutString(0, 5, line);
+}
+
+/* =========================================================================== */
+/*                          API PÚBLICA                                        */
+/* =========================================================================== */
+
+OLED_Status OLED_Init(void)
+{
+    osDelay(OLED_DELAY_INIT_MS);
+
+    OLED_port_send_cmd(OLED_CMD_DISPLAY_OFF);
+    OLED_port_send_cmd2(OLED_CMD_SET_CLK_DIV,      OLED_CLK_DIV_DEFAULT);
+    OLED_port_send_cmd2(OLED_CMD_SET_MUX_RATIO,    OLED_MUX_64);
+    OLED_port_send_cmd2(OLED_CMD_SET_DISPLAY_OFFSET, 0x00);
+    OLED_port_send_cmd(OLED_CMD_SET_START_LINE | 0x00);
+    OLED_port_send_cmd2(OLED_CMD_CHARGE_PUMP,       OLED_CHARGE_PUMP_ON);
+    OLED_port_send_cmd2(OLED_CMD_SET_MEM_MODE,      OLED_MEM_MODE_HORIZONTAL);
+    OLED_port_send_cmd(OLED_CMD_SEG_REMAP_FLIP);
+    OLED_port_send_cmd(OLED_CMD_COM_SCAN_FLIP);
+    OLED_port_send_cmd2(OLED_CMD_SET_COM_PINS,      OLED_COM_PINS_ALT);
+    OLED_port_send_cmd2(OLED_CMD_SET_CONTRAST,      OLED_CONTRAST_DEFAULT);
+    OLED_port_send_cmd2(OLED_CMD_SET_PRECHARGE,     OLED_PRECHARGE_DEFAULT);
+    OLED_port_send_cmd2(OLED_CMD_SET_VCOMH,         OLED_VCOMH_DEFAULT);
+    OLED_port_send_cmd(OLED_CMD_RESUME_RAM);
+    OLED_port_send_cmd(OLED_CMD_DISPLAY_NORMAL);
+    OLED_port_send_cmd(OLED_CMD_DEACTIVATE_SCROLL);
+    OLED_port_send_cmd(OLED_CMD_DISPLAY_ON);
+
+    OLED_Clear();
+    return OLED_OK;
+}
+
+void OLED_Clear(void)
+{
+    buf_clear();
+    buf_flush();
+}
+
+void OLED_PutString(uint8_t col, uint8_t page, const char *str)
+{
+    while (*str && col < OLED_WIDTH) {
+        buf_put_char(col, page, *str++);
+        col += OLED_FONT_W;
+    }
+}
+
+void OLED_Update(const OLED_Data *data)
+{
+    static uint32_t s_last_switch = 0;
+    static bool     s_show_clock  = false;
+
+    uint32_t now = osKernelGetTickCount();
+    if ((now - s_last_switch) >= OLED_SCREEN_SWITCH_MS) {
+        s_show_clock  = !s_show_clock;
+        s_last_switch = now;
+    }
+
+    buf_clear();
+
+    if (s_show_clock)
+        screen_clock(data);
+    else
+        screen_weights(data);
+
+    buf_flush();
+}
+
+void OLED_ShowDispensing(void)
+{
+    buf_clear();
+    OLED_PutString(14, 0, "Guardian Pet");
+    buf_draw_hline(1);
+    OLED_PutString(8,  3, "** DANDO  **");
+    OLED_PutString(8,  4, "** RACION **");
+    buf_flush();
+}
+
+void OLED_ShowError(void)
+{
+    buf_clear();
+    OLED_PutString(20, 2, "   ERROR   ");
+    OLED_PutString(4,  4, "Reiniciando...");
+    buf_flush();
+}

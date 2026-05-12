@@ -37,6 +37,8 @@ extern "C" {
 #include "dev_uart.h"
 #include "app_sm.h"
 #include "esp_comm.h"
+#include "dev_motor.h"
+#include "dev_hx711.h"
 #include <stdbool.h>
 
 /* Private includes ----------------------------------------------------------*/
