@@ -334,8 +334,17 @@ void SM_Task(void *argument)
             case ST_INIT:
             {
                 Device_Init_Stage stage = run_device_initialization();
-                if (stage == DEV_INIT_COMPLETE) { s_sm.state = ST_IDLE;  break; }
-                if (stage == DEV_INIT_ERROR)    { s_sm.state = ST_ERROR; break; }
+                if (stage == DEV_INIT_COMPLETE)
+                {
+                    /* Tara automática al arrancar — pone ambas galgas en 0 */
+                    uartSendString((uint8_t *)"[SM] Tara automatica al arrancar...\r\n");
+                    HX711_TareAll();
+                    uartSendString((uint8_t *)"[SM] Tara lista. Entrando a IDLE.\r\n");
+
+                    s_sm.state = ST_IDLE;
+                    break;
+                }
+                if (stage == DEV_INIT_ERROR) { s_sm.state = ST_ERROR; break; }
                 osDelay(50);
             }
             break;

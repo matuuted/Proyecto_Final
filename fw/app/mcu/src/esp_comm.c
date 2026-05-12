@@ -290,18 +290,26 @@ void Comm_SendData(const Comm_Data *t)
 {
     if (!t) return;
 
-    // newlib-nano no soporta %f en snprintf por defecto.
-    // Convertimos a entero + decimal manualmente para evitar el problema.
+    /*
+     * tank_weight  en kg → 2 decimales (resolución 10g)
+     *   ej: 1.37 kg → tank_int=1, tank_dec=37
+     *
+     * plate_weight en g  → 3 decimales (resolución 0.001g)
+     *   ej: 72.345 g → plate_int=72, plate_dec=345
+     */
     int tank_int  = (int)t->tankWeight;
-    int tank_dec  = (int)((t->tankWeight  - tank_int)  * 100);
+    int tank_dec  = (int)((t->tankWeight  - (float)tank_int) * 100.0f);
+    if (tank_dec  < 0) tank_dec  = -tank_dec;
+
     int plate_int = (int)t->plateWeight;
-    int plate_dec = (int)((t->plateWeight - plate_int) * 10);
+    int plate_dec = (int)((t->plateWeight - (float)plate_int) * 1000.0f);
+    if (plate_dec < 0) plate_dec = -plate_dec;
 
     uint8_t buf[UART_TX_MAX_SIZE];
     int len = snprintf((char *)buf, sizeof(buf),
         "{\"type\":\"telemetry\","
         "\"tank_weight\":%d.%02d,"
-        "\"plate_weight\":%d.%01d,"
+        "\"plate_weight\":%d.%03d,"
         "\"datetime\":{"
             "\"hour\":%d,\"minute\":%d,\"second\":%d,"
             "\"day\":%d,\"month\":%d,\"year\":%d,\"weekday\":%d"
@@ -355,27 +363,22 @@ void Comm_GetSchedules(Comm_Schedule *out, uint8_t *count)
 void Comm_Task(void *argument)
 {
     (void)argument;
-
     char line[UART_RX_BUF_SIZE];
-
     uartSendString((uint8_t *)"[COMM] CommTask iniciada.\r\n");
 
     for (;;)
     {
-        /* Esperar notificación de UART4 IRQ (línea completa recibida) */
-        uint32_t flags = osThreadFlagsWait(COMM_UART_RX_FLAG,
-                                           osFlagsWaitAny,
-                                           osWaitForever);
+        osThreadFlagsWait(COMM_UART_RX_FLAG, osFlagsWaitAny, osWaitForever);
 
-        if (flags & COMM_UART_RX_FLAG) {
-            uint16_t len = uartGetLine(line, sizeof(line));
-            if (len > 0) {
-                process_json(line);
-            }
+        /* TEMPORAL */
+        uartSendString((uint8_t *)"[COMM] Flag recibido\r\n");
+
+        uint16_t len;
+        while ((len = uartGetLine(line, sizeof(line))) > 0) {
+            process_json(line);
         }
     }
 }
-
 /* =========================================================================== */
 /*                          INICIALIZACIÓN                                     */
 /* =========================================================================== */

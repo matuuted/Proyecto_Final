@@ -1,37 +1,29 @@
 /**
  * @file    dev_hx711.c
  * @brief   Driver para dos módulos HX711 (tanque + plato).
- *
- * @details
- *  Protocolo HX711 Canal A Gain 128 (25 pulsos SCK):
- *   1. Esperar DOUT = LOW (dato listo, ~100 ms entre muestras a 10 Hz).
- *   2. 24 pulsos SCK → leer 1 bit DOUT por pulso (MSB first).
- *   3. 1 pulso extra (total 25) → Canal A Gain 128 para la próxima lectura.
- *   4. Valor de 24 bits en complemento a dos → convertir a int32_t.
- *   5. (crudo - offset) / scale = gramos.
- *
- * @author  Matías Durante
- * @version 1.0
- * @date    2025
  */
 
 #include "dev_hx711.h"
 #include "hx711_registers.h"
 #include "cmsis_os2.h"
+#include "dev_uart.h"
 
 /* =========================================================================== */
 /*                          ESTADO INTERNO POR CANAL                          */
 /* =========================================================================== */
 
 typedef struct {
-    int32_t offset; /**< Valor crudo en vacío (tara).      */
-    float   scale;  /**< Crudo / gramo (calibración).      */
+    int32_t offset;
+    float   scale;
 } HX711_State;
 
 static HX711_State s_state[HX711_CH_COUNT] = {
-    { .offset = 0, .scale = HX711_SCALE_TANK_DEFAULT  },  /* TANK  */
-    { .offset = 0, .scale = HX711_SCALE_PLATE_DEFAULT },  /* PLATE */
+    { .offset = 0, .scale = HX711_SCALE_TANK_DEFAULT  },
+    { .offset = 0, .scale = HX711_SCALE_PLATE_DEFAULT },
 };
+
+/** @brief Mutex — protege acceso simultáneo desde SM_Task y CommTask. */
+static osMutexId_t s_hx711_mutex = NULL;
 
 /* =========================================================================== */
 /*                          FUNCIONES PRIVADAS                                 */
@@ -69,9 +61,14 @@ static HX711_Status read_average(uint8_t ch, int32_t *avg)
 
 HX711_Status HX711_Init(void)
 {
+    /* Crear mutex antes de arrancar el RTOS — se llama desde devices_Init() */
+    s_hx711_mutex = osMutexNew(NULL);
+    /* Nota: osMutexNew puede retornar NULL si el kernel no arrancó todavía.
+     * En ese caso el mutex se crea en HX711_TareAll/ReadGrams si es NULL. */
+
     HX711_port_init();
 
-    /* Leer una vez cada canal para despertar el HX711 */
+    /* Despertar ambos HX711 */
     for (uint8_t ch = 0; ch < HX711_CH_COUNT; ch++) {
         if (!HX711_port_wait_ready(ch)) return HX711_ERROR;
         (void)HX711_port_read_raw(ch);
@@ -80,17 +77,29 @@ HX711_Status HX711_Init(void)
     return HX711_OK;
 }
 
+/**
+ * @brief  Crea el mutex si todavía no existe — llamar desde una tarea RTOS.
+ */
+static void ensure_mutex(void)
+{
+    if (s_hx711_mutex == NULL)
+        s_hx711_mutex = osMutexNew(NULL);
+}
+
 HX711_Status HX711_ReadGrams(uint8_t ch, float *grams)
 {
     if (ch >= HX711_CH_COUNT || grams == NULL) return HX711_ERROR;
 
+    ensure_mutex();
+    osMutexAcquire(s_hx711_mutex, osWaitForever);
+
     int32_t avg;
     HX711_Status st = read_average(ch, &avg);
+
+    osMutexRelease(s_hx711_mutex);
     if (st != HX711_OK) return st;
 
     float result = (float)(avg - s_state[ch].offset) / s_state[ch].scale;
-
-    /* Clamp solo valores muy negativos (ruido de fondo) — tolerancia 5g */
     *grams = (result < -5.0f) ? 0.0f : result;
 
     return HX711_OK;
@@ -100,12 +109,24 @@ HX711_Status HX711_Tare(uint8_t ch)
 {
     if (ch >= HX711_CH_COUNT) return HX711_ERROR;
 
+    ensure_mutex();
+    osMutexAcquire(s_hx711_mutex, osWaitForever);
+
     int32_t avg;
     HX711_Status st = read_average(ch, &avg);
-    if (st != HX711_OK) return st;
 
-    s_state[ch].offset = avg;
-    return HX711_OK;
+    if (st == HX711_OK) {
+        s_state[ch].offset = avg;
+
+        /* Debug — mostrar offset guardado */
+        uint8_t buf[64];
+        snprintf((char *)buf, sizeof(buf),
+                 "[HX711] CH%d tara OK, offset=%ld\r\n", ch, (long)avg);
+        uartSendString(buf);
+    }
+
+    osMutexRelease(s_hx711_mutex);
+    return st;
 }
 
 HX711_Status HX711_TareAll(void)

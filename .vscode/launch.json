@@ -14,8 +14,10 @@
             "runToEntryPoint": "main",
             "showDevDebugOutput": "none",
             "servertype": "stlink",
-            "liveWatch": true,
-            "svdFile": "${workspaceFolder}/STM32F446.svd"
+            "liveWatch": {
+                "enabled": true
+            }
+
         }
     ]
 }

@@ -33,17 +33,25 @@ static uint8_t  s_rx_byte = 0;
 static char     s_rx_line_buf[UART_RX_BUF_SIZE];
 static uint16_t s_rx_line_idx = 0;
 
-/** @brief Buffer con la última línea completa lista para leer. */
-static char     s_rx_ready_buf[UART_RX_BUF_SIZE];
-static uint16_t s_rx_ready_len = 0;
+/**
+ * @brief  Cola circular de líneas recibidas — profundidad UART_RX_QUEUE_DEPTH.
+ * @note   Evita perder el comando "tare" cuando llega mientras hay telemetría
+ *         pendiente de procesar.
+ */
+#define UART_RX_QUEUE_DEPTH  4U
 
-/** @brief Flag: hay una línea lista para leer (acceso desde IRQ y tarea). */
-static volatile bool s_rx_line_ready = false;
+typedef struct {
+    char     data[UART_RX_BUF_SIZE];
+    uint16_t len;
+} RxLine_t;
+
+static RxLine_t  s_rx_queue[UART_RX_QUEUE_DEPTH];
+static volatile uint8_t s_rx_q_head = 0;  /* IRQ escribe acá */
+static volatile uint8_t s_rx_q_tail = 0;  /* Tarea lee acá  */
 
 /** @brief Handle de la tarea a notificar cuando llega una línea completa. */
 static osThreadId_t s_rx_task_handle = NULL;
 
-/** @brief Flag de notificación que la tarea espera con osThreadFlagsWait. */
 #define UART_RX_FLAG  0x01U
 
 /* =========================================================================== */
@@ -54,7 +62,8 @@ bool uartInit(osThreadId_t rxTaskHandle)
 {
     s_rx_task_handle = rxTaskHandle;
     s_rx_line_idx    = 0;
-    s_rx_line_ready  = false;
+    s_rx_q_head      = 0;
+    s_rx_q_tail      = 0;
 
     huart4.Instance          = UART4;
     huart4.Init.BaudRate     = 115200;
@@ -69,10 +78,15 @@ bool uartInit(osThreadId_t rxTaskHandle)
         return false;
     }
 
+    HAL_NVIC_SetPriority(UART4_IRQn, 5, 0); // Prioridad para FreeRTOS (5 a 15)
+    HAL_NVIC_EnableIRQ(UART4_IRQn);
+
     /* Arrancar la primera recepción por IRQ — se re-arma sola en el callback */
     if (HAL_UART_Receive_IT(&huart4, &s_rx_byte, 1) != HAL_OK) {
         return false;
     }
+
+
 
     /* Mensaje de confirmación por UART */
     uint8_t msg[UART_TX_MAX_SIZE];
@@ -118,13 +132,19 @@ void uartReceiveStringSize(uint8_t *pstring, uint16_t size)
 
 uint16_t uartGetLine(char *dest, uint16_t maxLen)
 {
-    if (!s_rx_line_ready || dest == NULL || maxLen == 0) return 0;
+    if (dest == NULL || maxLen == 0) return 0;
 
-    uint16_t len = (s_rx_ready_len < maxLen - 1) ? s_rx_ready_len : maxLen - 1;
-    memcpy(dest, s_rx_ready_buf, len);
+    /* Cola vacía */
+    if (s_rx_q_tail == s_rx_q_head) return 0;
+
+    RxLine_t *entry = &s_rx_queue[s_rx_q_tail];
+    uint16_t len = (entry->len < maxLen - 1) ? entry->len : maxLen - 1;
+    memcpy(dest, entry->data, len);
     dest[len] = '\0';
 
-    s_rx_line_ready = false;
+    /* Avanzar tail */
+    s_rx_q_tail = (s_rx_q_tail + 1) % UART_RX_QUEUE_DEPTH;
+
     return len;
 }
 
@@ -144,33 +164,38 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     char c = (char)s_rx_byte;
 
     if (c == '\r') {
-        /* Ignorar CR — el protocolo usa '\n' como delimitador */
+        /* Ignorar CR */
     }
     else if (c == '\n') {
-        /* Línea completa — copiar al buffer de salida si no hay una pendiente */
-        if (!s_rx_line_ready && s_rx_line_idx > 0) {
-            memcpy(s_rx_ready_buf, s_rx_line_buf, s_rx_line_idx);
-            s_rx_ready_len  = s_rx_line_idx;
-            s_rx_line_ready = true;
+        if (s_rx_line_idx > 0) {
+            /* Calcular próxima posición del head */
+            uint8_t next_head = (s_rx_q_head + 1) % UART_RX_QUEUE_DEPTH;
 
-            /* Notificar a la tarea correspondiente desde IRQ */
-            if (s_rx_task_handle != NULL) {
-                osThreadFlagsSet(s_rx_task_handle, UART_RX_FLAG);
+            if (next_head != s_rx_q_tail) {
+                /* Hay espacio en la cola — guardar línea */
+                RxLine_t *entry = &s_rx_queue[s_rx_q_head];
+                memcpy(entry->data, s_rx_line_buf, s_rx_line_idx);
+                entry->len = s_rx_line_idx;
+                s_rx_q_head = next_head;
+
+                /* Notificar a CommTask */
+                if (s_rx_task_handle != NULL) {
+                    osThreadFlagsSet(s_rx_task_handle, UART_RX_FLAG);
+                }
             }
+            /* Si la cola está llena, la línea se descarta — raro pero seguro */
         }
-        s_rx_line_idx = 0; /* Resetear buffer de acumulación */
+        s_rx_line_idx = 0;
     }
     else {
-        /* Acumular byte — proteger contra overflow */
         if (s_rx_line_idx < UART_RX_BUF_SIZE - 1) {
             s_rx_line_buf[s_rx_line_idx++] = c;
         } else {
-            /* Buffer overflow: descartar línea y empezar de nuevo */
+            /* Overflow — descartar línea */
             s_rx_line_idx = 0;
         }
     }
 
-    /* Re-armar la recepción para el siguiente byte */
     HAL_UART_Receive_IT(huart, &s_rx_byte, 1);
 }
 
@@ -184,4 +209,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 void UART4_IRQHandler(void)
 {
     HAL_UART_IRQHandler(&huart4);
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == UART4) {
+        // Limpiar error y rearmar la recepción
+        HAL_UART_Receive_IT(huart, &s_rx_byte, 1);
+    }
 }
